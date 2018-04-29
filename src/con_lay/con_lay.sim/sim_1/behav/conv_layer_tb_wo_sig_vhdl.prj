@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../../ufixed_buffer.vhd"
+vhdl xil_defaultlib  "../../../../mac.vhd"
+vhdl xil_defaultlib  "../../../../conv_controller.vhd"
+vhdl xil_defaultlib  "../../../../ufixed_shift_registers.vhd"
+vhdl xil_defaultlib  "../../../../average_pooler.vhd"
+vhdl xil_defaultlib  "../../../../sfixed_fifo.vhd"
+vhdl xil_defaultlib  "../../../../tan_h.vhd"
+vhdl xil_defaultlib  "../../../../convolution.vhd"
+vhdl xil_defaultlib  "../../../../convolution_layer.vhd"
+vhdl xil_defaultlib  "../../../../../tb/conv_layer_tb_wo_sig.vhd"
+
+# Do not sort compile order
+nosort

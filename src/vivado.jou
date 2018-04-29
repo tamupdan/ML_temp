@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Apr 28 17:41:07 2018
+# Process ID: 6390
+# Log file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.log
+# Journal file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project tanget_hyperbolic /home/grads/p/prateek_24prasad/ml_new/src/tanget_hyperbolic -part xc7vx485tffg1157-1
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd /home/grads/p/prateek_24prasad/ml_new/tb/tanh_tb.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+source tanh_tb.tcl
+close_sim

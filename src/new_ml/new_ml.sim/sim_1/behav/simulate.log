@@ -1,0 +1,146 @@
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000000.00000000.
+Time: 31500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 32500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00000011.00000000.
+Time: 33500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 34500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 35500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 36500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 39500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000000.00000000.
+Time: 40500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00000011.00000000.
+Time: 41500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000000.00000000.
+Time: 42500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000000.00000000.
+Time: 43500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00000000.00000000.
+Time: 44500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 47500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000000.00000000.
+Time: 48500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000011.00000000.
+Time: 49500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000000.00000000.
+Time: 50500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000000.00000000.
+Time: 51500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00000000.00000000.
+Time: 52500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00000000.00000000.
+Time: 55500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 56500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000011.00000000.
+Time: 57500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000000.00000000.
+Time: 58500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00000000.00000000.
+Time: 59500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00000000.00000000.
+Time: 60500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00000000.00000000.
+Time: 63500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 64500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 65500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 66500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 67500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 68500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00000000.00000000.
+Time: 71500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 72500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 73500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 74500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 75500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000000.00000000.
+Time: 76500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000000.00000000.
+Time: 95500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 96500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00000011.00000000.
+Time: 97500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 98500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 99500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 100500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 103500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000000.00000000.
+Time: 104500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00000011.00000000.
+Time: 105500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000000.00000000.
+Time: 106500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000000.00000000.
+Time: 107500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00000000.00000000.
+Time: 108500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 111500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000000.00000000.
+Time: 112500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000011.00000000.
+Time: 113500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000000.00000000.
+Time: 114500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000000.00000000.
+Time: 115500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00000000.00000000.
+Time: 116500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00000000.00000000.
+Time: 119500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 120500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000011.00000000.
+Time: 121500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000000.00000000.
+Time: 122500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00000000.00000000.
+Time: 123500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00000000.00000000.
+Time: 124500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00000000.00000000.
+Time: 127500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 128500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 129500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 130500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 131500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 132500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00000000.00000000.
+Time: 135500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 136500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 137500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 138500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 139500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000000.00000000.
+Time: 140500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd

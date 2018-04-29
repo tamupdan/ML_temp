@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Webtalk v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Apr 25 15:13:34 2018
+# Process ID: 27941
+# Log file: /home/grads/s/sourav_1394/ML_Proj/webtalk.log
+# Journal file: /home/grads/s/sourav_1394/ML_Proj/webtalk.jou
+#-----------------------------------------------------------
+source /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.hw/webtalk/labtool_webtalk.tcl -notrace

@@ -1,0 +1,232 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Tue Apr 24 17:08:42 2018
+# Process ID: 30486
+# Log file: /home/grads/s/sourav_1394/ML_Proj/vivado.log
+# Journal file: /home/grads/s/sourav_1394/ML_Proj/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_layer_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/temp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer_tb
+ERROR: [VRFC 10-1471] type error near pixel_out ; current type sfixed; expected type std_logic_vector [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:108]
+ERROR: [VRFC 10-704] formal final_set has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:100]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:19]
+INFO: [VRFC 10-240] VHDL file /home/grads/s/sourav_1394/ML_Proj/temp.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_layer_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/temp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer_tb
+ERROR: [VRFC 10-1471] type error near pixel_out ; current type sfixed; expected type std_logic_vector [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:108]
+ERROR: [VRFC 10-704] formal final_set has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:100]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:19]
+INFO: [VRFC 10-240] VHDL file /home/grads/s/sourav_1394/ML_Proj/temp.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_layer_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/temp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer_tb
+ERROR: [VRFC 10-704] formal final_set has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:100]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:19]
+INFO: [VRFC 10-240] VHDL file /home/grads/s/sourav_1394/ML_Proj/temp.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_layer_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/temp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer_tb
+ERROR: [VRFC 10-704] formal final_set has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:102]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:19]
+INFO: [VRFC 10-240] VHDL file /home/grads/s/sourav_1394/ML_Proj/temp.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_layer_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/temp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer_tb
+ERROR: [VRFC 10-91] pool_dim is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:62]
+ERROR: [VRFC 10-91] dummy_bias is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:111]
+ERROR: [VRFC 10-283] actual of formal out port dummy_bias cannot be an expression [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:111]
+ERROR: [VRFC 10-704] formal final_set has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:101]
+ERROR: [VRFC 10-486] character '0' is not in type natural [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:127]
+ERROR: [VRFC 10-91] img is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:139]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:150]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:151]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:152]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:154]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:163]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:162]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:19]
+INFO: [VRFC 10-240] VHDL file /home/grads/s/sourav_1394/ML_Proj/temp.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_layer_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/temp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer_tb
+ERROR: [VRFC 10-91] dummy_bias is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:111]
+ERROR: [VRFC 10-283] actual of formal out port dummy_bias cannot be an expression [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:111]
+ERROR: [VRFC 10-704] formal final_set has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:101]
+ERROR: [VRFC 10-486] character '0' is not in type natural [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:127]
+ERROR: [VRFC 10-91] img is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:139]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:150]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:151]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:152]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:154]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:163]
+ERROR: [VRFC 10-91] nof_outputs is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:162]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:19]
+INFO: [VRFC 10-240] VHDL file /home/grads/s/sourav_1394/ML_Proj/temp.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_layer_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/temp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer_tb
+ERROR: [VRFC 10-91] dummy_bias is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:111]
+ERROR: [VRFC 10-283] actual of formal out port dummy_bias cannot be an expression [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:111]
+ERROR: [VRFC 10-704] formal final_set has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:101]
+ERROR: [VRFC 10-486] character '0' is not in type natural [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:127]
+ERROR: [VRFC 10-91] img is not declared [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:139]
+ERROR: [VRFC 10-1504] unit behavior ignored due to previous errors [/home/grads/s/sourav_1394/ML_Proj/temp.vhd:19]
+INFO: [VRFC 10-240] VHDL file /home/grads/s/sourav_1394/ML_Proj/temp.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.

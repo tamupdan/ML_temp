@@ -1,0 +1,99 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Apr 28 17:41:07 2018
+# Process ID: 6390
+# Log file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.log
+# Journal file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project tanget_hyperbolic /home/grads/p/prateek_24prasad/ml_new/src/tanget_hyperbolic -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd /home/grads/p/prateek_24prasad/ml_new/tb/tanh_tb.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tanh_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/src/tanget_hyperbolic/tanget_hyperbolic.sim/sim_1/behav'
+xvhdl -m64 --relax -prj tanh_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/tanh_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/src/tanget_hyperbolic/tanget_hyperbolic.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 3fa6de3352c94b0e96ab29bf6d9ac279 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot tanh_tb_behav xil_defaultlib.tanh_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.tan_h [\tan_h(8,8,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.tanh_tb
+Built simulation snapshot tanh_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/src/tanget_hyperbolic/tanget_hyperbolic.sim/sim_1/behav/xsim.dir/tanh_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/src/tanget_hyperbolic/tanget_hyperbolic.sim/sim_1/behav/xsim.dir/tanh_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Apr 28 17:42:33 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Apr 28 17:42:33 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/src/tanget_hyperbolic/tanget_hyperbolic.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tanh_tb_behav -key {Behavioral:sim_1:Functional:tanh_tb} -tclbatch {tanh_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source tanh_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1 ns  Iteration: 1  Process: /tanh_tb/tanh_port/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1 ns  Iteration: 1  Process: /tanh_tb/tanh_port/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tanh_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 6064.750 ; gain = 45.039 ; free physical = 9154 ; free virtual = 82610
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 28 17:50:09 2018...

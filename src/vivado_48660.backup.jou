@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Thu Apr 26 21:17:34 2018
+# Process ID: 41501
+# Log file: /home/grads/s/sourav_1394/ML_Proj/vivado.log
+# Journal file: /home/grads/s/sourav_1394/ML_Proj/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project Convolution_TB /home/grads/s/sourav_1394/ML_Proj/Convolution_TB -part xc7vx485tffg1157-1
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/tb/convolution_tb.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/convolution.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/conv_controller.vhd
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/mac.vhd /home/grads/s/sourav_1394/ML_Proj/ufixed_shift_registers.vhd}
+update_compile_order -fileset sources_1
+launch_simulation
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/ufixed_buffer.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+source convolution_tb.tcl
+run all

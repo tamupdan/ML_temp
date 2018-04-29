@@ -1,0 +1,31 @@
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 08458ac72802467dafa9d808b495e49f --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot convolution_tb_behav xil_defaultlib.convolution_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 3995. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4001. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.sfixed_buffer [\sfixed_buffer(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.sfixed_shift_registers [\sfixed_shift_registers(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.conv_controller [\conv_controller(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.convolution_tb
+Built simulation snapshot convolution_tb_behav

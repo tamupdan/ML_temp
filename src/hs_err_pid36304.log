@@ -1,0 +1,28 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x8e58a9) [0x7f69914e38a9]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(JVM_handle_linux_signal+0xb6) [0x7f69914e94f6]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x8e2523) [0x7f69914e0523]
+/lib64/libc.so.6(+0x35270) [0x7f69c7635270]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_common.so(std::_Hashtable<hdi::tcltasks::detail::collection_wrapper_base const*, std::pair<hdi::tcltasks::detail::collection_wrapper_base const* const, Tcl_Obj*>, std::allocator<std::pair<hdi::tcltasks::detail::collection_wrapper_base const* const, Tcl_Obj*> >, std::__detail::_Select1st, std::equal_to<hdi::tcltasks::detail::collection_wrapper_base const*>, boost::hash<hdi::tcltasks::detail::collection_wrapper_base const*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, false> >::equal_range(hdi::tcltasks::detail::collection_wrapper_base const* const&)+0x2b) [0x7f69c87006bb]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_common.so(hdi::tcltasks::native_cache<hdi::tcltasks::detail::collection_wrapper_base*>::remove(hdi::tcltasks::detail::collection_wrapper_base const*)+0x3e) [0x7f69c870098e]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_common.so(hdi::tcltasks::detail::collection_wrapper_base::~collection_wrapper_base()+0x17) [0x7f69c86ffa07]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_coretasks.so(hdi::tcltasks::detail::collection_wrapper<HSTVector<std::string, std::allocator<std::string> >, hdi::tcltasks::tcl_collection_container_traits>::~collection_wrapper()+0x20) [0x7f69b51c37a0]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_common.so(hdi::tcltasks::detail::collection_wrapper_base::decr_ref() const+0x14) [0x7f69c86ff2e4]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_coretasks.so(boost::any::holder<hdi::tcltasks::tcl_collection<HSTVector<std::string, std::allocator<std::string> >, hdi::tcltasks::tcl_collection_container_traits> const>::~holder()+0x20) [0x7f69b51be9e0]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_coretasks.so(+0x38c3c3) [0x7f69b52933c3]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/libboost_program_options.so(boost::program_options::option_description::~option_description()+0x7a) [0x7f69c6050a9a]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/libboost_program_options.so(boost::program_options::option_description::~option_description()+0x9) [0x7f69c6050b69]
+/softwares/Linux/xilinx/Vivado/2015.2/lib/lnx64.o/librdi_common.so(hdi::tcltasks::options_description::~options_description()+0x142) [0x7f69c870d312]
+/lib64/libc.so.6(+0x38a69) [0x7f69c7638a69]
+/lib64/libc.so.6(+0x38ab5) [0x7f69c7638ab5]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x660ad7) [0x7f699125ead7]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0xa81fd5) [0x7f699167ffd5]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0xa803aa) [0x7f699167e3aa]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0xa8072e) [0x7f699167e72e]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0xa80ba0) [0x7f699167eba0]
+/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x8e7d48) [0x7f69914e5d48]
+/lib64/libpthread.so.0(+0x7e25) [0x7f69c70e9e25]
+/lib64/libc.so.6(clone+0x6d) [0x7f69c76f834d]

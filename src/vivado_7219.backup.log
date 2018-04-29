@@ -1,0 +1,558 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Apr 25 14:52:39 2018
+# Process ID: 9588
+# Log file: /home/grads/s/sourav_1394/ML_Proj/vivado.log
+# Journal file: /home/grads/s/sourav_1394/ML_Proj/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project mac_tb /home/grads/s/sourav_1394/ML_Proj/mac_tb -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/mac.vhd /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'mac_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav'
+xvhdl -m64 --relax -prj mac_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 18d679b79d0642e2a5259b33789a8dfe --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot mac_tb_behav xil_defaultlib.mac_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 3995. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4001. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.mac_tb
+Built simulation snapshot mac_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav/xsim.dir/mac_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav/xsim.dir/mac_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Apr 25 14:55:18 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 25 14:55:18 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mac_tb_behav -key {Behavioral:sim_1:Functional:mac_tb} -tclbatch {mac_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source mac_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:TO_SFIXED(INTEGER): vector truncated
+Time: 119 ns  Iteration: 0  Process: /mac_tb/tb  File: /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.vhd
+Error: Result is 01111111.11111111. Expected 00000000.00000000
+Time: 122 ns  Iteration: 0  Process: /mac_tb/tb  File: /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mac_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:21 ; elapsed = 00:00:06 . Memory (MB): peak = 6119.480 ; gain = 52.859 ; free physical = 90772 ; free virtual = 224455
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'mac_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav'
+xvhdl -m64 --relax -prj mac_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 18d679b79d0642e2a5259b33789a8dfe --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot mac_tb_behav xil_defaultlib.mac_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 3995. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4001. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.mac_tb
+Built simulation snapshot mac_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav/xsim.dir/mac_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav/xsim.dir/mac_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Apr 25 15:01:41 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 25 15:01:41 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mac_tb_behav -key {Behavioral:sim_1:Functional:mac_tb} -tclbatch {mac_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source mac_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:TO_SFIXED(INTEGER): vector truncated
+Time: 119 ns  Iteration: 0  Process: /mac_tb/tb  File: /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.vhd
+Error: Result is 01111111.11111111. Expected 00000000.00000000
+Time: 122 ns  Iteration: 0  Process: /mac_tb/tb  File: /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mac_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_project
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/s/sourav_1394/ML_Proj/mac_tb/mac_tb.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Wed Apr 25 15:13:35 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 25 15:13:35 2018...
+create_project sigmoid_tb /home/grads/s/sourav_1394/ML_Proj/sigmoid_tb -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd /home/grads/s/sourav_1394/ML_Proj/tb/tb_sigmoid.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+remove_files /home/grads/s/sourav_1394/ML_Proj/tan_h.vhd
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/sigmoid.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb_sigmoid' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/sigmoid_tb/sigmoid_tb.sim/sim_1/behav'
+xvhdl -m64 --relax -prj tb_sigmoid_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/sigmoid.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sigmoid
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tb/tb_sigmoid.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_sigmoid
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/s/sourav_1394/ML_Proj/sigmoid_tb/sigmoid_tb.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 482f2b6176bb45a99f2ca26a31dca82f --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot tb_sigmoid_behav xil_defaultlib.tb_sigmoid -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-619] entity port x does not match with type ufixed of component port [/home/grads/s/sourav_1394/ML_Proj/tb/tb_sigmoid.vhd:18]
+ERROR: [VRFC 10-664] expression has 16 elements ; expected 32 [/home/grads/s/sourav_1394/ML_Proj/tb/tb_sigmoid.vhd:18]
+ERROR: [VRFC 10-664] expression has 16 elements ; expected 32 [/home/grads/s/sourav_1394/ML_Proj/tb/tb_sigmoid.vhd:19]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit tb_sigmoid in library work failed.
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/sigmoid_tb/sigmoid_tb.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/sigmoid_tb/sigmoid_tb.sim/sim_1/behav/elaborate.log' file for more information.
+close_project
+create_project tanh_tb /home/grads/s/sourav_1394/ML_Proj/tanh_tb -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd /home/grads/s/sourav_1394/ML_Proj/tan_h.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tanh_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/tanh_tb/tanh_tb.sim/sim_1/behav'
+xvhdl -m64 --relax -prj tanh_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/s/sourav_1394/ML_Proj/tanh_tb/tanh_tb.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 1de1c46222db465da0b2e5c4a08ebba2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot tanh_tb_behav xil_defaultlib.tanh_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.tan_h [\tan_h(16,16,16,16)\]
+Compiling architecture behavior of entity xil_defaultlib.tanh_tb
+Built simulation snapshot tanh_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/s/sourav_1394/ML_Proj/tanh_tb/tanh_tb.sim/sim_1/behav/xsim.dir/tanh_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/s/sourav_1394/ML_Proj/tanh_tb/tanh_tb.sim/sim_1/behav/xsim.dir/tanh_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Apr 25 15:18:20 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 25 15:18:20 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/s/sourav_1394/ML_Proj/tanh_tb/tanh_tb.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tanh_tb_behav -key {Behavioral:sim_1:Functional:tanh_tb} -tclbatch {tanh_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source tanh_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1 ns  Iteration: 1  Process: /tanh_tb/tanh_port/calculate_terms_c2  File: /home/grads/s/sourav_1394/ML_Proj/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1 ns  Iteration: 1  Process: /tanh_tb/tanh_port/calculate_terms_c2  File: /home/grads/s/sourav_1394/ML_Proj/tan_h.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tanh_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+report_drivers {/tanh_tb/x}
+Drivers for /tanh_tb/x[15:-16]
+  0 : Net /tanh_tb/x[15]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[14]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[13]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[12]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[11]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[10]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[9]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[8]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[7]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[6]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[5]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[4]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[3]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[2]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[1]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[0]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-1]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-2]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-3]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-4]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-5]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-6]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-7]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-8]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-9]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-10]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-11]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-12]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-13]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-14]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-15]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+  0 : Net /tanh_tb/x[-16]
+    0 : Driver /tanh_tb/tb at /home/grads/s/sourav_1394/ML_Proj/tb/tanh_tb.vhd:64
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_project
+create_project controller /home/grads/s/sourav_1394/ML_Proj/controller -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/tb/conv_controller_tb.vhd /home/grads/s/sourav_1394/ML_Proj/conv_controller.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'conv_controller_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav'
+xvhdl -m64 --relax -prj conv_controller_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/conv_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity conv_controller
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tb/conv_controller_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity conv_controller_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 4266f3ff3719450c93ea4399227f4bf3 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot conv_controller_tb_behav xil_defaultlib.conv_controller_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-704] formal layer_nr has no actual or default value [/home/grads/s/sourav_1394/ML_Proj/conv_controller.vhd:13]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit conv_controller_tb in library work failed.
+INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'conv_controller_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav'
+xvhdl -m64 --relax -prj conv_controller_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/conv_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity conv_controller
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tb/conv_controller_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity conv_controller_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 4266f3ff3719450c93ea4399227f4bf3 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot conv_controller_tb_behav xil_defaultlib.conv_controller_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.conv_controller [\conv_controller(32,7)\]
+Compiling architecture behavior of entity xil_defaultlib.conv_controller_tb
+Built simulation snapshot conv_controller_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav/xsim.dir/conv_controller_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav/xsim.dir/conv_controller_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Apr 25 15:55:33 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 25 15:55:33 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/s/sourav_1394/ML_Proj/controller/controller.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "conv_controller_tb_behav -key {Behavioral:sim_1:Functional:conv_controller_tb} -tclbatch {conv_controller_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source conv_controller_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Pre-delay. Output was 0. Should be 1.
+Time: 300500 ps  Iteration: 0  Process: /conv_controller_tb/stim_proc  File: /home/grads/s/sourav_1394/ML_Proj/tb/conv_controller_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'conv_controller_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_project
+create_project Average_Pooling_TB /home/grads/s/sourav_1394/ML_Proj/Average_Pooling_TB -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd /home/grads/s/sourav_1394/ML_Proj/tb/average_pooling_tb.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/ufixed_buffer.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'average_pooler_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Average_Pooling_TB/Average_Pooling_TB.sim/sim_1/behav'
+xvhdl -m64 --relax -prj average_pooler_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/ufixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/s/sourav_1394/ML_Proj/tb/average_pooling_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/s/sourav_1394/ML_Proj/Average_Pooling_TB/Average_Pooling_TB.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 6652282a6ccc4ba89cecc42f113bab1b --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot average_pooler_tb_behav xil_defaultlib.average_pooler_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 3995. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4001. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.sfixed_buffer [\sfixed_buffer(16,16)\]
+Compiling architecture behavioral of entity xil_defaultlib.average_pooler [\average_pooler(6,3,2,16,16)\]
+Compiling architecture behavior of entity xil_defaultlib.average_pooler_tb
+Built simulation snapshot average_pooler_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/s/sourav_1394/ML_Proj/Average_Pooling_TB/Average_Pooling_TB.sim/sim_1/behav/xsim.dir/average_pooler_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/s/sourav_1394/ML_Proj/Average_Pooling_TB/Average_Pooling_TB.sim/sim_1/behav/xsim.dir/average_pooler_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Apr 25 16:07:39 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 25 16:07:39 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/s/sourav_1394/ML_Proj/Average_Pooling_TB/Average_Pooling_TB.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "average_pooler_tb_behav -key {Behavioral:sim_1:Functional:average_pooler_tb} -tclbatch {average_pooler_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source average_pooler_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ERROR: Index -2 out of bound 1 downto 0
+Time: 13500 ps  Iteration: 1  Process: /average_pooler_tb/avg_pooler/update_sum
+  File: /home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd
+
+HDL Line: /home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd:165
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'average_pooler_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run all
+ERROR: [Simulator 45-1] A fatal run-time error was detected.  Simulation cannot continue.
+run all
+ERROR: [Simulator 45-1] A fatal run-time error was detected.  Simulation cannot continue.
+run all
+ERROR: [Simulator 45-1] A fatal run-time error was detected.  Simulation cannot continue.
+run all
+ERROR: [Simulator 45-1] A fatal run-time error was detected.  Simulation cannot continue.
+run all
+ERROR: [Simulator 45-1] A fatal run-time error was detected.  Simulation cannot continue.

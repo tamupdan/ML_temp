@@ -1,0 +1,455 @@
+/*
+
+Vivado v2015.2 (64-bit)
+SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+Process ID: 30486
+
+Current time: 	4/24/18 5:08:56 PM CDT
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: CentOS Linux release 7.4.1708 (Core) 
+Version: 3.10.0-693.11.1.el7.x86_64
+Architecture: amd64
+Available processors (cores): 40
+
+DISPLAY: localhost:71.0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_25 64-bit
+Java home: 	/softwares/Linux/xilinx/Vivado/2015.2/tps/lnx64/jre
+
+User name: 	sourav_1394
+User directory: /home/grads/s/sourav_1394/ML_Proj
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+Vivado preferences path: /home/grads/s/sourav_1394/.Xilinx/Vivado/2015.2/vivado.ini
+Vivado layouts directory: /home/grads/s/sourav_1394/.Xilinx/Vivado/2015.2/layouts/application
+
+GUI allocated memory:	202 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,950 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 24 MB (+22709kb) [00:00:06]
+// [Engine Memory]: 4,948 MB (+5036640kb) [00:00:06]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,958 MB. GUI used memory: 20 MB. Current time: 4/24/18 5:08:58 PM CDT
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.xpr", 0); // t:v (JViewport:JComponent, cl:JFrame)
+// Opening Vivado Project: /home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.xpr. Version: Vivado v2015.2 
+// cp:P (cl:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 32 MB (+7264kb) [00:00:16]
+// Tcl Message: open_project {/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 42 MB (+8990kb) [00:00:17]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: Conv testing; location: /home/grads/s/sourav_1394/ML_Proj/Conv testing; part: xc7vx485tffg1157-1
+dismissDialog("Open Project"); // cp:P (cl:JFrame)
+// [GUI Memory]: 49 MB (+4635kb) [00:00:19]
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 55 MB (+4151kb) [00:00:19]
+selectTab((HResource) null, (HResource) null, "Log", 2); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information. 
+// a:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+// [GUI Memory]: 59 MB (+822kb) [00:00:40]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, launch_simulation. , [USF-XSim 62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.. ]", 15, false); // ae:k (JViewport:JComponent, cl:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, launch_simulation. , [USF-XSim 62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information.. ]", 15, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1031, 125); // dQ:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1140, 154); // dQ:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd)]", 1); // A:k (H:JPanel, cl:JFrame)
+// Elapsed time: 164 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd)]", 2); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), activation_function2 - tan_h - Behavioral (tan_h.vhd)]", 7, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 6, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), intermediate_buffer - sfixed_fifo - Behavioral (sfixed_fifo.vhd)]", 4, false); // A:k (H:JPanel, cl:JFrame)
+// [GUI Memory]: 63 MB (+994kb) [00:03:55]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 6); // A:k (H:JPanel, cl:JFrame)
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true, false, false, false, true, false); // A:k (H:JPanel, cl:JFrame) - Popup Trigger - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true, false, false, false, true, false); // A:k (H:JPanel, cl:JFrame) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_ADD_SOURCES, "Add Sources..."); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (cl:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // w:JideButton (CommandBar:DockableBar, b:g)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ab:JMenuItem (ai:JPopupMenu, b:g)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,091 MB. GUI used memory: 29 MB. Current time: 4/24/18 5:13:13 PM CDT
+dismissFileChooser();
+// Elapsed time: 238 seconds
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // w:JideButton (CommandBar:DockableBar, b:g)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ab:JMenuItem (ai:JPopupMenu, b:g)
+setFileChooser("/home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd");
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 263 seconds
+dismissDialog("Add Sources"); // b:g (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/sfixed_buffer.vhd 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 6); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 6); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,143 MB. GUI used memory: 27 MB. Current time: 4/24/18 5:17:38 PM CDT
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information. 
+// a:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Log", 3); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Log", 2); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Log", 2); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cl:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1235, 130); // dQ:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1235, 130, false, false, false, false, true); // dQ:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Elapsed time: 49 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd)]", 1, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd)]", 1, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectCodeEditor("temp.vhd", 244, 414); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 244, 414, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 112, 192); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 112, 192, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 242, 348); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 242, 348, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd)]", 1); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd)]", 2, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, convolution_layer_tb - behavior (temp.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd)]", 2, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectCodeEditor("convolution_layer.vhd", 190, 438); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 190, 438, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("convolution_layer.vhd", 93, 424); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 93, 424, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Elapsed time: 36 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "temp.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("temp.vhd", 273, 313); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 235, 333); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 235, 333, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "temp.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 276, 326); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 276, 326, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "temp.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+// [GUI Memory]: 76 MB (+10349kb) [00:10:57]
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information. 
+// a:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("temp.vhd", 75, 324); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "convolution_layer.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 512, 219); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 18 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "final_set"); // o:ao (f:JComboBox, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "temp.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 31 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "final"); // o:ao (f:JComboBox, cl:JFrame)
+selectCodeEditor("temp.vhd", 104, 323); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 104, 323, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("temp.vhd", 82, 322); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 294, 319, true, false, false, false, false); // bj:J (JPanel:JComponent, cl:JFrame) - Shift Key
+typeControlKey((HResource) null, "temp.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 295, 248); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "temp.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 22 seconds
+selectCodeEditor("temp.vhd", 250, 264); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("temp.vhd", 294, 207); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 229, 209); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 274, 199); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 299, 213); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 272, 204); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("temp.vhd", 206, 475); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 291, 383); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "temp.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 306, 288); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 295, 314); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 296, 304); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "temp.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 16 seconds
+selectCodeEditor("temp.vhd", 128, 381); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 128, 381, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 216, 324); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 216, 324, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "convolution_layer.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 194, 350); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 194, 350, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("convolution_layer.vhd", 215, 326); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 85, 325); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 253, 321); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "temp.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 29 seconds
+selectCodeEditor("temp.vhd", 439, 289); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "MAX"); // o:ao (f:JComboBox, cl:JFrame)
+selectCodeEditor("temp.vhd", 109, 202); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 110, 202); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 110, 202, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 454, 358); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information. 
+// a:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+// Elapsed time: 67 seconds
+selectCodeEditor("temp.vhd", 144, 387); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 144, 387, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 65, 385); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 201, 382); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 201, 382, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 383, 418); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 148 seconds
+selectCodeEditor("temp.vhd", 34, 253); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 12 seconds
+typeControlKey((HResource) null, "temp.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 80 MB (+145kb) [00:19:11]
+// Elapsed time: 21 seconds
+selectCodeEditor("temp.vhd", 224, 333); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information. 
+// a:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+// Elapsed time: 50 seconds
+selectCodeEditor("temp.vhd", 92, 131); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 113, 124); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 113, 124, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Elapsed time: 20 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pool_dim"); // o:ao (f:JComboBox, cl:JFrame)
+selectCodeEditor("temp.vhd", 80, 195); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information. 
+// a:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("temp.vhd", 64, 313); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 66, 312, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "temp.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 77 seconds
+selectCodeEditor("temp.vhd", 154, 418); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 112, 432); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 112, 432, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 233, 402); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 233, 402, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "temp.vhd", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 238, 432); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 240, 435); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 240, 435, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "convolution_layer.vhd", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "temp.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,145 MB. GUI used memory: 31 MB. Current time: 4/24/18 5:47:39 PM CDT
+// Elapsed time: 960 seconds
+selectCodeEditor("temp.vhd", 46, 359); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 46, 359, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Elapsed time: 30 seconds
+selectCodeEditor("temp.vhd", 8, 160); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 8, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 8, 159, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("temp.vhd", 132, 250); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 132, 250, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Elapsed time: 416 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clk_period"); // o:ao (f:JComboBox, cl:JFrame)
+// [GUI Memory]: 84 MB (+196kb) [00:49:02]
+// Elapsed time: 763 seconds
+selectCodeEditor("temp.vhd", 469, 304); // bj:J (JPanel:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,145 MB. GUI used memory: 28 MB. Current time: 4/24/18 6:17:39 PM CDT
+// Elapsed time: 1980 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "NOF"); // o:ao (f:JComboBox, cl:JFrame)
+selectCodeEditor("temp.vhd", 285, 286); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 30, 368); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 53 seconds
+selectCodeEditor("temp.vhd", 836, 169); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 264, 373); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'convolution_layer_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-99] Step results log file:'/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/s/sourav_1394/ML_Proj/Conv testing/Conv testing.sim/sim_1/behav/xvhdl.log' file for more information. 
+// a:a (cl:JFrame): Critical Messages: addNotify
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 104, 118); // dQ:J (JPanel:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,145 MB. GUI used memory: 28 MB. Current time: 4/24/18 6:47:39 PM CDT
+// Elapsed time: 574 seconds
+selectCodeEditor("temp.vhd", 94, 167); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("temp.vhd", 94, 167, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH

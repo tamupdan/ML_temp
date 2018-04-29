@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Apr 28 17:39:26 2018
+# Process ID: 27505
+# Log file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.log
+# Journal file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project con_lay /home/grads/p/prateek_24prasad/ml_new/src/con_lay -part xc7vx485tffg1157-1
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd /home/grads/p/prateek_24prasad/ml_new/tb/convolution_layer_tb.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd /home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd}
+update_compile_order -fileset sources_1
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd /home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd}
+update_compile_order -fileset sources_1
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+remove_files /home/grads/p/prateek_24prasad/ml_new/tb/convolution_layer_tb.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+add_wave {{/conv_layer_tb_wo_sig/conv_layer/activation_function/x}} 
+run all
+add_wave {{/conv_layer_tb_wo_sig/conv_layer/activation_function2/x}} 
+report_drivers {/conv_layer_tb_wo_sig/conv_layer/activation_function2/x}
+report_drivers {/conv_layer_tb_wo_sig/conv_layer/pixelValid_ScaleFactorToBias2}
+report_drivers {/conv_layer_tb_wo_sig/conv_layer/pixelValid_AvgPoolToScaleFactor}
+report_drivers {/conv_layer_tb_wo_sig/conv_layer/avg_pooler/output_valid_buf}
+add_wave {{/conv_layer_tb_wo_sig/conv_layer/avg_pooler/input_valid}} 

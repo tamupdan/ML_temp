@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Fri Apr 27 17:14:07 2018
+# Process ID: 48660
+# Log file: /home/grads/s/sourav_1394/ML_Proj/vivado.log
+# Journal file: /home/grads/s/sourav_1394/ML_Proj/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project Convolution_Layer_TB /home/grads/s/sourav_1394/ML_Proj/Convolution_Layer_TB -part xc7vx485tffg1157-1
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/tb/conv_layer_tb_wo_sig.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/convolution_layer.vhd
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/average_pooler.vhd /home/grads/s/sourav_1394/ML_Proj/sfixed_fifo.vhd /home/grads/s/sourav_1394/ML_Proj/tan_h.vhd /home/grads/s/sourav_1394/ML_Proj/convolution.vhd}
+update_compile_order -fileset sources_1
+add_files -norecurse {/home/grads/s/sourav_1394/ML_Proj/conv_controller.vhd /home/grads/s/sourav_1394/ML_Proj/mac.vhd /home/grads/s/sourav_1394/ML_Proj/ufixed_shift_registers.vhd}
+update_compile_order -fileset sources_1
+add_files -norecurse /home/grads/s/sourav_1394/ML_Proj/ufixed_buffer.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+close_project
+open_project /home/grads/s/sourav_1394/ML_Proj/Convolution_TB/Convolution_TB.xpr
+launch_simulation
+source convolution_tb.tcl
+close_sim
+launch_simulation
+source convolution_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+source convolution_tb.tcl
+close_sim

@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Apr 28 17:02:57 2018
+# Process ID: 27048
+# Log file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.log
+# Journal file: /home/grads/p/prateek_24prasad/ml_new/src/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project new_ml /home/grads/p/prateek_24prasad/ml_new/src/new_ml -part xc7vx485tffg1157-1
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+source convolution_tb.tcl
+close_sim
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/mac.vhd
+update_compile_order -fileset sources_1
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+source convolution_tb.tcl
+close_sim
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+source convolution_tb.tcl
+close_sim
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+source convolution_tb.tcl
+close_sim
+launch_simulation
+source convolution_tb.tcl
+close_sim
