@@ -28,7 +28,6 @@ entity convolution_layer is
 		pxl_in	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		pxl_valid	: out std_logic;
 		pxl_out 	: out sfixed(INT_WIDTH+FRAC_WIDTH-1 downto 0);
-		dummy_bias	: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		pxl_tanh_pool        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		pxl_tanh_out        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
 	);

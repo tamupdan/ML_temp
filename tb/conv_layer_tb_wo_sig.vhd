@@ -38,7 +38,6 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 			pxl_in	    : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			pxl_valid	: out std_logic;
 			pxl_out 	: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			--dummy_bias	: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			pxl_tanh_out	 : inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
             pxl_tanh_pool    : inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
 		);
@@ -54,13 +53,10 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 	signal pxl_in		: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
 	signal pxl_valid	: std_logic := '0';
 	signal pxl_out 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-	signal dummy_bias	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
 	signal pxl_tanh_pool	:  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-    signal pxl_tanh_out    :  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pxl_tanh_out    :  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);	
 	
 	constant clk_period : time := 1 ns;
-	
-	-- INPUT/OUTPUT
 	
 	constant val_zero 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000000000000000";
 	constant val_one 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000000100000000";
@@ -69,17 +65,18 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 	constant val_four 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010000000000";
 	constant val_five 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010100000000";
 	
-    constant result0 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
-    constant result1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
-    constant result2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
-    constant result3 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(94, 7, -8);
-    constant result4 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(47, 7, -8);
-    constant result5 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(76, 7, -8);
-    constant result6 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(93, 7, -8);
-    constant result7 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(72, 7, -8);
-    constant result8 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
+    constant r0 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
+    constant r1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
+    constant r2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
+    constant r3 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(94, 7, -8);
+    constant r4 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(47, 7, -8);
+    constant r5 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(76, 7, -8);
+    constant r6 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(93, 7, -8);
+    constant r7 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(72, 7, -8);
+    constant r8 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
 	
 	constant OUTPUT_DIM : Natural := (IMG_DIM-KERNEL_DIM+1)/POOL_DIM;
+	
 	type image_array is array ((IMG_DIM*IMG_DIM)-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 	type kernel_array is array ((KERNEL_DIM*KERNEL_DIM) downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 	type pooled_array is array ((OUTPUT_DIM*OUTPUT_DIM)-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
@@ -103,12 +100,12 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 	);
 	
 	signal result : pooled_array := (
-        result8, result7, result6,
-        result5, result4, result3,
-        result2, result1, result0
+        r8, r7, r6,
+        r5, r4, r3,
+        r2, r1, r0
     );
 	
-	signal nof_outputs : Natural := 0;
+	signal total_out : Natural := 0;
 	
 	
 	
@@ -126,7 +123,6 @@ begin
 		pxl_in		=> pxl_in,
 		pxl_valid	=> pxl_valid,
 		pxl_out 	=> pxl_out,
-		--dummy_bias	=> dummy_bias,
 		pxl_tanh_pool	 => pxl_tanh_pool,
         pxl_tanh_out  => pxl_tanh_out
 	);
@@ -167,11 +163,11 @@ begin
 	begin
 		if rising_edge(clk) then
 			if (pxl_valid ='1') then
-				assert pxl_out = result(nof_outputs)
-					report "Output nr. " & Natural'image(nof_outputs) & ". Expected value: " &
-						to_string(result(nof_outputs)) & ". Actual value: " & to_string(pxl_out) & "."
+				assert pxl_out = result(total_out)
+					report "Output nr. " & Natural'image(total_out) & ". Expected value: " &
+						to_string(result(total_out)) & ". Actual value: " & to_string(pxl_out) & "."
 					severity error;
-				nof_outputs <= nof_outputs + 1;
+				total_out <= total_out + 1;
 			end if;
 		end if; 
 	end process;
@@ -179,8 +175,8 @@ begin
 	assert_correct_nof_outputs : process(clk)
 	begin
 		if rising_edge(clk) then
-			if (nof_outputs >= 9) then
-				assert nof_outputs = 9
+			if (total_out >= 9) then
+				assert total_out = 9
 					report "More values was set as valid outputs than expected!"
 					severity error;
 			end if;
