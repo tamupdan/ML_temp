@@ -25,12 +25,12 @@ entity convolution_layer is
 		lyr_nmbr	: in Natural;
 		wt_we	: in std_logic;
 		wt_data	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pixel_in	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pixel_valid	: out std_logic;
-		pixel_out 	: out sfixed(INT_WIDTH+FRAC_WIDTH-1 downto 0);
+		pxl_in	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		pxl_valid	: out std_logic;
+		pxl_out 	: out sfixed(INT_WIDTH+FRAC_WIDTH-1 downto 0);
 		dummy_bias	: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pixelOut_TanhToAvgPool        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pixelOut_Tanh2ToOut        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+		pxl_tanh_pool        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		pxl_tanh_out        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
 	);
 end convolution_layer;
 
@@ -50,10 +50,10 @@ architecture Behavioral of convolution_layer is
 			lyr_nmbr        : in natural;
 			wt_we		: in std_logic;
 			wt_data 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			pixel_in 		: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+			pxl_in 		: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			output_valid	: out std_logic; 
 			conv_en_out		: out std_logic;
-			pixel_out 		: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+			pxl_out 		: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			bias     		: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
 		);
 	end component;
@@ -132,7 +132,7 @@ architecture Behavioral of convolution_layer is
     signal pixel_biasToTanh : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
     
     signal pixelValid_TanhToAvgPool : std_logic;
-    --signal pixelOut_TanhToAvgPool : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    --signal pxl_tanh_pool : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
     
     signal pixelValid_AvgPoolToScaleFactor : std_logic;
     signal pixelOut_AvgPoolToScaleFactor : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
@@ -144,7 +144,7 @@ architecture Behavioral of convolution_layer is
     signal pixelOut_Bias2ToTanh2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 
     signal pixelValid_Tanh2ToOut : std_logic;
-    --signal pixelOut_Tanh2ToOut : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    --signal pxl_tanh_out : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 
     signal pixelValid_F2FToOut : std_logic;
     signal pixelOut_F2FToOut : float32;
@@ -164,10 +164,10 @@ begin
 		lyr_nmbr        => lyr_nmbr,
 		wt_we		=> wt_we,
 		wt_data 	=> wt_data,
-		pixel_in 		=> pixel_in,
+		pxl_in 		=> pxl_in,
 		output_valid	=> outputValid_convToMux,--dv_conv_to_buf_and_mux,
 		conv_en_out		=> convEn_convToMux,
-		pixel_out 		=> pixelOut_convToMux,--data_conv_to_buf_and_mux,
+		pxl_out 		=> pixelOut_convToMux,--data_conv_to_buf_and_mux,
 		bias    		=> bias
 	
 	);
@@ -224,7 +224,7 @@ begin
 	    input_valid => valid_biasToTanh,
         x => pixel_biasToTanh(INT_WIDTH-1 downto -FRAC_WIDTH),
         output_valid => pixelValid_TanhToAvgPool,
-        y => pixelOut_TanhToAvgPool
+        y => pxl_tanh_pool
 	);
 
 	
@@ -236,7 +236,7 @@ begin
         weight_in       => bias,
         wt_we       => wt_we,
         input_valid		=> pixelValid_TanhToAvgPool,
-        data_in         => pixelOut_TanhToAvgPool,
+        data_in         => pxl_tanh_pool,
         data_out		=> pixelOut_AvgPoolToScaleFactor,
 	  	output_valid 	=> pixelValid_AvgPoolToScaleFactor,
         output_weight   => weight_avgPoolToBias2
@@ -265,13 +265,13 @@ begin
 	    input_valid => pixelValid_Bias2ToTanh2,
         x => pixelOut_Bias2ToTanh2(INT_WIDTH-1 downto -FRAC_WIDTH),
         output_valid => pixelValid_Tanh2ToOut,
-        y => pixelOut_Tanh2ToOut
+        y => pxl_tanh_out
 	);
 
     FixedToFloat : process (clk)
     begin
         if rising_edge(clk) then
-            pixelOut_F2FToOut <= to_float(pixelOut_TanhToAvgPool);
+            pixelOut_F2FToOut <= to_float(pxl_tanh_pool);
             pixelValid_F2FToOut <= pixelValid_TanhToAvgPool;
         end if;
     end process;
@@ -280,14 +280,14 @@ begin
     begin
         if rising_edge(clk) then
             --if lyr_nmbr = 0 then
-                pixel_out <= pixelOut_Tanh2ToOut;
-                pixel_valid <= pixelValid_Tanh2ToOut;
+                pxl_out <= pxl_tanh_out;
+                pxl_valid <= pixelValid_Tanh2ToOut;
             --elsif lyr_nmbr = 1 then
-            --    pixel_out <= to_slv(pixelOut_Tanh2ToOut); 
-            --    pixel_valid <= pixelValid_Tanh2ToOut and (final_set);
+            --    pxl_out <= to_slv(pxl_tanh_out); 
+            --    pxl_valid <= pixelValid_Tanh2ToOut and (final_set);
             --else
-            --    pixel_out <= to_slv(pixelOut_F2FToOut);
-            --    pixel_valid <= pixelValid_F2FToOut;
+            --    pxl_out <= to_slv(pixelOut_F2FToOut);
+            --    pxl_valid <= pixelValid_F2FToOut;
             --end if;
         end if;
     end process;

@@ -21,11 +21,11 @@ entity convolution is
 		lyr_nmbr : in Natural;
 		wt_we : in std_logic;
 		wt_data : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pixel_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		pxl_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 	    
 	    conv_en_out : out std_logic;
 	    output_valid : out std_logic;
-		pixel_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		pxl_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		bias : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
 	);
 end convolution;
@@ -93,7 +93,7 @@ architecture Behavioral of convolution is
 
 begin
 
-    pixel_out <= acc_values(KERNEL_DIM-1)(KERNEL_DIM-1);
+    pxl_out <= acc_values(KERNEL_DIM-1)(KERNEL_DIM-1);
     
     controller : conv_controller port map (
         clk => clk,
@@ -113,7 +113,7 @@ begin
                         reset => reset,
                         wt_we => wt_we,
                         weight_in => wt_data,
-                        multi_value => pixel_in,
+                        multi_value => pxl_in,
                         acc_value => (others => '0'),
                         weight_out => weight_values(row)(col),
                         result => acc_values(row)(col)
@@ -127,7 +127,7 @@ begin
                         reset => reset,
                         wt_we => wt_we,
                         weight_in => weight_values(row-1)(KERNEL_DIM-1),
-                        multi_value => pixel_in,
+                        multi_value => pxl_in,
                         acc_value => shift_reg_output(row-1),
                         weight_out => weight_values(row)(col),
                         result => acc_values(row)(col)
@@ -141,7 +141,7 @@ begin
                         reset => reset,
                         wt_we => wt_we,
                         weight_in => weight_values(row)(col-1),
-                        multi_value => pixel_in,
+                        multi_value => pxl_in,
                         acc_value => acc_values(row)(col-1),
                         weight_out => weight_values(row)(col),
                         result => acc_values(row)(col)
@@ -155,7 +155,7 @@ begin
                         reset => reset,
                         wt_we => wt_we,
                         weight_in => weight_values(row)(col-1),
-                        multi_value => pixel_in,
+                        multi_value => pxl_in,
                         acc_value => acc_values(row)(col-1),
                         weight_out => weight_values(row)(col),
                         result => acc_values(row)(col)
