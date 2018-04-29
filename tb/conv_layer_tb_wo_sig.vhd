@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-
 library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
@@ -65,15 +64,15 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 	constant val_four 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010000000000";
 	constant val_five 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010100000000";
 	
-    constant r0 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
-    constant r1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
-    constant r2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
-    constant r3 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(94, 7, -8);
-    constant r4 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(47, 7, -8);
-    constant r5 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(76, 7, -8);
-    constant r6 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(93, 7, -8);
-    constant r7 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(72, 7, -8);
-    constant r8 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
+--    constant r0 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
+--    constant r1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
+--    constant r2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
+--    constant r3 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(94, 7, -8);
+--    constant r4 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(47, 7, -8);
+--    constant r5 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(76, 7, -8);
+--    constant r6 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(93, 7, -8);
+--    constant r7 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(72, 7, -8);
+--    constant r8 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
 	
 	constant OUTPUT_DIM : Natural := (IMG_DIM-KERNEL_DIM+1)/POOL_DIM;
 	
@@ -99,11 +98,11 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 		val_three
 	);
 	
-	signal result : pooled_array := (
-        r8, r7, r6,
-        r5, r4, r3,
-        r2, r1, r0
-    );
+--	signal result : pooled_array := (
+--        r8, r7, r6,
+--        r5, r4, r3,
+--        r2, r1, r0
+--    );
 	
 	signal total_out : Natural := 0;
 	
@@ -159,28 +158,28 @@ begin
 		wait; 
 	end process;
 	
-	assert_outputs : process(clk)
-	begin
-		if rising_edge(clk) then
-			if (pxl_valid ='1') then
-				assert pxl_out = result(total_out)
-					report "Output nr. " & Natural'image(total_out) & ". Expected value: " &
-						to_string(result(total_out)) & ". Actual value: " & to_string(pxl_out) & "."
-					severity error;
-				total_out <= total_out + 1;
-			end if;
-		end if; 
-	end process;
+--	assert_outputs : process(clk)
+--	begin
+--		if rising_edge(clk) then
+--			if (pxl_valid ='1') then
+--				assert pxl_out = result(total_out)
+--					report "Output nr. " & Natural'image(total_out) & ". Expected value: " &
+--						to_string(result(total_out)) & ". Actual value: " & to_string(pxl_out) & "."
+--					severity error;
+--				total_out <= total_out + 1;
+--			end if;
+--		end if; 
+--	end process;
 	
-	assert_correct_nof_outputs : process(clk)
-	begin
-		if rising_edge(clk) then
-			if (total_out >= 9) then
-				assert total_out = 9
-					report "More values was set as valid outputs than expected!"
-					severity error;
-			end if;
-		end if;
-	end process;
+--	assert_correct_nof_outputs : process(clk)
+--	begin
+--		if rising_edge(clk) then
+--			if (total_out >= 9) then
+--				assert total_out = 9
+--					report "More values was set as valid outputs than expected!"
+--					severity error;
+--			end if;
+--		end if;
+--	end process;
 
 end;
