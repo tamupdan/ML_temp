@@ -8,20 +8,20 @@ use ieee_proposed.fixed_pkg.all;
 
 entity sfixed_buffer is
 	generic (
-		INT_WIDTH 	: Natural := 8;
-		FRAC_WIDTH 	: Natural := 8
+		BITS_INT_PART 	: Natural := 8;
+		BITS_FRAC_PART 	: Natural := 8
 	);
 	Port ( 
         clk : in std_logic;
         reset : in std_logic;
         we : in std_logic;
-        data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-        data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+        data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+        data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end sfixed_buffer;
 
 architecture Behavioral of sfixed_buffer is
-	signal stored_value : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal stored_value : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 begin
 
 	data_out <= stored_value;

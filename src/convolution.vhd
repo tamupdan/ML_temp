@@ -11,8 +11,8 @@ entity convolution is
     generic 	(
 		IMG_DIM : Natural := 8;
 		KERNEL_DIM : Natural := 3;
-		INT_WIDTH : Natural := 8;
-		FRAC_WIDTH : Natural := 8
+		BITS_INT_PART : Natural := 8;
+		BITS_FRAC_PART : Natural := 8
 	);
 	port ( 
 		clk : in std_logic;
@@ -20,13 +20,13 @@ entity convolution is
 		convol_en : in std_logic;
 		lyr_nmbr : in Natural;
 		wt_we : in std_logic;
-		wt_data : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pxl_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		wt_data : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		pxl_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	    
 	    conv_en_out : out std_logic;
-	    output_valid : out std_logic;
-		pxl_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		bias : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+	    out_valid : out std_logic;
+		pxl_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		bias : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end convolution;
 
@@ -41,48 +41,48 @@ architecture Behavioral of convolution is
             clk : in  std_logic;
             convol_en : in  std_logic;
             lyr_nmbr : in Natural;
-            output_valid : out  std_logic
+            out_valid : out  std_logic
         );
         end component;
 
     component sfixed_shift_registers 
         generic (
             NOF_REGS : Natural := IMG_DIM-KERNEL_DIM;
-            INT_WIDTH : Natural := INT_WIDTH;
-            FRAC_WIDTH : Natural := FRAC_WIDTH
+            BITS_INT_PART : Natural := BITS_INT_PART;
+            BITS_FRAC_PART : Natural := BITS_FRAC_PART
         );
         port (
             clk : in std_logic;
             reset : in std_logic;
             we : in std_logic;
             output_reg : in Natural;
-            data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+            data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
         );
     end component;
        
     
     component mac
         generic (
-            INT_WIDTH : Natural := INT_WIDTH;
-            FRAC_WIDTH : Natural := FRAC_WIDTH
+            BITS_INT_PART : Natural := BITS_INT_PART;
+            BITS_FRAC_PART : Natural := BITS_FRAC_PART
         );
         port (
             clk : in std_logic;
             reset : in std_logic;
             wt_we : in std_logic;
-            weight_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            multi_value : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            acc_value : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            weight_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            result : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+            weight_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            multi_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            acc_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            weight_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            result : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
         );
     end component;
 
     
-    type sfixed_array is array (KERNEL_DIM-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    type sfixed_array is array (KERNEL_DIM-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     type sfixed_array_of_arrays is array (KERNEL_DIM-1 downto 0) of sfixed_array;
-    type sfixed_array_shift_reg is array (KERNEL_DIM-2 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    type sfixed_array_shift_reg is array (KERNEL_DIM-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
     signal weight_values : sfixed_array_of_arrays;
     signal acc_values : sfixed_array_of_arrays;
@@ -99,7 +99,7 @@ begin
         clk => clk,
         convol_en => convol_en,
         lyr_nmbr => lyr_nmbr,
-        output_valid => output_valid
+        out_valid => out_valid
     );
 
     gen_mac_rows: for row in 0 to KERNEL_DIM-1 generate

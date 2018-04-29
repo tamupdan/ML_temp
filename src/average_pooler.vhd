@@ -10,22 +10,22 @@ entity average_pooler is
 	generic (
 	    IMG_DIM : Natural := 6;
         KERNEL_DIM : Natural := 3;
-		POOL_DIM : Natural := 2;
-		INT_WIDTH : Natural := 8;
-		FRAC_WIDTH : Natural := 8
+		POOLING_DIM : Natural := 2;
+		BITS_INT_PART : Natural := 8;
+		BITS_FRAC_PART : Natural := 8
 	);
 	Port ( 
 		clk : in std_logic;
         reset : in std_logic;
         convol_en : in std_logic;
         lyr_nmbr : in Natural;
-        weight_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+        weight_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
         wt_we : in std_logic;
 		input_valid : in std_logic;
-		data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		output_valid : out std_logic;
-		output_weight : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+		data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		out_valid : out std_logic;
+		output_weight : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end average_pooler;
 
@@ -33,33 +33,33 @@ architecture Behavioral of average_pooler is
 
 	component sfixed_buffer is
 		generic (
-			INT_WIDTH 	: positive := INT_WIDTH;
-			FRAC_WIDTH 	: positive := FRAC_WIDTH
+			BITS_INT_PART 	: positive := BITS_INT_PART;
+			BITS_FRAC_PART 	: positive := BITS_FRAC_PART
 		);
 		Port ( 
 			clk 		: in std_logic;
 			reset		: in std_logic;
 			we 		: in std_logic;
-			data_in 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+			data_in 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 		);
 	end component;
 
-    constant POOL_ARRAY_DIM_MAX : Natural := IMG_DIM/POOL_DIM;
+    constant POOL_ARRAY_DIM_MAX : Natural := IMG_DIM/POOLING_DIM;
 	type states is (find_max, end_of_row,wait_for_new_row, finished);
 
-	type sfixed_array is array(POOL_ARRAY_DIM_MAX-2 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	type sfixed_array is array(POOL_ARRAY_DIM_MAX-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
 	signal buffer_values : sfixed_array;
 	signal reset_buffers : std_logic;
 	signal write_buffers : std_logic;
-    signal pool_sum	     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-    signal weight        : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pool_sum	     : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal weight        : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal output_valid_buf : std_logic;
 	signal pool_x : Natural range 0 to POOL_ARRAY_DIM_MAX-1 := 0;
     signal buf_reset : std_logic;
 
-    signal averaged_sum : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal averaged_sum : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal averaged_sum_valid : std_logic;
 
     signal POOL_ARRAY_DIM : Natural;
@@ -73,7 +73,7 @@ begin
         --if lyr_nmbr = 0 then
             POOL_ARRAY_DIM <= POOL_ARRAY_DIM_MAX;
         --else
-            --POOL_ARRAY_DIM <= ((IMG_DIM/2)-KERNEL_DIM+1)/POOL_DIM;
+            --POOL_ARRAY_DIM <= ((IMG_DIM/2)-KERNEL_DIM+1)/POOLING_DIM;
         --end if;
     end process;
     
@@ -115,7 +115,7 @@ begin
                 y := 0;
                 pool_x <= 0;
             elsif input_valid = '1' then
-                if x = POOL_DIM-1 and y = POOL_DIM-1 then
+                if x = POOLING_DIM-1 and y = POOLING_DIM-1 then
                     if pool_x = POOL_ARRAY_DIM-1 then
                         output_valid_buf <= '1';
                         reset_buffers <= '0';
@@ -130,7 +130,7 @@ begin
                         x := 0;
                         pool_x <= pool_x + 1; 
                     end if;
-                elsif x = POOL_DIM-1 then
+                elsif x = POOLING_DIM-1 then
                     output_valid_buf <= '0';
                     x := 0;
                     write_buffers <= '1';
@@ -162,9 +162,9 @@ begin
                 pool_sum <= (others => '0');
             elsif input_valid = '1' then
                 if write_buffers = '1' then
-                    pool_sum <= resize(data_in + buffer_values(POOL_ARRAY_DIM-2), INT_WIDTH-1, -FRAC_WIDTH);
+                    pool_sum <= resize(data_in + buffer_values(POOL_ARRAY_DIM-2), BITS_INT_PART-1, -BITS_FRAC_PART);
                 else
-                    pool_sum <= resize(data_in + pool_sum, INT_WIDTH-1, -FRAC_WIDTH);
+                    pool_sum <= resize(data_in + pool_sum, BITS_INT_PART-1, -BITS_FRAC_PART);
                 end if;
             elsif write_buffers = '1' then
                 pool_sum <= buffer_values(POOL_ARRAY_DIM-2);
@@ -190,7 +190,7 @@ begin
                 averaged_sum <= (others => '0');
                 averaged_sum_valid <= '0';
             else
-                averaged_sum <= resize(weight*pool_sum, INT_WIDTH-1, -FRAC_WIDTH);
+                averaged_sum <= resize(weight*pool_sum, BITS_INT_PART-1, -BITS_FRAC_PART);
                 averaged_sum_valid <= output_valid_buf;
             end if;
         end if;
@@ -199,7 +199,7 @@ begin
     output_reg : process(clk)
     begin
         if rising_edge(clk) then
-            output_valid <= averaged_sum_valid;
+            out_valid <= averaged_sum_valid;
             data_out <= averaged_sum;
         end if;
     end process;

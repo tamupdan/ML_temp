@@ -7,17 +7,17 @@ use ieee_proposed.fixed_pkg.all;
 
 entity tan_h is
     generic (
-        INT_WIDTH : Natural := 8;
-        FRAC_WIDTH : Natural := 8;
+        BITS_INT_PART : Natural := 8;
+        BITS_FRAC_PART : Natural := 8;
         CONST_INT_WIDTH : Natural := 8;
         CONST_FRAC_WIDTH : Natural := 8
     );
 	Port (
 		clk : in std_logic;
 		input_valid : in std_logic;
-		x : in  sfixed (INT_WIDTH-1 downto -FRAC_WIDTH);
-		output_valid : out std_logic;
-		y : out sfixed (INT_WIDTH-1 downto -FRAC_WIDTH)
+		x : in  sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		out_valid : out std_logic;
+		y : out sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end tan_h;
  
@@ -34,12 +34,12 @@ architecture Behavioral of tan_h is
 	
 	
 	-- cx = cycle x.
-	signal abs_x : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	signal abs_x_c1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	signal abs_x_c2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal abs_x : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal abs_x_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal abs_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
-	signal pow_x_c1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	signal pow_x_c2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal pow_x_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal pow_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
 	signal signed_bit_c1 : std_logic;
 	signal signed_bit_c2 : std_logic;
@@ -49,11 +49,11 @@ architecture Behavioral of tan_h is
 	signal input_valid_c2 : std_logic;
 	signal input_valid_c3 : std_logic;
 	
-	signal tanh_x_c3 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal tanh_x_c3 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
-	signal term1_c2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	signal term2_c2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	signal term3_c2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal term1_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal term2_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal term3_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
 begin
     
@@ -63,8 +63,8 @@ begin
     begin
         if rising_edge(clk) then
             abs_x_c1 <= abs_x;
-            pow_x_c1 <= resize(abs_x*abs_x, INT_WIDTH-1, -FRAC_WIDTH);
-            signed_bit_c1 <= x(INT_WIDTH-1);
+            pow_x_c1 <= resize(abs_x*abs_x, BITS_INT_PART-1, -BITS_FRAC_PART);
+            signed_bit_c1 <= x(BITS_INT_PART-1);
             input_valid_c1 <= input_valid;
         end if;
     end process;
@@ -76,17 +76,17 @@ begin
             signed_bit_c2 <= signed_bit_c1;
             input_valid_c2 <= input_valid_c1;
             if abs_x_c1 <= a and abs_x_c1 >= 0 then
-                term1_c2 <= resize(m1*pow_x_c1, INT_WIDTH-1, -FRAC_WIDTH);
-                term2_c2 <= resize(c1*abs_x_c1, INT_WIDTH-1, -FRAC_WIDTH);
+                term1_c2 <= resize(m1*pow_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
+                term2_c2 <= resize(c1*abs_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
                 term3_c2 <= d1;
             elsif abs_x_c1 <= b and abs_x_c1 > a then
-                term1_c2 <= resize(m2*pow_x_c1, INT_WIDTH-1, -FRAC_WIDTH);
-                term2_c2 <= resize(c2*abs_x_c1, INT_WIDTH-1, -FRAC_WIDTH);
+                term1_c2 <= resize(m2*pow_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
+                term2_c2 <= resize(c2*abs_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
                 term3_c2 <= d2;
             else
                 term1_c2 <= (others => '0');
                 term2_c2 <= (others => '0');
-                term3_c2 <= to_sfixed(1, INT_WIDTH-1, -FRAC_WIDTH);
+                term3_c2 <= to_sfixed(1, BITS_INT_PART-1, -BITS_FRAC_PART);
             end if;
         end if;
     end process;
@@ -96,7 +96,7 @@ begin
         if rising_edge(clk) then
             signed_bit_c3 <= signed_bit_c2;
             input_valid_c3 <= input_valid_c2;
-            tanh_x_c3 <= resize(term1_c2 + term2_c2 + term3_c2, INT_WIDTH-1, -FRAC_WIDTH);
+            tanh_x_c3 <= resize(term1_c2 + term2_c2 + term3_c2, BITS_INT_PART-1, -BITS_FRAC_PART);
         end if;
     end process;
     
@@ -104,11 +104,11 @@ begin
         begin 
             if rising_edge(clk) then
                 if signed_bit_c3 = '1' then
-                    y <= resize(-tanh_x_c3, INT_WIDTH-1, -FRAC_WIDTH);
+                    y <= resize(-tanh_x_c3, BITS_INT_PART-1, -BITS_FRAC_PART);
                 else
                     y <= tanh_x_c3;
                 end if;
-                output_valid <= input_valid_c3;
+                out_valid <= input_valid_c3;
             end if;
         end process;
         

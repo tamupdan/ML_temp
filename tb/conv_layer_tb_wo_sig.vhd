@@ -7,11 +7,11 @@ use ieee_proposed.fixed_pkg.all;
 
 ENTITY conv_layer_tb_wo_sig IS
 	generic (
-		IMG_DIM 		: Natural := 8;
-		KERNEL_DIM 		: Natural := 3;
-		POOL_DIM 	    : Natural := 2;
-		INT_WIDTH 		: Natural := 8;
-		FRAC_WIDTH 		: Natural := 8
+		IMG_DIM 		    : Natural := 8;
+		KERNEL_DIM 		    : Natural := 3;
+		POOLING_DIM 	    : Natural := 2;
+		BITS_INT_PART 		: Natural := 8;
+		BITS_FRAC_PART 		: Natural := 8
 	);
 END conv_layer_tb_wo_sig;
 
@@ -19,66 +19,66 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 
 	component convolution_layer is
 		generic (
-			IMG_DIM 		: Natural := IMG_DIM;
-			KERNEL_DIM 		: Natural := KERNEL_DIM;
-			POOL_DIM 	    : Natural := POOL_DIM;
-			INT_WIDTH 		: Natural := INT_WIDTH;
-			FRAC_WIDTH 		: Natural := FRAC_WIDTH
+			IMG_DIM 		    : Natural := IMG_DIM;
+			KERNEL_DIM 		    : Natural := KERNEL_DIM;
+			POOLING_DIM 	    : Natural := POOLING_DIM;
+			BITS_INT_PART 		: Natural := BITS_INT_PART;
+			BITS_FRAC_PART 		: Natural := BITS_FRAC_PART
 		);
 		
 		port ( 
-			clk 		: in std_logic;
-			reset		: in std_logic;
-			convol_en	: in std_logic;
-			final_set   : in std_logic;
-			lyr_nmbr	: in Natural;
-			wt_we	    : in std_logic;
-			wt_data	    : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			pxl_in	    : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			pxl_valid	: out std_logic;
-			pxl_out 	: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			pxl_tanh_out	 : inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            pxl_tanh_pool    : inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+			clk 		     : in std_logic;
+			reset		     : in std_logic;
+			convol_en	     : in std_logic;
+			final_set        : in std_logic;
+			lyr_nmbr	     : in Natural;
+			wt_we	         : in std_logic;
+			wt_data	         : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			pxl_in	         : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			pxl_valid	     : out std_logic;
+			pxl_out 	     : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			pxl_tanh_out	 : inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            pxl_tanh_pool    : inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 		);
 	end component;
 	
-	signal clk 			: std_logic := '0';
-	signal reset		: std_logic := '0';
-	signal convol_en		: std_logic := '0';
-	signal final_set    : std_logic := '0';
-	signal lyr_nmbr	    : Natural := 0;
-	signal wt_we	: std_logic := '0';
-	signal wt_data	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-	signal pxl_in		: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-	signal pxl_valid	: std_logic := '0';
-	signal pxl_out 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-	signal pxl_tanh_pool	:  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-    signal pxl_tanh_out    :  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);	
+	signal clk 			   : std_logic := '0';
+	signal reset		   : std_logic := '0';
+	signal convol_en	   : std_logic := '0';
+	signal final_set       : std_logic := '0';
+	signal lyr_nmbr	       : Natural := 0;
+	signal wt_we	       : std_logic := '0';
+	signal wt_data	       : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := (others => '0');
+	signal pxl_in		   : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := (others => '0');
+	signal pxl_valid	   : std_logic := '0';
+	signal pxl_out 	       : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := (others => '0');
+	signal pxl_tanh_pool   :  sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal pxl_tanh_out    :  sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);	
 	
 	constant clk_period : time := 1 ns;
 	
-	constant val_zero 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000000000000000";
-	constant val_one 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000000100000000";
-	constant val_two 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000001000000000";
-	constant val_three : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000001100000000";
-	constant val_four 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010000000000";
-	constant val_five 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010100000000";
+	constant val_zero 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := "0000000000000000";
+	constant val_one 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := "0000000100000000";
+	constant val_two 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := "0000001000000000";
+	constant val_three : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := "0000001100000000";
+	constant val_four 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := "0000010000000000";
+	constant val_five 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := "0000010100000000";
 	
---    constant r0 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
---    constant r1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
---    constant r2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
---    constant r3 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(94, 7, -8);
---    constant r4 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(47, 7, -8);
---    constant r5 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(76, 7, -8);
---    constant r6 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(93, 7, -8);
---    constant r7 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(72, 7, -8);
---    constant r8 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
+--    constant r0 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(84, 7, -8);
+--    constant r1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(82, 7, -8);
+--    constant r2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(84, 7, -8);
+--    constant r3 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(94, 7, -8);
+--    constant r4 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(47, 7, -8);
+--    constant r5 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(76, 7, -8);
+--    constant r6 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(93, 7, -8);
+--    constant r7 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(72, 7, -8);
+--    constant r8 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(82, 7, -8);
 	
-	constant OUTPUT_DIM : Natural := (IMG_DIM-KERNEL_DIM+1)/POOL_DIM;
+--	constant OUTPUT_DIM : Natural := (IMG_DIM-KERNEL_DIM+1)/POOLING_DIM;
 	
-	type image_array is array ((IMG_DIM*IMG_DIM)-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	type kernel_array is array ((KERNEL_DIM*KERNEL_DIM) downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	type pooled_array is array ((OUTPUT_DIM*OUTPUT_DIM)-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	type image_array is array ((IMG_DIM*IMG_DIM)-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	type kernel_array is array ((KERNEL_DIM*KERNEL_DIM) downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+--	type pooled_array is array ((OUTPUT_DIM*OUTPUT_DIM)-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
 	signal image : image_array := (
         val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
@@ -104,7 +104,7 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 --        r2, r1, r0
 --    );
 	
-	signal total_out : Natural := 0;
+--	signal total_out : Natural := 0;
 	
 	
 	

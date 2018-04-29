@@ -10,8 +10,8 @@ use ieee_proposed.float_pkg.all;
 
 entity sfixed_fifo is
 	Generic (
-		constant INT_WIDTH : natural := 16;
-        constant FRAC_WIDTH : natural := 16;
+		constant BITS_INT_PART : natural := 16;
+        constant BITS_FRAC_PART : natural := 16;
 		constant FIFO_DEPTH	: natural := 128
 	);
 	Port ( 
@@ -19,14 +19,14 @@ entity sfixed_fifo is
 		reset	 : in  std_logic;
 		write_en : in  std_logic;
         lyr_nmbr : in  natural;
-		data_in	 : in  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+		data_in	 : in  sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end sfixed_fifo;
 
 architecture Behavioral of sfixed_fifo is
 
-    type FIFO_Memory is array (0 to FIFO_DEPTH - 1) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    type FIFO_Memory is array (0 to FIFO_DEPTH - 1) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal Memory : FIFO_Memory;
     signal index : natural range 0 to FIFO_DEPTH - 1;
     signal looped : boolean;
@@ -61,7 +61,7 @@ begin
         elsif rising_edge(clk) then				
             if (write_en = '1') then
                 if looped then
-                    Memory(index) <= resize(data_in + Memory(index), INT_WIDTH-1, -FRAC_WIDTH);
+                    Memory(index) <= resize(data_in + Memory(index), BITS_INT_PART-1, -BITS_FRAC_PART);
                 else
                     Memory(index) <= data_in;
                 end if;

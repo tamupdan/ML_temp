@@ -7,26 +7,26 @@ use ieee_proposed.fixed_pkg.all;
 
 entity mac is
 	generic  (
-					INT_WIDTH 	: Natural := 8;
-					FRAC_WIDTH 	: Natural := 8
+					BITS_INT_PART 	: Natural := 8;
+					BITS_FRAC_PART 	: Natural := 8
 				);
 	Port( 	
 			clk 		: in std_logic;
 			reset 		: in std_logic;		
 			wt_we 	: in std_logic;
-			weight_in 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			multi_value : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			acc_value 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			weight_out	: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			result 		: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+			weight_in 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			multi_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			acc_value 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			weight_out	: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			result 		: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 		);
 end mac;
 
 architecture Behavioral of mac is
 	
-	signal weight_reg 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	signal sum 			: sfixed(INT_WIDTH*2 downto -FRAC_WIDTH*2);
-    signal product      : sfixed((INT_WIDTH*2)-1 downto -FRAC_WIDTH*2);
+	signal weight_reg 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal sum 			: sfixed(BITS_INT_PART*2 downto -BITS_FRAC_PART*2);
+    signal product      : sfixed((BITS_INT_PART*2)-1 downto -BITS_FRAC_PART*2);
 	
 begin	
 	
@@ -46,7 +46,7 @@ begin
     result_register : process(clk) 
     begin
         if rising_edge(clk) then
-            result <= resize(sum, INT_WIDTH-1, -FRAC_WIDTH);
+            result <= resize(sum, BITS_INT_PART-1, -BITS_FRAC_PART);
         end if;
     end process;
     

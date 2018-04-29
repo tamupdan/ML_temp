@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-
 library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
@@ -11,9 +10,9 @@ entity convolution_layer is
 	generic (
 		IMG_DIM 		: Natural := 8;
 		KERNEL_DIM 		: Natural := 3;
-		POOL_DIM    	: Natural := 2;
-		INT_WIDTH 		: Natural := 8;
-		FRAC_WIDTH 		: Natural := 8
+		POOLING_DIM    	: Natural := 2;
+		BITS_INT_PART 		: Natural := 8;
+		BITS_FRAC_PART 		: Natural := 8
 	);
 	
 	
@@ -24,12 +23,12 @@ entity convolution_layer is
         final_set   : in std_logic;
 		lyr_nmbr	: in Natural;
 		wt_we	: in std_logic;
-		wt_data	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pxl_in	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		wt_data	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		pxl_in	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 		pxl_valid	: out std_logic;
-		pxl_out 	: out sfixed(INT_WIDTH+FRAC_WIDTH-1 downto 0);
-		pxl_tanh_pool        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-		pxl_tanh_out        	: inout sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+		pxl_out 	: out sfixed(BITS_INT_PART+BITS_FRAC_PART-1 downto 0);
+		pxl_tanh_pool        	: inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		pxl_tanh_out        	: inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end convolution_layer;
 
@@ -39,21 +38,21 @@ architecture Behavioral of convolution_layer is
 		generic 	(
 			IMG_DIM	: Natural := IMG_DIM;
 			KERNEL_DIM 	: Natural := KERNEL_DIM;
-			INT_WIDTH	: Natural := INT_WIDTH;
-			FRAC_WIDTH	: Natural := FRAC_WIDTH
+			BITS_INT_PART	: Natural := BITS_INT_PART;
+			BITS_FRAC_PART	: Natural := BITS_FRAC_PART
 		);
 		port ( 
 			clk				: in std_logic;
 			reset			: in std_logic;
 			convol_en 		: in std_logic;
 			lyr_nmbr        : in natural;
-			wt_we		: in std_logic;
-			wt_data 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			pxl_in 		: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			output_valid	: out std_logic; 
+			wt_we		    : in std_logic;
+			wt_data 	    : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			pxl_in 		    : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			out_valid	    : out std_logic; 
 			conv_en_out		: out std_logic;
-			pxl_out 		: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			bias     		: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+			pxl_out 		: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			bias     		: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 		);
 	end component;
 	
@@ -61,30 +60,30 @@ architecture Behavioral of convolution_layer is
         generic (
             IMG_DIM : Natural := IMG_DIM-KERNEL_DIM+1;
             KERNEL_DIM : Natural := KERNEL_DIM;
-            POOL_DIM : Natural := POOL_DIM;
-            INT_WIDTH : Natural := INT_WIDTH;
-            FRAC_WIDTH : Natural := FRAC_WIDTH
+            POOLING_DIM : Natural := POOLING_DIM;
+            BITS_INT_PART : Natural := BITS_INT_PART;
+            BITS_FRAC_PART : Natural := BITS_FRAC_PART
             );
         Port ( 
             clk : in std_logic;
             reset : in std_logic;
             convol_en : in std_logic;
             lyr_nmbr : in natural;
-            weight_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+            weight_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
             wt_we : in std_logic;
             input_valid : in std_logic;
-            data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            output_valid : out std_logic;
-            output_weight : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+            data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            out_valid : out std_logic;
+            output_weight : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
             
         );
 	end component;
 	
 	component sfixed_fifo is
 		generic (
-			INT_WIDTH 	: Natural := INT_WIDTH;
-			FRAC_WIDTH 	: Natural := FRAC_WIDTH;
+			BITS_INT_PART 	: Natural := BITS_INT_PART;
+			BITS_FRAC_PART 	: Natural := BITS_FRAC_PART;
             FIFO_DEPTH : Natural := (((IMG_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM+1)*(((IMG_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM+1)
 		);
 		Port ( 
@@ -92,8 +91,8 @@ architecture Behavioral of convolution_layer is
             reset	 : in  std_logic;
             write_en : in  std_logic;
             lyr_nmbr    : in  Natural;
-            data_in	 : in  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)			
+            data_in	 : in  sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)			
 		);
 	end component;
 	
@@ -101,55 +100,55 @@ architecture Behavioral of convolution_layer is
 		Port (
             clk 	     : in std_logic;
 			input_valid  : in std_logic;
-			x 		     : in  sfixed (INT_WIDTH-1 downto -FRAC_WIDTH);
-			output_valid : out std_logic;
-			y 		     : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+			x 		     : in  sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			out_valid : out std_logic;
+			y 		     : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 		);
 	end component;
 	
 
 
-	signal bias : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	signal bias2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-    signal weight_avgPoolToBias2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-    signal scale_factor : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal bias : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal bias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal weight_avgPoolToBias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal scale_factor : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
 	signal convEn_convToMux : std_logic;
 	signal outputValid_convToMux : std_logic;
-    signal pixelOut_convToMux : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixelOut_convToMux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
-    signal pixel_BufToMux : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixel_BufToMux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal buffer_we      : std_logic;
     
-    signal pixel_MuxToBias : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixel_MuxToBias : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal valid_MuxToBias : std_logic;
 
-    signal pixel_MuxToF2F : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixel_MuxToF2F : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal pixelValid_MuxToF2F : std_logic;
     
     signal valid_biasToTanh : std_logic;
-    signal pixel_biasToTanh : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixel_biasToTanh : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
     signal pixelValid_TanhToAvgPool : std_logic;
-    --signal pxl_tanh_pool : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    --signal pxl_tanh_pool : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
     signal pixelValid_AvgPoolToScaleFactor : std_logic;
-    signal pixelOut_AvgPoolToScaleFactor : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixelOut_AvgPoolToScaleFactor : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
     signal pixelValid_ScaleFactorToBias2 : std_logic;
-    signal pixelOut_ScaleFactorToBias2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixelOut_ScaleFactorToBias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
     signal pixelValid_Bias2ToTanh2 : std_logic;
-    signal pixelOut_Bias2ToTanh2 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    signal pixelOut_Bias2ToTanh2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
     signal pixelValid_Tanh2ToOut : std_logic;
-    --signal pxl_tanh_out : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    --signal pxl_tanh_out : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
     signal pixelValid_F2FToOut : std_logic;
     signal pixelOut_F2FToOut : float32;
     
-    --signal y1        	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-    --signal y2            : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    --signal y1        	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    --signal y2            : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
     signal float_size : float32;
 
@@ -164,7 +163,7 @@ begin
 		wt_we		=> wt_we,
 		wt_data 	=> wt_data,
 		pxl_in 		=> pxl_in,
-		output_valid	=> outputValid_convToMux,--dv_conv_to_buf_and_mux,
+		out_valid	=> outputValid_convToMux,--dv_conv_to_buf_and_mux,
 		conv_en_out		=> convEn_convToMux,
 		pxl_out 		=> pixelOut_convToMux,--data_conv_to_buf_and_mux,
 		bias    		=> bias
@@ -199,7 +198,7 @@ begin
                 valid_MuxToBias <= outputValid_convToMux;
             --elsif lyr_nmbr = 1 or lyr_nmbr = 2 then
             --    if final_set = '1' then
-            --        pixel_MuxToBias <= resize(pixelOut_convToMux + pixel_bufToMux, INT_WIDTH-1, -FRAC_WIDTH);
+            --        pixel_MuxToBias <= resize(pixelOut_convToMux + pixel_bufToMux, BITS_INT_PART-1, -BITS_FRAC_PART);
             --        valid_MuxToBias <= outputValid_convToMux;
             --    else
             --        pixel_MuxToBias <= (others => '0');
@@ -213,7 +212,7 @@ begin
 	add_bias : process(clk)
 	begin
 	   if rising_edge(clk) then
-	       pixel_biasToTanh <= resize(bias + pixel_MuxToBias, INT_WIDTH-1, -FRAC_WIDTH);
+	       pixel_biasToTanh <= resize(bias + pixel_MuxToBias, BITS_INT_PART-1, -BITS_FRAC_PART);
 	       valid_biasToTanh <= valid_MuxToBias;
 	   end if;
 	end process;
@@ -221,8 +220,8 @@ begin
     activation_function : tan_h port map (
 	    clk => clk,
 	    input_valid => valid_biasToTanh,
-        x => pixel_biasToTanh(INT_WIDTH-1 downto -FRAC_WIDTH),
-        output_valid => pixelValid_TanhToAvgPool,
+        x => pixel_biasToTanh(BITS_INT_PART-1 downto -BITS_FRAC_PART),
+        out_valid => pixelValid_TanhToAvgPool,
         y => pxl_tanh_pool
 	);
 
@@ -237,14 +236,14 @@ begin
         input_valid		=> pixelValid_TanhToAvgPool,
         data_in         => pxl_tanh_pool,
         data_out		=> pixelOut_AvgPoolToScaleFactor,
-	  	output_valid 	=> pixelValid_AvgPoolToScaleFactor,
+	  	out_valid 	=> pixelValid_AvgPoolToScaleFactor,
         output_weight   => weight_avgPoolToBias2
     );
 
     apply_scale_factor : process(clk)
     begin
         if rising_edge(clk) then
-            pixelOut_ScaleFactorToBias2 <= resize(scale_factor*pixelOut_AvgPoolToScaleFactor, INT_WIDTH-1, -FRAC_WIDTH);
+            pixelOut_ScaleFactorToBias2 <= resize(scale_factor*pixelOut_AvgPoolToScaleFactor, BITS_INT_PART-1, -BITS_FRAC_PART);
             pixelValid_ScaleFactorToBias2 <= pixelValid_AvgPoolToScaleFactor;
         end if;
     end process;
@@ -253,7 +252,7 @@ begin
     add_bias_after_ap : process(clk)
     begin
        if rising_edge(clk) then
-           pixelOut_Bias2ToTanh2 <= resize(bias2 + pixelOut_ScaleFactorToBias2, INT_WIDTH-1, -FRAC_WIDTH);
+           pixelOut_Bias2ToTanh2 <= resize(bias2 + pixelOut_ScaleFactorToBias2, BITS_INT_PART-1, -BITS_FRAC_PART);
            pixelValid_Bias2ToTanh2 <= pixelValid_ScaleFactorToBias2;
        end if;
     end process;
@@ -262,8 +261,8 @@ begin
     activation_function2 : tan_h port map (
 	    clk => clk,
 	    input_valid => pixelValid_Bias2ToTanh2,
-        x => pixelOut_Bias2ToTanh2(INT_WIDTH-1 downto -FRAC_WIDTH),
-        output_valid => pixelValid_Tanh2ToOut,
+        x => pixelOut_Bias2ToTanh2(BITS_INT_PART-1 downto -BITS_FRAC_PART),
+        out_valid => pixelValid_Tanh2ToOut,
         y => pxl_tanh_out
 	);
 

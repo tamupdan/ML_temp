@@ -38,16 +38,16 @@ use ieee_proposed.fixed_pkg.all;
 entity sfixed_shift_registers is
     generic (
         NOF_REGS : Natural := 8;
-        INT_WIDTH : Natural := 8;
-        FRAC_WIDTH : Natural := 8
+        BITS_INT_PART : Natural := 8;
+        BITS_FRAC_PART : Natural := 8
     );
     port (
         clk : in std_logic;
         reset : in std_logic;
         we : in std_logic;
         output_reg : in Natural;
-        data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-        data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+        data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+        data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
     );
     
 
@@ -57,19 +57,19 @@ architecture Behavioral of sfixed_shift_registers is
 
     component sfixed_buffer
         generic (
-            INT_WIDTH : Natural := INT_WIDTH;
-            FRAC_WIDTH : Natural := FRAC_WIDTH
+            BITS_INT_PART : Natural := BITS_INT_PART;
+            BITS_FRAC_PART : Natural := BITS_FRAC_PART
         );
         port (
             clk : in std_logic;
             reset : in std_logic;
             we : in std_logic;
-            data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+            data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
         );
     end component;
     
-    type sfixed_array is array (NOF_REGS-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+    type sfixed_array is array (NOF_REGS-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
     signal shift_reg_values : sfixed_array; 
 

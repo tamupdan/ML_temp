@@ -11,7 +11,7 @@ entity conv_controller is
 		clk 				: in  std_logic;
 		convol_en 			: in  std_logic;
         lyr_nmbr            : in Natural;
-		output_valid 	    : out std_logic
+		out_valid 	    : out std_logic
 	);
 end conv_controller;
 
@@ -76,9 +76,9 @@ begin
 			if conv_en_buf = '1'
 			and reached_valid_row = '1' 
 			and (column_num >= KERNEL_DIM-1 and column_num < curr_img_dim) then
-				output_valid <= '1';
+				out_valid <= '1';
 			else 
-				output_valid <= '0';
+				out_valid <= '0';
 			end if;
 		end if;
 	end process;
