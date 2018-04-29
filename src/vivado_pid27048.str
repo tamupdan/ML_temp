@@ -1473,3 +1473,4 @@ selectButton("RDIResource.WaveformUtils_WAVEFORM_CONFIGURATION_HAS_BEEN_MODIFIED
 // Elapsed time: 2519 seconds
 selectCodeEditor("convolution_tb.vhd", 482, 451); // bj:J (JPanel:JComponent, cl:JFrame)
 // HMemoryUtils.trashcanNow. Engine heap size: 5,128 MB. GUI used memory: 38 MB. Current time: 4/28/18 6:35:41 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,128 MB. GUI used memory: 36 MB. Current time: 4/28/18 7:05:41 PM CDT
