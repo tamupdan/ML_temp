@@ -14,7 +14,7 @@ entity mac is
 			clk 		: in std_logic;
 			reset 		: in std_logic;		
 			wt_we 	: in std_logic;
-			weight_in 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			wt_in 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 			multi_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 			acc_value 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 			weight_out	: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
@@ -38,7 +38,7 @@ begin
 			if (reset = '0') then
 				weight_reg <= (others => '0');
 			elsif(wt_we = '1') then
-				weight_reg <= weight_in;
+				weight_reg <= wt_in;
 			end if;
 		end if;
 	end process;

@@ -14,10 +14,10 @@ entity tan_h is
     );
 	Port (
 		clk : in std_logic;
-		input_valid : in std_logic;
-		x : in  sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		in_valid : in std_logic;
+		tanh_in : in  sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART);
 		out_valid : out std_logic;
-		y : out sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART)
+		tanh_out : out sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end tan_h;
  
@@ -33,7 +33,7 @@ architecture Behavioral of tan_h is
 	constant b : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(2.57, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
 	
 	
-	-- cx = cycle x.
+	-- cx = cycle tanh_in.
 	signal abs_x : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	signal abs_x_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	signal abs_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
@@ -57,15 +57,15 @@ architecture Behavioral of tan_h is
 	
 begin
     
-    abs_x <= resize(abs(x), abs_x); -- Absolute value of x
+    abs_x <= resize(abs(tanh_in), abs_x); -- Absolute value of tanh_in
     
     process_input_c1 : process(clk) 
     begin
         if rising_edge(clk) then
             abs_x_c1 <= abs_x;
             pow_x_c1 <= resize(abs_x*abs_x, BITS_INT_PART-1, -BITS_FRAC_PART);
-            signed_bit_c1 <= x(BITS_INT_PART-1);
-            input_valid_c1 <= input_valid;
+            signed_bit_c1 <= tanh_in(BITS_INT_PART-1);
+            input_valid_c1 <= in_valid;
         end if;
     end process;
     
@@ -104,9 +104,9 @@ begin
         begin 
             if rising_edge(clk) then
                 if signed_bit_c3 = '1' then
-                    y <= resize(-tanh_x_c3, BITS_INT_PART-1, -BITS_FRAC_PART);
+                    tanh_out <= resize(-tanh_x_c3, BITS_INT_PART-1, -BITS_FRAC_PART);
                 else
-                    y <= tanh_x_c3;
+                    tanh_out <= tanh_x_c3;
                 end if;
                 out_valid <= input_valid_c3;
             end if;

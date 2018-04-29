@@ -218,3 +218,1036 @@ selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMe
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 10, true); // A:k (H:JPanel, cl:JFrame) - Node
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 10, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "average_pooler.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 120 seconds
+selectCodeEditor("convolution_layer.vhd", 647, 375); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "conv_layer_tb_wo_sig.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectCodeEditor("convolution_layer.vhd", 126, 392); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 110, 399); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 110, 399, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Find in Files: addNotify
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 32 MB. Current time: 4/29/18 5:33:50 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 31 MB. Current time: 4/29/18 5:33:50 PM CDT
+// Replace in Files: addNotify
+// Elapsed time: 17 seconds
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "weight_in", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "wt_in", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 33 MB. Current time: 4/29/18 5:34:08 PM CDT
+// 'e' command handler elapsed time: 13 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 44 MB. Current time: 4/29/18 5:34:08 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_REPLACE_IN_FILES
+// Replace in Files: addNotify
+// Elapsed time: 11 seconds
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 32 MB. Current time: 4/29/18 5:34:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 32 MB. Current time: 4/29/18 5:34:21 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+// [GUI Memory]: 73 MB (+4421kb) [00:09:47]
+selectCodeEditor("convolution_layer.vhd", 878, 463); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 89, 340); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 113, 352); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 117, 375); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 116, 381); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("convolution_layer.vhd", 110, 397); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 110, 411); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("convolution_layer.vhd", 113, 423); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("convolution_layer.vhd", 96, 404); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 97, 411); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 107, 427); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 107, 427, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Replace in Files: addNotify
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "input_valid", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "wt_in", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 32 MB. Current time: 4/29/18 5:35:00 PM CDT
+// 'e' command handler elapsed time: 10 seconds
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 32 MB. Current time: 4/29/18 5:35:00 PM CDT
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+// [GUI Memory]: 77 MB (+885kb) [00:10:21]
+selectCodeEditor("convolution_layer.vhd", 293, 544); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("convolution_layer.vhd", 101, 343); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("convolution_layer.vhd", 108, 358); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 108, 367); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 117, 390); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 97, 339); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 99, 349); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 105, 365); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 107, 388); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 106, 396); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 106, 411); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 106, 428); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 108, 472); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 106, 427); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 108, 403); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 108, 415); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 105, 437); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 105, 454); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 104, 492); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 153, 489); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 153, 489, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Find in Files: addNotify
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 33 MB. Current time: 4/29/18 5:35:34 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 33 MB. Current time: 4/29/18 5:35:35 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 2); // E:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 14 seconds
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // E:k (JViewport:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "convolution_layer.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 47 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "average_pooler.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 37 seconds
+selectCodeEditor("convolution_layer.vhd", 130, 330); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 128, 354); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 128, 354, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Replace in Files: addNotify
+// Elapsed time: 12 seconds
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "output_weight", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "in_valid", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 34 MB. Current time: 4/29/18 5:37:40 PM CDT
+// 'e' command handler elapsed time: 12 seconds
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,123 MB. GUI used memory: 33 MB. Current time: 4/29/18 5:37:40 PM CDT
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 785, 383); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 952, 108, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, Popup:JWindow)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "convolution_layer.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("average_pooler.vhd", 681, 123, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5, true); // A:k (H:JPanel, cl:JFrame) - Node
+// [GUI Memory]: 84 MB (+2840kb) [00:13:12]
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'conv_layer_tb_wo_sig' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// Tcl Message: Built simulation snapshot conv_layer_tb_wo_sig_behav 
+// Tcl Message:  ****** Webtalk v2015.2 (64-bit)   **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.  source /home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr 29 17:38:01 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Sun Apr 29 17:38:01 2018... 
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "conv_layer_tb_wo_sig_behav -key {Behavioral:sim_1:Functional:conv_layer_tb_wo_sig} -tclbatch {conv_layer_tb_wo_sig.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2015.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// Tcl Message: source conv_layer_tb_wo_sig.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'conv_layer_tb_wo_sig_behav' loaded. 
+// Tcl Message: INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 6074.395 ; gain = 7.000 ; free physical = 2910 ; free virtual = 58783 
+// 'c' command handler elapsed time: 9 seconds
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,128 MB. GUI used memory: 72 MB. Current time: 4/29/18 5:38:06 PM CDT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, lyr_nmbr]", 4, false); // a:k (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, clk]", 0, false); // a:k (JViewport:JComponent, cl:JFrame)
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, val_two[7:-8]]", 22, true, true, false, false, false, false); // a:k (JViewport:JComponent, cl:JFrame) - Shift Key - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 5,128 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:13 PM CDT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, kernel[9:0][7:-8]]", 13, true, false, false, false, true, false); // a:k (JViewport:JComponent, cl:JFrame) - Popup Trigger - Node
+selectMenu((HResource) null, "Name"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Waveform Style"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Signal Color"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Signal Color"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Waveform Style"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem((HResource) null, "Signed Decimal"); // N:JCheckBoxMenuItem (JPopupMenu:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 322, 506); // o:a (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 10, 2); // o:a (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,128 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:20 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,128 MB. GUI used memory: 38 MB. Current time: 4/29/18 5:38:20 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,128 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:20 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 543, 118); // o:a (JViewport:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:24 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:24 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:25 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 38 MB. Current time: 4/29/18 5:38:25 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 925, 581, false, false, false, true, false); // o:a (JViewport:JComponent, cl:JFrame) - Popup Trigger
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:29 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 16, 64); // o:a (JViewport:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:34 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 42 MB. Current time: 4/29/18 5:38:34 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 10 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, pxl_in[7:-8]]", 7, true); // a:k (JViewport:JComponent, cl:JFrame) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 38 MB. Current time: 4/29/18 5:38:44 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:47 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:48 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:48 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:51 PM CDT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 90, 144); // o:a (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:56 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:56 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 38 MB. Current time: 4/29/18 5:38:57 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:38:57 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 10 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 701, 196); // o:a (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:39:16 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 38 MB. Current time: 4/29/18 5:39:17 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 38 MB. Current time: 4/29/18 5:39:17 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:39:17 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,130 MB. GUI used memory: 38 MB. Current time: 4/29/18 5:39:18 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cl:JFrame)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - conv_layer_tb_wo_sig", "DesignTask.SIMULATION");
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+selectButton("RDIResource.WaveformUtils_WAVEFORM_CONFIGURATION_HAS_BEEN_MODIFIED_Discard", "Discard"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+// Elapsed time: 11 seconds
+selectCodeEditor("convolution_layer.vhd", 165, 158); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 168, 174); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 168, 190); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 173, 168); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 141, 340); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 135, 327); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 115, 306); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 108, 296); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 112, 278); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 132, 261); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 140, 249); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 170, 234); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 141, 224); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 136, 203); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("convolution_layer.vhd", 938, 301, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, Popup:JWindow)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("convolution_layer.vhd", 143, 266); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 165, 282); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 25 seconds
+selectCodeEditor("convolution_layer.vhd", 144, 235); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 108 seconds
+selectCodeEditor("convolution_layer.vhd", 654, 252, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 21 seconds
+selectCodeEditor("convolution_layer.vhd", 115, 292); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 130, 306); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 28 seconds
+selectCodeEditor("convolution_layer.vhd", 819, 111, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd)]", 6); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 10); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 10, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 10, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+// [GUI Memory]: 90 MB (+2004kb) [00:19:28]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 10); // A:k (H:JPanel, cl:JFrame)
+// Elapsed time: 50 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "average_pooler.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "convolution_layer.vhd", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "average_pooler.vhd", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectCodeEditor("convolution_layer.vhd", 98, 247); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 400 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'conv_layer_tb_wo_sig' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// Tcl Message: Built simulation snapshot conv_layer_tb_wo_sig_behav  ****** Webtalk v2015.2 (64-bit)   **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.  source /home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr 29 17:52:31 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Sun Apr 29 17:52:32 2018... 
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "conv_layer_tb_wo_sig_behav -key {Behavioral:sim_1:Functional:conv_layer_tb_wo_sig} -tclbatch {conv_layer_tb_wo_sig.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2015.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: Time resolution is 1 ps 
+// Tcl Message: source conv_layer_tb_wo_sig.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'conv_layer_tb_wo_sig_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 6076.398 ; gain = 0.000 ; free physical = 6056 ; free virtual = 59673 
+// 'c' command handler elapsed time: 8 seconds
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, final_set]", 3, false); // a:k (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 39 MB. Current time: 4/29/18 5:52:35 PM CDT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, val_two[7:-8]]", 22, true, true, false, false, false, false); // a:k (JViewport:JComponent, cl:JFrame) - Shift Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, POOLING_DIM]", 16, false, false, false, false, true, false); // a:k (JViewport:JComponent, cl:JFrame) - Popup Trigger
+selectMenu((HResource) null, "Name"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Waveform Style"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Signal Color"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Signal Color"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem((HResource) null, "Signed Decimal"); // N:JCheckBoxMenuItem (JPopupMenu:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 90, 656); // o:a (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 39 MB. Current time: 4/29/18 5:52:41 PM CDT
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 9, 56); // o:a (JViewport:JComponent, cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 39 MB. Current time: 4/29/18 5:52:47 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 39 MB. Current time: 4/29/18 5:52:47 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 11 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cl:JFrame)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - conv_layer_tb_wo_sig", "DesignTask.SIMULATION");
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+selectButton("RDIResource.WaveformUtils_WAVEFORM_CONFIGURATION_HAS_BEEN_MODIFIED_Discard", "Discard"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Elapsed time: 80 seconds
+selectCodeEditor("convolution_layer.vhd", 60, 187); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 78, 225); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 64, 215); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 46 seconds
+selectCodeEditor("convolution_layer.vhd", 564, 251); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 41 seconds
+selectCodeEditor("convolution_layer.vhd", 81, 355); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 20 seconds
+selectCodeEditor("convolution_layer.vhd", 92, 416); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 92, 416, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Find in Files: addNotify
+// Elapsed time: 22 seconds
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 36 MB. Current time: 4/29/18 5:56:41 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 35 MB. Current time: 4/29/18 5:56:42 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 3); // E:k (JViewport:JComponent, cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 2); // E:k (JViewport:JComponent, cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // E:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 17 seconds
+selectCodeEditor("convolution_layer.vhd", 386, 338); // bj:J (JPanel:JComponent, cl:JFrame)
+// Find in Files: addNotify
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "x", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "wt_out", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 36 MB. Current time: 4/29/18 5:57:24 PM CDT
+// 'f' command handler elapsed time: 6 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:57:24 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 4, true); // E:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 4, true); // E:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 4, true, false, false, false, false, true); // E:k (JViewport:JComponent, cl:JFrame) - Double Click - Node
+collapseTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 4); // E:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 18 seconds
+minimizeFrame(RDIResource.RDIViews_PROPERTIES, "Source File Properties"); // ap:DockableFrame (FrameContainer:JideTabbedPane, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), activation_function - tan_h - Behavioral (tan_h.vhd)]", 21, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), activation_function - tan_h - Behavioral (tan_h.vhd)]", 21, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+// Elapsed time: 73 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectCodeEditor("convolution_layer.vhd", 90, 413); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 90, 413, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Replace in Files: addNotify
+// Elapsed time: 10 seconds
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "x", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "wt_out", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:59:30 PM CDT
+// 'e' command handler elapsed time: 7 seconds
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 37 MB. Current time: 4/29/18 5:59:30 PM CDT
+// Elapsed time: 14 seconds
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 86, 446); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 86, 446, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("convolution_layer.vhd", 90, 444); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 90, 444, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Replace in Files: addNotify
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "y", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "tanh_in", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 39 MB. Current time: 4/29/18 6:00:00 PM CDT
+// 'e' command handler elapsed time: 10 seconds
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 37 MB. Current time: 4/29/18 6:00:01 PM CDT
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("convolution_layer.vhd", 519, 125, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("convolution_layer.vhd", 615, 332); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'conv_layer_tb_wo_sig' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// Tcl Message: Built simulation snapshot conv_layer_tb_wo_sig_behav 
+// Tcl Message:  ****** Webtalk v2015.2 (64-bit)   **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.  source /home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr 29 18:00:23 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Sun Apr 29 18:00:23 2018... 
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "conv_layer_tb_wo_sig_behav -key {Behavioral:sim_1:Functional:conv_layer_tb_wo_sig} -tclbatch {conv_layer_tb_wo_sig.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2015.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: Time resolution is 1 ps 
+// Tcl Message: source conv_layer_tb_wo_sig.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'conv_layer_tb_wo_sig_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 6076.398 ; gain = 0.000 ; free physical = 8467 ; free virtual = 64316 
+// 'c' command handler elapsed time: 7 seconds
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+// Elapsed time: 11 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, final_set]", 3, false); // a:k (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 40 MB. Current time: 4/29/18 6:00:38 PM CDT
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // w:JideButton (CommandBar:DockableBar, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, val_zero[7:-8]]", 20, true, true, false, false, false, false); // a:k (JViewport:JComponent, cl:JFrame) - Shift Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, POOLING_DIM]", 16, false, false, false, false, true, false); // a:k (JViewport:JComponent, cl:JFrame) - Popup Trigger
+selectMenu((HResource) null, "Name"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Waveform Style"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Signal Color"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Signal Color"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Waveform Style"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem((HResource) null, "Signed Decimal"); // N:JCheckBoxMenuItem (JPopupMenu:JComponent, Popup:JWindow)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,124 MB. GUI used memory: 40 MB. Current time: 4/29/18 6:00:46 PM CDT
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cl:JFrame)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - conv_layer_tb_wo_sig", "DesignTask.SIMULATION");
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+selectButton("RDIResource.WaveformUtils_WAVEFORM_CONFIGURATION_HAS_BEEN_MODIFIED_Discard", "Discard"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), activation_function - tan_h - Behavioral (tan_h.vhd)]", 11, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), activation_function - tan_h - Behavioral (tan_h.vhd)]", 11, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+// Elapsed time: 16 seconds
+selectCodeEditor("convolution_layer.vhd", 83, 295); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("convolution_layer.vhd", 163, 386); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 33 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), conv - convolution - Behavioral (convolution.vhd)]", 19); // A:k (H:JPanel, cl:JFrame)
+// Elapsed time: 54 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_DESIGN_HUBS, "Design Hubs"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORT, "Report"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Customize Commands"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Customize Commands"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORT, "Report"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Customize Commands"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_OPTIONS, "Options..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_OPTIONS
+// : addNotify
+selectButton("Strategies", "Strategies"); // JideButton:JButton (ScrollableButtonPanel:ButtonPanel, U:br)
+selectButton("Remote Hosts", "Remote Hosts"); // JideButton:JButton (ScrollableButtonPanel:ButtonPanel, U:br)
+selectButton("Fonts", "Fonts"); // JideButton:JButton (ScrollableButtonPanel:ButtonPanel, U:br)
+selectButton("Window Behavior", "Window Behavior"); // JideButton:JButton (ScrollableButtonPanel:ButtonPanel, U:br)
+selectButton("Fonts", "Fonts"); // JideButton:JButton (ScrollableButtonPanel:ButtonPanel, U:br)
+// Elapsed time: 54 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Elapsed time: 38 seconds
+selectButton("Colors", "Colors"); // JideButton:JButton (ScrollableButtonPanel:ButtonPanel, U:br)
+selectComboBox(PAResourceTtoZ.ThemePanel_THEMECOMBOBOX, "Vivado Light Theme", 1); // M:f (J:JPanel, U:br)
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Background ; java.awt.Color[r=255,g=255,b=255] ; ", 41, "java.awt.Color[r=255,g=255,b=255]", 1, false); // av:TreeTable (JViewport:JComponent, U:br)
+selectTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Foreground ; java.awt.Color[r=0,g=0,b=0] ; Foreground", 42, "java.awt.Color[r=0,g=0,b=0]", 1, false); // av:TreeTable (JViewport:JComponent, U:br)
+// Elapsed time: 11 seconds
+selectButton("APPLY", "Apply"); // JButton:AbstractButton (ButtonPanel:JPanel, U:br)
+// Elapsed time: 18 seconds
+selectTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Foreground ; java.awt.Color[r=0,g=0,b=0] ; ", 2, "java.awt.Color[r=0,g=0,b=0]", 1, false); // av:TreeTable (JViewport:JComponent, U:br)
+selectButton("APPLY", "Apply"); // JButton:AbstractButton (ButtonPanel:JPanel, U:br)
+selectCodeEditor("convolution_layer.vhd", 299, 305); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 14 seconds
+selectComboBox(PAResourceTtoZ.ThemePanel_THEMECOMBOBOX, "Vivado Light Theme", 1); // M:f (J:JPanel, U:br)
+selectButton("APPLY", "Apply"); // JButton:AbstractButton (ButtonPanel:JPanel, U:br)
+selectTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Background ; java.awt.Color[r=255,g=255,b=255] ; ", 47, "java.awt.Color[r=255,g=255,b=255]", 1, false); // av:TreeTable (JViewport:JComponent, U:br)
+selectTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Foreground ; java.awt.Color[r=0,g=0,b=0] ; ", 48, "java.awt.Color[r=0,g=0,b=0]", 1, false); // av:TreeTable (JViewport:JComponent, U:br)
+selectButton("APPLY", "Apply"); // JButton:AbstractButton (ButtonPanel:JPanel, U:br)
+// Elapsed time: 12 seconds
+selectButton("OK", "OK"); // JButton:AbstractButton (ButtonPanel:JPanel, U:br)
+dismissDialog("Vivado Options"); // U:br (cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORT, "Report"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Customize Commands"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_OPTIONS, "Options..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_OPTIONS
+// : addNotify
+// Elapsed time: 11 seconds
+selectComboBox(PAResourceTtoZ.ThemePanel_THEMECOMBOBOX, "Vivado Light Theme", 1); // M:f (J:JPanel, U:br)
+selectButton("OK", "OK"); // JButton:AbstractButton (ButtonPanel:JPanel, U:br)
+dismissDialog("Vivado Options"); // U:br (cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORT, "Report"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Customize Commands"); // X:JMenu (JPopupMenu:JComponent, cl:JFrame)
+selectMenuItem(RDIResourceCommand.RDICommands_OPTIONS, "Options..."); // ab:JMenuItem (JPopupMenu:JComponent, cl:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // R:JideMenu (CommandMenuBar:CommandBar, cl:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_OPTIONS
+// : addNotify
+collapseTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Highlight ;  ; Highlight colors", 11); // av:TreeTable (JViewport:JComponent, U:br)
+expandTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Highlight ;  ; Highlight colors", 11); // av:TreeTable (JViewport:JComponent, U:br)
+collapseTreeTable(PAResourceAtoD.ColorTreePanel_COLOR_TREE_TABLE, "Highlight ;  ; Highlight colors", 11); // av:TreeTable (JViewport:JComponent, U:br)
+dismissDialog("Vivado Options"); // U:br (cl:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("convolution_layer.vhd", 552, 427); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 866, 250, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenu(RDIResource.HCodeEditor_BLANK_OPERATIONS, "Blank Operations"); // R:JideMenu (ai:JPopupMenu, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 760, 481); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("convolution_layer.vhd", 92, 313); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 92, 313, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Find in Files: addNotify
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 47 MB. Current time: 4/29/18 6:08:33 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 47 MB. Current time: 4/29/18 6:08:34 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // E:k (JViewport:JComponent, cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 5); // E:k (JViewport:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("convolution_layer.vhd", 92, 327); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 92, 327, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Find in Files: addNotify
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 47 MB. Current time: 4/29/18 6:08:58 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 47 MB. Current time: 4/29/18 6:08:59 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // E:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 137, 337); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 169, 341); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 169, 341, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Find in Files: addNotify
+// Elapsed time: 11 seconds
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 48 MB. Current time: 4/29/18 6:09:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 47 MB. Current time: 4/29/18 6:09:22 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // E:k (JViewport:JComponent, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_REPLACE_IN_FILES
+// Replace in Files: addNotify
+// Elapsed time: 80 seconds
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "weight_avgPoolToBias2", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "tanh_out", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 48 MB. Current time: 4/29/18 6:10:45 PM CDT
+// 'e' command handler elapsed time: 14 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 48 MB. Current time: 4/29/18 6:10:46 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 716, 251, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'conv_layer_tb_wo_sig' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// Tcl Message: Built simulation snapshot conv_layer_tb_wo_sig_behav 
+// Tcl Message:  ****** Webtalk v2015.2 (64-bit)   **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.  source /home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr 29 18:11:02 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Sun Apr 29 18:11:02 2018... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 6076.398 ; gain = 0.000 ; free physical = 7183 ; free virtual = 65319 
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "conv_layer_tb_wo_sig_behav -key {Behavioral:sim_1:Functional:conv_layer_tb_wo_sig} -tclbatch {conv_layer_tb_wo_sig.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2015.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: Time resolution is 1 ps 
+// Tcl Message: source conv_layer_tb_wo_sig.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'conv_layer_tb_wo_sig_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 6076.398 ; gain = 0.000 ; free physical = 7092 ; free virtual = 65247 
+// 'c' command handler elapsed time: 9 seconds
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cl:JFrame)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - conv_layer_tb_wo_sig", "DesignTask.SIMULATION");
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// [GUI Memory]: 98 MB (+3705kb) [00:46:26]
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+selectCodeEditor("convolution_layer.vhd", 504, 360); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 96, 307); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 96, 321); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 98, 339); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 105, 353); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 50 seconds
+selectCodeEditor("convolution_layer.vhd", 153, 373); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 114, 306); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 114, 306, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Find in Files: addNotify
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 49 MB. Current time: 4/29/18 6:12:20 PM CDT
+// 'f' command handler elapsed time: 3 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 49 MB. Current time: 4/29/18 6:12:20 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // E:k (JViewport:JComponent, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_REPLACE_IN_FILES
+// Replace in Files: addNotify
+// Elapsed time: 11 seconds
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "scale_factor", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "wt_pool_bias2", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 50 MB. Current time: 4/29/18 6:12:36 PM CDT
+// 'e' command handler elapsed time: 6 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 50 MB. Current time: 4/29/18 6:12:36 PM CDT
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 727, 192, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("convolution_layer.vhd", 597, 335); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("convolution_layer.vhd", 568, 363); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'conv_layer_tb_wo_sig' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// Tcl Message: Built simulation snapshot conv_layer_tb_wo_sig_behav 
+// Tcl Message:  ****** Webtalk v2015.2 (64-bit)   **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.  source /home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr 29 18:13:03 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Sun Apr 29 18:13:03 2018... 
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "conv_layer_tb_wo_sig_behav -key {Behavioral:sim_1:Functional:conv_layer_tb_wo_sig} -tclbatch {conv_layer_tb_wo_sig.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2015.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// Tcl Message: source conv_layer_tb_wo_sig.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'conv_layer_tb_wo_sig_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 6076.398 ; gain = 0.000 ; free physical = 5991 ; free virtual = 65015 
+// 'c' command handler elapsed time: 7 seconds
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, lyr_nmbr]", 4, false); // a:k (JViewport:JComponent, cl:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 5,126 MB. GUI used memory: 53 MB. Current time: 4/29/18 6:13:09 PM CDT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, val_one[7:-8]]", 21, true, true, false, false, false, false); // a:k (JViewport:JComponent, cl:JFrame) - Shift Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, val_one[7:-8]]", 21, true, false, false, false, true, false); // a:k (JViewport:JComponent, cl:JFrame) - Popup Trigger - Node
+selectMenu((HResource) null, "Name"); // X:JMenu (ai:JPopupMenu, Popup:JWindow)
+selectMenu((HResource) null, "Waveform Style"); // X:JMenu (ai:JPopupMenu, Popup:JWindow)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, Popup:JWindow)
+selectMenu((HResource) null, "Signal Color"); // X:JMenu (ai:JPopupMenu, Popup:JWindow)
+selectMenu((HResource) null, "Radix"); // X:JMenu (ai:JPopupMenu, Popup:JWindow)
+selectMenuItem((HResource) null, "Signed Decimal"); // N:JCheckBoxMenuItem (JPopupMenu:JComponent, Popup:JWindow)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cl:JFrame)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - conv_layer_tb_wo_sig", "DesignTask.SIMULATION");
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+selectButton("RDIResource.WaveformUtils_WAVEFORM_CONFIGURATION_HAS_BEEN_MODIFIED_Discard", "Discard"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 

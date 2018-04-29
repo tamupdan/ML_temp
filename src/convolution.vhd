@@ -71,7 +71,7 @@ architecture Behavioral of convolution is
             clk : in std_logic;
             reset : in std_logic;
             wt_we : in std_logic;
-            weight_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            wt_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
             multi_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
             acc_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
             weight_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
@@ -112,7 +112,7 @@ begin
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
-                        weight_in => wt_data,
+                        wt_in => wt_data,
                         multi_value => pxl_in,
                         acc_value => (others => '0'),
                         weight_out => weight_values(row)(col),
@@ -126,7 +126,7 @@ begin
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
-                        weight_in => weight_values(row-1)(KERNEL_DIM-1),
+                        wt_in => weight_values(row-1)(KERNEL_DIM-1),
                         multi_value => pxl_in,
                         acc_value => shift_reg_output(row-1),
                         weight_out => weight_values(row)(col),
@@ -140,7 +140,7 @@ begin
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
-                        weight_in => weight_values(row)(col-1),
+                        wt_in => weight_values(row)(col-1),
                         multi_value => pxl_in,
                         acc_value => acc_values(row)(col-1),
                         weight_out => weight_values(row)(col),
@@ -154,7 +154,7 @@ begin
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
-                        weight_in => weight_values(row)(col-1),
+                        wt_in => weight_values(row)(col-1),
                         multi_value => pxl_in,
                         acc_value => acc_values(row)(col-1),
                         weight_out => weight_values(row)(col),

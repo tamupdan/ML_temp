@@ -19,13 +19,13 @@ entity average_pooler is
         reset : in std_logic;
         convol_en : in std_logic;
         lyr_nmbr : in Natural;
-        weight_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+        wt_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
         wt_we : in std_logic;
-		input_valid : in std_logic;
+		in_valid : in std_logic;
 		data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 		data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 		out_valid : out std_logic;
-		output_weight : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
+		wt_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end average_pooler;
 
@@ -103,46 +103,46 @@ begin
 	end generate;
 	
     controller : process(clk)
-        variable x : integer;
-        variable y : integer;
+        variable tanh_in : integer;
+        variable tanh_out : integer;
     begin
         if rising_edge(clk) then
             if convol_en = '0' or reset = '0' then
                 output_valid_buf <= '0';
                 reset_buffers <= '1';
                 write_buffers <= '0';
-                x := 0;
-                y := 0;
+                tanh_in := 0;
+                tanh_out := 0;
                 pool_x <= 0;
-            elsif input_valid = '1' then
-                if x = POOLING_DIM-1 and y = POOLING_DIM-1 then
+            elsif in_valid = '1' then
+                if tanh_in = POOLING_DIM-1 and tanh_out = POOLING_DIM-1 then
                     if pool_x = POOL_ARRAY_DIM-1 then
                         output_valid_buf <= '1';
                         reset_buffers <= '0';
                         write_buffers <= '0';
-                        x := 0;
-                        y := 0;
+                        tanh_in := 0;
+                        tanh_out := 0;
                         pool_x <= 0;
                     else
                         output_valid_buf <= '1';
                         reset_buffers <= '1';
                         write_buffers <= '1';
-                        x := 0;
+                        tanh_in := 0;
                         pool_x <= pool_x + 1; 
                     end if;
-                elsif x = POOLING_DIM-1 then
+                elsif tanh_in = POOLING_DIM-1 then
                     output_valid_buf <= '0';
-                    x := 0;
+                    tanh_in := 0;
                     write_buffers <= '1';
                     reset_buffers <= '1';
                     if pool_x = POOL_ARRAY_DIM-1 then 
-                        y := y + 1;
+                        tanh_out := tanh_out + 1;
                         pool_x <= 0;
                     else
                         pool_x <= pool_x + 1;
                     end if;
                 else
-                    x := x + 1;
+                    tanh_in := tanh_in + 1;
                     output_valid_buf <= '0';
                     reset_buffers <= '1';
                     write_buffers <= '0';                        
@@ -160,7 +160,7 @@ begin
         if rising_edge(clk) then
             if convol_en = '0' or reset_buffers = '0' or reset = '0' then
                 pool_sum <= (others => '0');
-            elsif input_valid = '1' then
+            elsif in_valid = '1' then
                 if write_buffers = '1' then
                     pool_sum <= resize(data_in + buffer_values(POOL_ARRAY_DIM-2), BITS_INT_PART-1, -BITS_FRAC_PART);
                 else
@@ -178,7 +178,7 @@ begin
             if reset = '0' then
                 weight <= (others => '0');
             elsif wt_we = '1' then
-                weight <= weight_in;
+                weight <= wt_in;
             end if;
         end if;
     end process;
@@ -204,6 +204,6 @@ begin
         end if;
     end process;
 
-    output_weight <= weight;
+    wt_out <= weight;
     
 end Behavioral;
