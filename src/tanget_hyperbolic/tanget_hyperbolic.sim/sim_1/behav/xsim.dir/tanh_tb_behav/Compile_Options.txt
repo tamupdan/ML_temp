@@ -1,1 +1,0 @@
--wto "3fa6de3352c94b0e96ab29bf6d9ac279" --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "tanh_tb_behav" "xil_defaultlib.tanh_tb" -log "elaborate.log" 

@@ -1,0 +1,62 @@
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/conv_layer/activation_function/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
+Error: Output nr. 0. Expected value: 01010100.00000000. Actual value: 00000000.00000100.
+Time: 56500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd
+Error: Output nr. 1. Expected value: 01010010.00000000. Actual value: 00000000.00000100.
+Time: 58500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd
+Error: Output nr. 2. Expected value: 01010100.00000000. Actual value: 00000000.00000100.
+Time: 60500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd
+Error: Output nr. 3. Expected value: 01011110.00000000. Actual value: 00000000.00000100.
+Time: 72500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd
+Error: Output nr. 4. Expected value: 00101111.00000000. Actual value: 00000000.00000100.
+Time: 74500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd
+Error: Output nr. 5. Expected value: 01001100.00000000. Actual value: 00000000.00000100.
+Time: 76500 ps  Iteration: 1  Process: /conv_layer_tb_wo_sig/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd

@@ -1,6 +1,0 @@
-Vivado Simulator 2015.2
-Time resolution is 1 ps
-Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
-Time: 1 ns  Iteration: 1  Process: /tanh_tb/tanh_port/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd
-Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
-Time: 1 ns  Iteration: 1  Process: /tanh_tb/tanh_port/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd

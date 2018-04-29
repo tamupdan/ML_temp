@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Apr 28 19:54:47 2018
+# Process ID: 20175
+# Log file: /home/grads/p/prateek_24prasad/ml_new/vivado.log
+# Journal file: /home/grads/p/prateek_24prasad/ml_new/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/grads/p/prateek_24prasad/ml_new/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd /home/grads/p/prateek_24prasad/ml_new/src/mac.vhd /home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd /home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd /home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim

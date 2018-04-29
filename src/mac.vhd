@@ -13,7 +13,7 @@ entity mac is
 	Port( 	
 			clk 		: in std_logic;
 			reset 		: in std_logic;		
-			weight_we 	: in std_logic;
+			wt_we 	: in std_logic;
 			weight_in 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			multi_value : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			acc_value 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
@@ -37,7 +37,7 @@ begin
 		if rising_edge(clk) then
 			if (reset = '0') then
 				weight_reg <= (others => '0');
-			elsif(weight_we = '1') then
+			elsif(wt_we = '1') then
 				weight_reg <= weight_in;
 			end if;
 		end if;

@@ -9,8 +9,8 @@ entity conv_controller is
 	);
 	port (
 		clk 				: in  std_logic;
-		conv_en 			: in  std_logic;
-        layer_nr            : in Natural;
+		convol_en 			: in  std_logic;
+        lyr_nmbr            : in Natural;
 		output_valid 	    : out std_logic
 	);
 end conv_controller;
@@ -29,11 +29,11 @@ architecture Behavioral of conv_controller is
 
 begin
 
-    set_img_dim : process(layer_nr)
+    set_img_dim : process(lyr_nmbr)
     begin
-        if layer_nr = 0 then
+        if lyr_nmbr = 0 then
             curr_img_dim <= IMAGE_DIM;
-        elsif layer_nr = 1 then
+        elsif lyr_nmbr = 1 then
             curr_img_dim <= (IMAGE_DIM-KERNEL_DIM+1)/2;
         else
             curr_img_dim <= (((IMAGE_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM+1)/2;
@@ -43,8 +43,8 @@ begin
 	count_pixels : process (clk)
 	begin
 		if rising_edge(clk) then
-			conv_en_buf <= conv_en;
-			if conv_en = '1' then
+			conv_en_buf <= convol_en;
+			if convol_en = '1' then
 				if (column_num = curr_img_dim and row_num = curr_img_dim) then
 					row_num <= 1;
 					column_num <= 1;

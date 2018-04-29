@@ -17,10 +17,10 @@ entity convolution is
 	port ( 
 		clk : in std_logic;
 		reset : in std_logic;
-		conv_en : in std_logic;
-		layer_nr : in Natural;
-		weight_we : in std_logic;
-		weight_data : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		convol_en : in std_logic;
+		lyr_nmbr : in Natural;
+		wt_we : in std_logic;
+		wt_data : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		pixel_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 	    
 	    conv_en_out : out std_logic;
@@ -39,8 +39,8 @@ architecture Behavioral of convolution is
         );
         port (
             clk : in  std_logic;
-            conv_en : in  std_logic;
-            layer_nr : in Natural;
+            convol_en : in  std_logic;
+            lyr_nmbr : in Natural;
             output_valid : out  std_logic
         );
         end component;
@@ -70,7 +70,7 @@ architecture Behavioral of convolution is
         port (
             clk : in std_logic;
             reset : in std_logic;
-            weight_we : in std_logic;
+            wt_we : in std_logic;
             weight_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
             multi_value : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
             acc_value : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
@@ -97,8 +97,8 @@ begin
     
     controller : conv_controller port map (
         clk => clk,
-        conv_en => conv_en,
-        layer_nr => layer_nr,
+        convol_en => convol_en,
+        lyr_nmbr => lyr_nmbr,
         output_valid => output_valid
     );
 
@@ -111,8 +111,8 @@ begin
                     mac1 : mac port map (
                         clk => clk,
                         reset => reset,
-                        weight_we => weight_we,
-                        weight_in => weight_data,
+                        wt_we => wt_we,
+                        weight_in => wt_data,
                         multi_value => pixel_in,
                         acc_value => (others => '0'),
                         weight_out => weight_values(row)(col),
@@ -125,7 +125,7 @@ begin
                     mac1 : mac port map (
                         clk => clk,
                         reset => reset,
-                        weight_we => weight_we,
+                        wt_we => wt_we,
                         weight_in => weight_values(row-1)(KERNEL_DIM-1),
                         multi_value => pixel_in,
                         acc_value => shift_reg_output(row-1),
@@ -139,7 +139,7 @@ begin
                     mac3 : mac port map (
                         clk => clk,
                         reset => reset,
-                        weight_we => weight_we,
+                        wt_we => wt_we,
                         weight_in => weight_values(row)(col-1),
                         multi_value => pixel_in,
                         acc_value => acc_values(row)(col-1),
@@ -153,7 +153,7 @@ begin
                     mac4 : mac port map (
                         clk => clk,
                         reset => reset,
-                        weight_we => weight_we,
+                        wt_we => wt_we,
                         weight_in => weight_values(row)(col-1),
                         multi_value => pixel_in,
                         acc_value => acc_values(row)(col-1),
@@ -167,7 +167,7 @@ begin
                     sr : sfixed_shift_registers port map (
                         clk => clk,
                         reset => reset,
-                        we => conv_en,
+                        we => convol_en,
                         output_reg => output_shift_reg_nr,
                         data_in => acc_values(row)(col),
                         data_out => shift_reg_output(row)
@@ -177,11 +177,11 @@ begin
         end generate;
     end generate;
     
-    shift_reg_config : process(layer_nr)
+    shift_reg_config : process(lyr_nmbr)
     begin
-        --if layer_nr = 0 then
+        --if lyr_nmbr = 0 then
             output_shift_reg_nr <= IMG_DIM-KERNEL_DIM-1;
-        --elsif layer_nr = 1 then
+        --elsif lyr_nmbr = 1 then
         --    output_shift_reg_nr <= ((IMG_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM-1;
         --else
         --    output_shift_reg_nr <= 0;
@@ -193,7 +193,7 @@ begin
         if rising_edge(clk) then
             if reset = '0' then
                 bias <= (others => '0');
-            elsif weight_we = '1' then
+            elsif wt_we = '1' then
                 bias <= weight_values(KERNEL_DIM-1)(KERNEL_DIM-1);
             end if; 
         end if;
@@ -202,7 +202,7 @@ begin
     conv_reg : process(clk) 
     begin
         if rising_edge(clk) then
-            conv_en_out <= conv_en;
+            conv_en_out <= convol_en;
         end if;
     end process;
     

@@ -20,11 +20,11 @@ entity convolution_layer is
 	port ( 
 		clk 		: in std_logic;
 		reset		: in std_logic;
-		conv_en		: in std_logic;
+		convol_en		: in std_logic;
         final_set   : in std_logic;
-		layer_nr	: in Natural;
-		weight_we	: in std_logic;
-		weight_data	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+		lyr_nmbr	: in Natural;
+		wt_we	: in std_logic;
+		wt_data	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		pixel_in	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		pixel_valid	: out std_logic;
 		pixel_out 	: out sfixed(INT_WIDTH+FRAC_WIDTH-1 downto 0);
@@ -46,10 +46,10 @@ architecture Behavioral of convolution_layer is
 		port ( 
 			clk				: in std_logic;
 			reset			: in std_logic;
-			conv_en 		: in std_logic;
-			layer_nr        : in natural;
-			weight_we		: in std_logic;
-			weight_data 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+			convol_en 		: in std_logic;
+			lyr_nmbr        : in natural;
+			wt_we		: in std_logic;
+			wt_data 	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			pixel_in 		: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			output_valid	: out std_logic; 
 			conv_en_out		: out std_logic;
@@ -69,10 +69,10 @@ architecture Behavioral of convolution_layer is
         Port ( 
             clk : in std_logic;
             reset : in std_logic;
-            conv_en : in std_logic;
-            layer_nr : in natural;
+            convol_en : in std_logic;
+            lyr_nmbr : in natural;
             weight_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            weight_we : in std_logic;
+            wt_we : in std_logic;
             input_valid : in std_logic;
             data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
             data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
@@ -92,7 +92,7 @@ architecture Behavioral of convolution_layer is
             clk		 : in  std_logic;
             reset	 : in  std_logic;
             write_en : in  std_logic;
-            layer_nr    : in  Natural;
+            lyr_nmbr    : in  Natural;
             data_in	 : in  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
             data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)			
 		);
@@ -160,10 +160,10 @@ begin
 	conv : convolution port map (
 		clk				=> clk,
 		reset			=> reset,
-		conv_en 		=> conv_en,
-		layer_nr        => layer_nr,
-		weight_we		=> weight_we,
-		weight_data 	=> weight_data,
+		convol_en 		=> convol_en,
+		lyr_nmbr        => lyr_nmbr,
+		wt_we		=> wt_we,
+		wt_data 	=> wt_data,
 		pixel_in 		=> pixel_in,
 		output_valid	=> outputValid_convToMux,--dv_conv_to_buf_and_mux,
 		conv_en_out		=> convEn_convToMux,
@@ -172,9 +172,9 @@ begin
 	
 	);
 
-    is_layer_1_process : process (layer_nr)
+    is_layer_1_process : process (lyr_nmbr)
     begin
-        --if layer_nr = 1 or layer_nr = 2 then
+        --if lyr_nmbr = 1 or lyr_nmbr = 2 then
             --is_layer_1 <= '1';
         --else
             is_layer_1 <= '0';
@@ -187,7 +187,7 @@ begin
         clk => clk,
         reset => reset,
         write_en => buffer_we,
-        layer_nr => layer_nr,
+        lyr_nmbr => lyr_nmbr,
         data_in => pixelOut_convToMux,
         data_out => pixel_bufToMux
     );
@@ -195,10 +195,10 @@ begin
     mux : process(clk)
     begin
         if rising_edge(clk) then
-            --if layer_nr = 0 then
+            --if lyr_nmbr = 0 then
                 pixel_MuxToBias <= pixelOut_convToMux;
                 valid_MuxToBias <= outputValid_convToMux;
-            --elsif layer_nr = 1 or layer_nr = 2 then
+            --elsif lyr_nmbr = 1 or lyr_nmbr = 2 then
             --    if final_set = '1' then
             --        pixel_MuxToBias <= resize(pixelOut_convToMux + pixel_bufToMux, INT_WIDTH-1, -FRAC_WIDTH);
             --        valid_MuxToBias <= outputValid_convToMux;
@@ -231,10 +231,10 @@ begin
 	avg_pooler : average_pooler port map ( 
 		clk 			=> clk,
         reset           => reset,
-        conv_en			=> conv_en,
-        layer_nr        => layer_nr,
+        convol_en			=> convol_en,
+        lyr_nmbr        => lyr_nmbr,
         weight_in       => bias,
-        weight_we       => weight_we,
+        wt_we       => wt_we,
         input_valid		=> pixelValid_TanhToAvgPool,
         data_in         => pixelOut_TanhToAvgPool,
         data_out		=> pixelOut_AvgPoolToScaleFactor,
@@ -279,10 +279,10 @@ begin
     OutputProcess : process(clk)
     begin
         if rising_edge(clk) then
-            --if layer_nr = 0 then
+            --if lyr_nmbr = 0 then
                 pixel_out <= pixelOut_Tanh2ToOut;
                 pixel_valid <= pixelValid_Tanh2ToOut;
-            --elsif layer_nr = 1 then
+            --elsif lyr_nmbr = 1 then
             --    pixel_out <= to_slv(pixelOut_Tanh2ToOut); 
             --    pixel_valid <= pixelValid_Tanh2ToOut and (final_set);
             --else
@@ -297,7 +297,7 @@ begin
         if rising_edge(clk) then
             if reset = '0' then
                 bias2 <= (others => '0');
-            elsif weight_we = '1' then
+            elsif wt_we = '1' then
                 bias2 <= weight_avgPoolToBias2; 
            end if;
         end if;     
@@ -308,7 +308,7 @@ begin
         if rising_edge(clk) then
             if reset = '0' then
                 scale_factor <= (others => '0');
-            elsif weight_we = '1' then
+            elsif wt_we = '1' then
                 scale_factor <= bias2;
             end if;
         end if;

@@ -17,10 +17,10 @@ entity average_pooler is
 	Port ( 
 		clk : in std_logic;
         reset : in std_logic;
-        conv_en : in std_logic;
-        layer_nr : in Natural;
+        convol_en : in std_logic;
+        lyr_nmbr : in Natural;
         weight_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-        weight_we : in std_logic;
+        wt_we : in std_logic;
 		input_valid : in std_logic;
 		data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
@@ -68,9 +68,9 @@ begin
 
     buf_reset <= reset and reset_buffers;
 
-    set_array_dim : process(layer_nr)
+    set_array_dim : process(lyr_nmbr)
     begin
-        --if layer_nr = 0 then
+        --if lyr_nmbr = 0 then
             POOL_ARRAY_DIM <= POOL_ARRAY_DIM_MAX;
         --else
             --POOL_ARRAY_DIM <= ((IMG_DIM/2)-KERNEL_DIM+1)/POOL_DIM;
@@ -107,7 +107,7 @@ begin
         variable y : integer;
     begin
         if rising_edge(clk) then
-            if conv_en = '0' or reset = '0' then
+            if convol_en = '0' or reset = '0' then
                 output_valid_buf <= '0';
                 reset_buffers <= '1';
                 write_buffers <= '0';
@@ -158,7 +158,7 @@ begin
     update_sum : process(clk)
 	begin
         if rising_edge(clk) then
-            if conv_en = '0' or reset_buffers = '0' or reset = '0' then
+            if convol_en = '0' or reset_buffers = '0' or reset = '0' then
                 pool_sum <= (others => '0');
             elsif input_valid = '1' then
                 if write_buffers = '1' then
@@ -177,7 +177,7 @@ begin
         if rising_edge(clk) then
             if reset = '0' then
                 weight <= (others => '0');
-            elsif weight_we = '1' then
+            elsif wt_we = '1' then
                 weight <= weight_in;
             end if;
         end if;

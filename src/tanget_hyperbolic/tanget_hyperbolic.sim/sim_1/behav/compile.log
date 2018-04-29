@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity tan_h
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/tanh_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity tanh_tb

@@ -30,11 +30,11 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 		port ( 
 			clk 		: in std_logic;
 			reset		: in std_logic;
-			conv_en		: in std_logic;
+			convol_en		: in std_logic;
 			final_set   : in std_logic;
-			layer_nr	: in Natural;
-			weight_we	: in std_logic;
-			weight_data	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+			lyr_nmbr	: in Natural;
+			wt_we	: in std_logic;
+			wt_data	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			pixel_in	: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 			pixel_valid	: out std_logic;
 			pixel_out 	: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
@@ -46,11 +46,11 @@ ARCHITECTURE behavior OF conv_layer_tb_wo_sig IS
 	
 	signal clk 			: std_logic := '0';
 	signal reset		: std_logic := '0';
-	signal conv_en		: std_logic := '0';
+	signal convol_en		: std_logic := '0';
 	signal final_set    : std_logic := '0';
-	signal layer_nr	    : Natural := 0;
-	signal weight_we	: std_logic := '0';
-	signal weight_data	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
+	signal lyr_nmbr	    : Natural := 0;
+	signal wt_we	: std_logic := '0';
+	signal wt_data	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
 	signal pixel_in		: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
 	signal pixel_valid	: std_logic := '0';
 	signal pixel_out 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
@@ -118,11 +118,11 @@ begin
 	conv_layer : convolution_layer port map ( 
 		clk 			=> clk,
 		reset			=> reset,
-		conv_en		=> conv_en,
-		layer_nr	=> layer_nr,
+		convol_en		=> convol_en,
+		lyr_nmbr	=> lyr_nmbr,
 		final_set => final_set,
-		weight_we	=> weight_we,
-		weight_data	=> weight_data,
+		wt_we	=> wt_we,
+		wt_data	=> wt_data,
 		pixel_in		=> pixel_in,
 		pixel_valid	=> pixel_valid,
 		pixel_out 	=> pixel_out,
@@ -144,22 +144,22 @@ begin
 		
 		wait for clk_period;
 		
-		layer_nr <= 0;
+		lyr_nmbr <= 0;
 		reset <= '1';
-		weight_we <= '1';
+		wt_we <= '1';
 		for i in 0 to (KERNEL_DIM*KERNEL_DIM) loop
-			weight_data <= kernel(i);
+			wt_data <= kernel(i);
 			wait for clk_period;
 		end loop;
-		weight_we <= '0';
+		wt_we <= '0';
 		wait for clk_period;
 		
-		conv_en <= '1';
+		convol_en <= '1';
 		for i in 0 to (IMG_DIM*IMG_DIM)-1 loop
 			pixel_in <= img((IMG_DIM*IMG_DIM)-1-i);
 			wait for clk_period;
 		end loop;
-		conv_en <= '0';
+		convol_en <= '0';
 		wait; 
 	end process;
 	

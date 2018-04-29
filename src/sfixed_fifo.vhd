@@ -18,7 +18,7 @@ entity sfixed_fifo is
 		clk		 : in  std_logic;
 		reset	 : in  std_logic;
 		write_en : in  std_logic;
-        layer_nr : in  natural;
+        lyr_nmbr : in  natural;
 		data_in	 : in  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
 		data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
 	);
@@ -35,9 +35,9 @@ architecture Behavioral of sfixed_fifo is
     
 begin
 
-    set_layer_depth : process(layer_nr)
+    set_layer_depth : process(lyr_nmbr)
     begin
-        if layer_nr = 1 then
+        if lyr_nmbr = 1 then
             LAYER_DEPTH <= FIFO_DEPTH;
         else
             LAYER_DEPTH <= 25;

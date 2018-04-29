@@ -1,0 +1,20 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_buffer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_shift_registers
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity conv_controller
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sfixed_fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tan_h
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity average_pooler
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_layer
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity conv_layer_tb_wo_sig
