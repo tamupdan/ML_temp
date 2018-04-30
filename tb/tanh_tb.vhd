@@ -8,8 +8,8 @@ use ieee_proposed.fixed_pkg.all;
 
 entity tanh_tb is
     generic (
-        INT_WIDTH : natural := 8;
-        FRAC_WIDTH : natural := 8
+        BITS_INT_PART : natural := 8;
+        BITS_FRAC_PART : natural := 8
     );
 end tanh_tb;
 
@@ -18,38 +18,38 @@ architecture behavior of tanh_tb is
   -- Component Declaration
 	component tan_h
 		generic (
-            INT_WIDTH : Natural := 8;
-            FRAC_WIDTH : Natural := 8;
+            BITS_INT_PART : Natural := 8;
+            BITS_FRAC_PART : Natural := 8;
             CONST_INT_WIDTH : Natural := 8;
             CONST_FRAC_WIDTH : Natural := 8
         );
         Port (
             clk : in std_logic;
-            input_valid : in std_logic;
-            x : in  sfixed (INT_WIDTH-1 downto -FRAC_WIDTH);
-            output_valid : out std_logic;
-            y : out sfixed (INT_WIDTH-1 downto -FRAC_WIDTH)
+            in_valid : in std_logic;
+            x : in  sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            out_valid : out std_logic;
+            y : out sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART)
         );
 	end component;
 	
 	signal clk : std_logic := '0';
-	signal input_valid : std_logic := '0';
-	signal x :  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-	signal output_valid : std_logic := '0';
-	signal y :  sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
+	signal in_valid : std_logic := '0';
+	signal x :  sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := (others => '0');
+	signal out_valid : std_logic := '0';
+	signal y :  sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := (others => '0');
 	
 	constant clk_period : time := 2 ns;	
 	
-	constant m1 : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(-0.54324, INT_WIDTH-1, -FRAC_WIDTH);
+	constant m1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(-0.54324, BITS_INT_PART-1, -BITS_FRAC_PART);
 	
 begin
 
     
     tanh_port : tan_h PORT MAP(
         clk => clk,
-        input_valid => input_valid,
+        in_valid => in_valid,
         x => x,
-        output_valid => output_valid,
+        out_valid => out_valid,
         y => y
     );
 
@@ -64,7 +64,7 @@ begin
 	tb : process
 	begin
         wait for clk_period*5;
-        input_valid <= '1';
+        in_valid <= '1';
         x <= to_sfixed(0.5, x);
         wait for clk_period;
         x <= to_sfixed(1, x);
@@ -81,7 +81,7 @@ begin
         wait for clk_period;
         x <= to_sfixed(-0.26000, x);
         wait for clk_period;
-        input_valid <= '0';
+        in_valid <= '0';
         x <= (others => '0');
         wait; -- wait forever
 	end process tb;

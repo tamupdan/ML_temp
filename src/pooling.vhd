@@ -45,7 +45,6 @@ architecture Behavioral of pooling is
 	end component;
 
     constant POOL_ARRAY_MAX_DIM : Natural := IMG_DIM/POOLING_DIM;
-	--type states is (find_max, end_of_row,wait_for_new_row, finished);
 
 	type arr is array(POOL_ARRAY_MAX_DIM-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
@@ -69,11 +68,7 @@ begin
 
     array_dimension : process(lyr_nmbr)
     begin
-        --if lyr_nmbr = 0 then
             POOL_ARRAY_DIM <= POOL_ARRAY_MAX_DIM;
-        --else
-            --POOL_ARRAY_DIM <= ((IMG_DIM/2)-KERNEL_DIM+1)/POOLING_DIM;
-        --end if;
     end process;
     
 	buffer_values : for i in 0 to POOL_ARRAY_MAX_DIM-2 generate

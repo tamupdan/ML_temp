@@ -8,27 +8,25 @@ use ieee_proposed.float_pkg.all;
 
 entity cnn is
 	generic (
-		IMG_DIM 		    : Natural := 8;
-		KERNEL_DIM 		    : Natural := 3;
+		IMG_DIM 		: Natural := 8;
+		KERNEL_DIM 		  : Natural := 3;
 		POOLING_DIM    	    : Natural := 2;
-		BITS_INT_PART 		: Natural := 8;
+		BITS_INT_PART : Natural := 8;
 		BITS_FRAC_PART 		: Natural := 8
 	);
-	
-	
 	port ( 
-		clk 		            : in std_logic;
-		reset		            : in std_logic;
+		clk            : in std_logic;
+		reset		         : in std_logic;
 		convol_en		        : in std_logic;
-        final_set               : in std_logic;
+        final_set            : in std_logic;
 		lyr_nmbr	            : in Natural;
-		wt_we	                : in std_logic;
+		wt_we	         : in std_logic;
 		wt_data               	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-		pxl_in	                : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-		pxl_valid	            : out std_logic;
-		pxl_out 	            : out sfixed(BITS_INT_PART+BITS_FRAC_PART-1 downto 0);
-		pxl_tanh_pool        	: inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-		pxl_tanh_out        	: inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
+		pxl_in	            : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		pxl_valid	         : out std_logic;
+		pxl_out 	         : out sfixed(BITS_INT_PART+BITS_FRAC_PART-1 downto 0);
+		pxl_tanh_pool     	: inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+		pxl_tanh_out       : inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
 end cnn;
 
@@ -113,46 +111,26 @@ architecture Behavioral of cnn is
 	signal bias : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	signal bias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal wt_pool_bias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    signal scaling : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    
+    signal scaling : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);    
 	signal convol_en_con_mux : std_logic;
 	signal out_vld_con_mux : std_logic;
     signal pxl_out_con_mux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
     signal buffer_we      : std_logic;
     signal pxl_buf_mux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
     signal valid_mux_bias : std_logic;
     signal pxl_mux_bias : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
-    --signal pixelValid_MuxToF2F : std_logic;
-    --signal pixel_MuxToF2F : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
-    
     signal valid_bias_tanh : std_logic;
     signal pxl_bias_tanh : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    
-    signal valid_tanh_pool : std_logic;
-    --signal pxl_tanh_pool : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    
+    signal valid_tanh_pool : std_logic;  
     signal valid_pool_scaling : std_logic;
     signal pxl_pool_scaling : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
     signal valid_scaling_bias2 : std_logic;
     signal pxl_scaling_bias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    
     signal valid_bias2_tanh2 : std_logic;
     signal pxl_bias2_tanh2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
     signal valid_tanh2_out : std_logic;
-    --signal pxl_tanh_out : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
     signal valid_float_out : std_logic;
     signal pxl_float_out : float32;
-    
-    --signal y1        	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    --signal y2            : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-
     
 begin
 
@@ -173,11 +151,7 @@ begin
 
     is_layer_1_process : process (lyr_nmbr)
     begin
-        --if lyr_nmbr = 1 or lyr_nmbr = 2 then
-            --layer1 <= '1';
-        --else
-            layer1 <= '0';
-        --end if;
+        layer1 <= '0';
     end process;
     
     buffer_we <= layer1 and out_vld_con_mux;
@@ -194,18 +168,8 @@ begin
     mux : process(clk)
     begin
         if rising_edge(clk) then
-            --if lyr_nmbr = 0 then
-                pxl_mux_bias <= pxl_out_con_mux;
-                valid_mux_bias <= out_vld_con_mux;
-            --elsif lyr_nmbr = 1 or lyr_nmbr = 2 then
-            --    if final_set = '1' then
-            --        pxl_mux_bias <= resize(pxl_out_con_mux + pxl_buf_mux, BITS_INT_PART-1, -BITS_FRAC_PART);
-            --        valid_mux_bias <= out_vld_con_mux;
-            --    else
-            --        pxl_mux_bias <= (others => '0');
-            --        valid_mux_bias <= '0';
-            --    end if;
-            --end if;
+            pxl_mux_bias <= pxl_out_con_mux;
+            valid_mux_bias <= out_vld_con_mux;
         end if;
 
     end process;
@@ -278,16 +242,8 @@ begin
     OutputProcess : process(clk)
     begin
         if rising_edge(clk) then
-            --if lyr_nmbr = 0 then
                 pxl_out <= pxl_tanh_out;
                 pxl_valid <= valid_tanh2_out;
-            --elsif lyr_nmbr = 1 then
-            --    pxl_out <= to_slv(pxl_tanh_out); 
-            --    pxl_valid <= valid_tanh2_out and (final_set);
-            --else
-            --    pxl_out <= to_slv(pxl_float_out);
-            --    pxl_valid <= valid_float_out;
-            --end if;
         end if;
     end process;
     

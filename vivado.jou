@@ -2,14 +2,14 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Mon Apr 30 15:26:25 2018
-# Process ID: 26577
+# Start of session at: Mon Apr 30 15:46:29 2018
+# Process ID: 6108
 # Log file: /home/grads/p/prateek_24prasad/ml_new/vivado.log
 # Journal file: /home/grads/p/prateek_24prasad/ml_new/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project project_2 /home/grads/p/prateek_24prasad/ml_new/project_2 -part xc7vx485tffg1157-1
-add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd /home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd /home/grads/p/prateek_24prasad/ml_new/src/mac.vhd /home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd /home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd /home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd /home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd}
+create_project project_3 /home/grads/p/prateek_24prasad/ml_new/project_3 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd /home/grads/p/prateek_24prasad/ml_new/src/mac.vhd /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd /home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd /home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd /home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd /home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd /home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd /home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd}
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
@@ -17,18 +17,41 @@ launch_simulation
 source cnn_tb.tcl
 close_sim
 launch_simulation
-source cnn_tb.tcl
-close_sim
-remove_files /home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd
+launch_simulation
 launch_simulation
 source cnn_tb.tcl
 close_sim
-add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd
+launch_simulation
+source cnn_tb.tcl
+close_sim
+launch_simulation
+source cnn_tb.tcl
+close_sim
+launch_simulation
+source cnn_tb.tcl
+close_sim
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/tb/average_pooling_tb.vhd /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd /home/grads/p/prateek_24prasad/ml_new/tb/tanh_tb.vhd}
 update_compile_order -fileset sources_1
-add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd
+launch_simulation
+source cnn_tb.tcl
+close_sim
+launch_simulation
+source cnn_tb.tcl
+close_sim
+launch_simulation
+source cnn_tb.tcl
+close_sim
+launch_simulation
+source cnn_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+source cnn_tb.tcl
+close_sim
+launch_simulation
+source cnn_tb.tcl
+close_sim
 launch_simulation
 source cnn_tb.tcl
 close_sim

@@ -178,13 +178,7 @@ begin
     
     reg_number : process(lyr_nmbr)
     begin
-        --if lyr_nmbr = 0 then
-            out_reg_nmbr <= IMG_DIM-KERNEL_DIM-1;
-        --elsif lyr_nmbr = 1 then
-        --    out_reg_nmbr <= ((IMG_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM-1;
-        --else
-        --    out_reg_nmbr <= 0;
-        --end if; 
+        out_reg_nmbr <= IMG_DIM-KERNEL_DIM-1; 
     end process;
     
     bias_reg_val : process(clk, reset)

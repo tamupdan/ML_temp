@@ -9209,3 +9209,5 @@ close_sim
 INFO: [Simtcl 6-16] Simulation closed
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 30 15:46:11 2018...

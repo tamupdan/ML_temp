@@ -11,7 +11,7 @@ ENTITY convolution_tb IS
 		IMAGE_DIM	: Natural := 8;
 		KERNEL_DIM 	: Natural := 3;
 		INT_WIDTH	: Natural := 8;
-		FRAC_WIDTH	: Natural := 8
+		BITS_FRAC_PART	: Natural := 8
 	);
 END convolution_tb;
 
@@ -23,93 +23,93 @@ ARCHITECTURE behavior OF convolution_tb IS
 			IMG_DIM	: Natural := IMAGE_DIM;
 			KERNEL_DIM 	: Natural := KERNEL_DIM;
 			INT_WIDTH	: Natural := INT_WIDTH;
-			FRAC_WIDTH	: Natural := FRAC_WIDTH
+			BITS_FRAC_PART	: Natural := BITS_FRAC_PART
 		);
 		port ( 
 			clk					: in std_logic;
 			reset				: in std_logic;
-			layer_nr            : in Natural;
+			lyr_nmbr            : in Natural;
 			conv_en			    : in std_logic;
-			weight_we			: in std_logic;
-			weight_data 		: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			pixel_in 			: in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			output_valid		: out std_logic; 
+			wt_we			: in std_logic;
+			weight_data 		: in sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
+			pixel_in 			: in sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
+			out_valid		: out std_logic; 
 			conv_en_out			: out std_logic;
-			pixel_out 			: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-			bias				: out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH)
+			pixel_out 			: out sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
+			bias				: out sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART)
 		);
 	END COMPONENT;
 	
-    constant zero 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000000000000000";
-	constant one 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000000100000000";
-	constant two 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000001000000000";
-	constant three : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000001100000000";
-	constant four 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010000000000";
-	constant five 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := "0000010100000000";
+    constant val_zero 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := "0000000000000000";
+	constant val_one 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := "0000000100000000";
+	constant val_two 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := "0000001000000000";
+	constant val_three : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := "0000001100000000";
+	constant val_four 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := "0000010000000000";
+	constant val_five 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := "0000010100000000";
 	
-	constant result0 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(71, 7, -8);
-	constant result1 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
-	constant result2 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(74, 7, -8);
-	constant result3 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
-	constant result4 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(84, 7, -8);
-	constant result5 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(69, 7, -8);
+	constant result0 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(71, 7, -8);
+	constant result1 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(84, 7, -8);
+	constant result2 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(74, 7, -8);
+	constant result3 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(82, 7, -8);
+	constant result4 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(84, 7, -8);
+	constant result5 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(69, 7, -8);
 	
-	constant result6 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(44, 7, -8);
-	constant result7 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(42, 7, -8);
-	constant result8 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(55, 7, -8);
-	constant result9 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(80, 7, -8);
-	constant result10	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(81, 7, -8);
-	constant result11	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(60, 7, -8);
+	constant result6 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(44, 7, -8);
+	constant result7 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(42, 7, -8);
+	constant result8 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(55, 7, -8);
+	constant result9 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(80, 7, -8);
+	constant result10	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(81, 7, -8);
+	constant result11	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(60, 7, -8);
 	
-	constant result12	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(73, 7, -8);
-	constant result13	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(43, 7, -8);
-	constant result14	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(41, 7, -8);
-	constant result15	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(38, 7, -8);
-	constant result16 	: sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(36, 7, -8);
-    constant result17     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(50, 7, -8);
+	constant result12	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(73, 7, -8);
+	constant result13	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(43, 7, -8);
+	constant result14	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(41, 7, -8);
+	constant result15	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(38, 7, -8);
+	constant result16 	: sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(36, 7, -8);
+    constant result17     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(50, 7, -8);
     
-    constant result18     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(94, 7, -8);
-    constant result19     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(63, 7, -8);
-    constant result20     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(34, 7, -8);
-    constant result21     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(47, 7, -8);
-    constant result22     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(76, 7, -8);
-    constant result23     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(57, 7, -8);
+    constant result18     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(94, 7, -8);
+    constant result19     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(63, 7, -8);
+    constant result20     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(34, 7, -8);
+    constant result21     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(47, 7, -8);
+    constant result22     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(76, 7, -8);
+    constant result23     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(57, 7, -8);
     
-    constant result24     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(79, 7, -8);
-    constant result25     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(63, 7, -8);
-    constant result26    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(67, 7, -8);
-    constant result27    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(44, 7, -8);
-    constant result28    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(73, 7, -8);
-    constant result29    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(82, 7, -8);
+    constant result24     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(79, 7, -8);
+    constant result25     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(63, 7, -8);
+    constant result26    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(67, 7, -8);
+    constant result27    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(44, 7, -8);
+    constant result28    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(73, 7, -8);
+    constant result29    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(82, 7, -8);
     
-    constant result30    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(93, 7, -8);
-    constant result31    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(75, 7, -8);
-    constant result32    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(72, 7, -8);
-    constant result33    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(69, 7, -8);
-    constant result34    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(75, 7, -8);
-    constant result35    : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(45, 7, -8);
+    constant result30    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(93, 7, -8);
+    constant result31    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(75, 7, -8);
+    constant result32    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(72, 7, -8);
+    constant result33    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(69, 7, -8);
+    constant result34    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(75, 7, -8);
+    constant result35    : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := to_sfixed(45, 7, -8);
     
 	
-	type img_array is array (IMAGE_DIM*IMAGE_DIM-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	type kernel_array is array (KERNEL_DIM*KERNEL_DIM downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	type conv_array is array (35 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	type img_array is array (IMAGE_DIM*IMAGE_DIM-1 downto 0) of sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
+	type kernel_array is array (KERNEL_DIM*KERNEL_DIM downto 0) of sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
+	type conv_array is array (35 downto 0) of sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
 	
 	signal image 	: img_array := (
-        zero, zero, zero, one, zero, zero, zero, zero, 
-        zero, zero, zero, one, zero, zero, zero, zero, 
-        zero, zero, zero, one, zero, zero, zero, zero, 
-        zero, zero, zero, one, zero, zero, zero, zero, 
-        zero, zero, zero, one, zero, zero, zero, zero, 
-        zero, zero, zero, one, zero, zero, zero, zero, 
-        zero, zero, zero, one, zero, zero, zero, zero, 
-        zero, zero, zero, one, zero, zero, zero, zero
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero, 
+        val_zero, val_zero, val_zero, val_one, val_zero, val_zero, val_zero, val_zero
 	);
 	
 	signal kernel 	: kernel_array := (
-        zero, one, zero, 
-        zero, one, zero, 
-        zero, one, zero,
-		one -- bias
+        val_zero, val_one, val_zero, 
+        val_zero, val_one, val_zero, 
+        val_zero, val_one, val_zero,
+		val_one -- bias
 		);
 		
 	signal result : conv_array := (
@@ -125,14 +125,14 @@ ARCHITECTURE behavior OF convolution_tb IS
 	signal clk			   : std_logic := '0';
 	signal reset		   : std_logic := '1';
 	signal conv_en_in	   : std_logic := '0';
-	signal layer_nr        : Natural := 0;
-	signal weight_we	   : std_logic := '0';
-	signal weight_data     : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-    signal pixel_in        : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-	signal output_valid    : std_logic; 
-	signal pixel_out       : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal lyr_nmbr        : Natural := 0;
+	signal wt_we	   : std_logic := '0';
+	signal weight_data     : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := (others => '0');
+    signal pixel_in        : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART) := (others => '0');
+	signal out_valid    : std_logic; 
+	signal pixel_out       : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
 	signal conv_en_out     : std_logic;
-	signal bias_out        : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
+	signal bias_out        : sfixed(INT_WIDTH-1 downto -BITS_FRAC_PART);
 	
 	constant clk_period : time := 1 ns;
 	signal nof_outputs 	: Natural := 0;
@@ -143,11 +143,11 @@ BEGIN
 		clk => clk,
 		reset => reset,
 		conv_en => conv_en_in,
-		layer_nr => layer_nr,
-		weight_we => weight_we,
+		lyr_nmbr => lyr_nmbr,
+		wt_we => wt_we,
 		weight_data => weight_data,
 		pixel_in => pixel_in,
-		output_valid => output_valid,
+		out_valid => out_valid,
 		pixel_out => pixel_out,
 		conv_en_out => conv_en_out,
 		bias => bias_out
@@ -165,16 +165,16 @@ BEGIN
 	load_weights : process
 	begin
 		reset <= '0';
-		weight_we <= '0';
+		wt_we <= '0';
 		wait for clk_period;
 		reset <= '1';
-		weight_we <= '1';
+		wt_we <= '1';
 		for i in 0 to KERNEL_DIM*KERNEL_DIM loop
 			weight_data <= kernel(i);
 			wait for clk_period;
 		end loop;
 		
-		weight_we <= '0';
+		wt_we <= '0';
 		wait;
 		
 	end process;
@@ -200,7 +200,7 @@ BEGIN
 	begin
 		if rising_edge(clk) then
 			if (convs_tested < Nof_Convs) then
-				if (output_valid ='1') then
+				if (out_valid ='1') then
 					assert pixel_out = result(nof_outputs)
 						report "Output nr. " & Natural'image(nof_outputs) & ". Expected value: " &
 							to_string(result(nof_outputs)) & ". Actual value: " & to_string(pixel_out) & "."

@@ -1,107 +1,96 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
-
 library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 
-ENTITY average_pooler_tb IS
+ENTITY pooling_tb IS
 	generic (
         IMG_DIM : Natural := 6;
-        POOL_DIM : Natural:= 2;
-        INT_WIDTH : Natural := 8;
-        FRAC_WIDTH : Natural := 8
+        POOLING_DIM : Natural:= 2;
+        BITS_INT_PART : Natural := 8;
+        BITS_FRAC_PART : Natural := 8
 	);
-END average_pooler_tb;
+END pooling_tb;
  
-ARCHITECTURE behavior OF average_pooler_tb IS 
- 
-    -- Component Declaration for the Unit Under Test (UUT)
-	 
-    component average_pooler is
+ARCHITECTURE behavior OF pooling_tb IS 
+  
+    component pooling is
         generic (
             IMG_DIM : Natural := IMG_DIM;
-            POOL_DIM : Natural := POOL_DIM;
-            INT_WIDTH : Natural := INT_WIDTH;
-            FRAC_WIDTH : Natural := FRAC_WIDTH
+            POOLING_DIM : Natural := POOLING_DIM;
+            BITS_INT_PART : Natural := BITS_INT_PART;
+            BITS_FRAC_PART : Natural := BITS_FRAC_PART
         );
         Port ( 
             clk : in std_logic;
             reset : in std_logic;
-            conv_en : in std_logic;
-            layer_nr : in Natural;
-            weight_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            weight_we : in std_logic;
-            input_valid : in std_logic;
-            data_in : in sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            data_out : out sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-            output_valid : out std_logic
+            convol_en : in std_logic;
+            lyr_nmbr : in Natural;
+            wt_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            wt_we : in std_logic;
+            in_valid : in std_logic;
+            data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            out_valid : out std_logic
 
         );
     end component;
 
-
-    --Inputs
     signal clk : std_logic := '0';
     signal reset : std_logic := '0';
-    signal conv_en : std_logic := '0';
-    signal layer_nr : Natural := 1;
-    signal weight_in : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-    signal weight_we : std_logic := '0';
-    signal input_valid : std_logic := '0';
-    signal data_in : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := (others => '0');
-    
-    --Outputs
-    signal data_out : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-    signal output_valid : std_logic;
-    
-   -- Clock period definitions
+    signal convol_en : std_logic := '0';
+    signal lyr_nmbr : Natural := 1;
+    signal wt_in : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := (others => '0');
+    signal wt_we : std_logic := '0';
+    signal in_valid : std_logic := '0';
+    signal data_in : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := (others => '0');
+    signal data_out : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal out_valid : std_logic;
+  
     constant clk_period : time := 1 ns;
     
-    constant neg_one : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(-1, INT_WIDTH-1, -FRAC_WIDTH);
-    constant zero : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(0, INT_WIDTH-1, -FRAC_WIDTH);
-    constant one : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(1, INT_WIDTH-1, -FRAC_WIDTH);
-    constant two : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(2, INT_WIDTH-1, -FRAC_WIDTH);
-    constant three : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(3, INT_WIDTH-1, -FRAC_WIDTH); 
-    constant four : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(4, INT_WIDTH-1, -FRAC_WIDTH);
-    constant five : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(5, INT_WIDTH-1, -FRAC_WIDTH);
+    constant val_minus_one : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(-1, BITS_INT_PART-1, -BITS_FRAC_PART);
+    constant val_zero : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(0, BITS_INT_PART-1, -BITS_FRAC_PART);
+    constant val_one : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(1, BITS_INT_PART-1, -BITS_FRAC_PART);
+    constant val_two : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(2, BITS_INT_PART-1, -BITS_FRAC_PART);
+    constant val_three : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(3, BITS_INT_PART-1, -BITS_FRAC_PART); 
+    constant val_four : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(4, BITS_INT_PART-1, -BITS_FRAC_PART);
+    constant val_five : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(5, BITS_INT_PART-1, -BITS_FRAC_PART);
+	signal weight : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(0.25, BITS_INT_PART-1, -BITS_FRAC_PART);
 	
-	type sfixed_2d_array is array ((IMG_DIM*IMG_DIM)-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	type sfixed_pooled_array is array ((IMG_DIM/2)*(IMG_DIM/2)-1 downto 0) of sfixed(INT_WIDTH-1 downto -FRAC_WIDTH);
-	
-    signal weight : sfixed(INT_WIDTH-1 downto -FRAC_WIDTH) := to_sfixed(0.25, INT_WIDTH-1, -FRAC_WIDTH);
-	signal input_array : sfixed_2d_array := (
-        one, one,     two, two,     three, three,
-        one, one,     two, two,     three, three,
+	type arr is array ((IMG_DIM*IMG_DIM)-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal in_arr : arr := (
+            val_one, val_one,     val_two, val_two,     val_three, val_three,
+            val_one, val_one,     val_two, val_two,     val_three, val_three,          
+            val_four, val_four,   val_five, val_five,     val_one, val_two,
+            val_four, val_four,   val_five, val_five,     val_three, val_two,     
+            val_three, val_two,     val_one, val_one,     val_minus_one, val_minus_one,
+            val_three, val_four,    val_five, val_one,    val_minus_one, val_minus_one
+        );
         
-        four, four,   five, five,     one, two,
-        four, four,   five, five,     three, two,
-        
-        three, two,     one, one,     neg_one, neg_one,
-        three, four,    five, one,    neg_one, neg_one
-    );
-	
-	signal expected : sfixed_pooled_array := (
-	   one, two, three,
-	   four, five, two,
-	   three, two, neg_one
+	type pooling_arr is array ((IMG_DIM/2)*(IMG_DIM/2)-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal expected : pooling_arr := (
+	   val_one, val_two, val_three,
+	   val_four, val_five, val_two,
+	   val_three, val_two, val_minus_one
 	);
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   avg_pooler : average_pooler PORT MAP (
+   pooling_inst : pooling PORT MAP (
           clk => clk,
           reset => reset,
-          conv_en => conv_en,
-          layer_nr => layer_nr,
-          weight_in => weight_in,
-          weight_we => weight_we,
-          input_valid => input_valid,
+          convol_en => convol_en,
+          lyr_nmbr => lyr_nmbr,
+          wt_in => wt_in,
+          wt_we => wt_we,
+          in_valid => in_valid,
           data_in => data_in,
           data_out => data_out,
-          output_valid => output_valid
+          out_valid => out_valid
         );
 
    -- Clock process definitions
@@ -121,50 +110,50 @@ BEGIN
         wait for 10*clk_period;
 
         reset <= '1';
-        weight_we <= '1';
-        weight_in <= weight;
+        wt_we <= '1';
+        wt_in <= weight;
         wait for clk_period;
         
-        weight_we <= '0';
-        conv_en <= '1';
+        wt_we <= '0';
+        convol_en <= '1';
 
         for i in 0 to IMG_DIM-1 loop
-            input_valid <= '1';
+            in_valid <= '1';
             for j in 0 to IMG_DIM-1 loop
-                data_in <= input_array(((IMG_DIM*IMG_DIM)-1)-((i*(IMG_DIM))+j));
+                data_in <= in_arr(((IMG_DIM*IMG_DIM)-1)-((i*(IMG_DIM))+j));
                 wait for clk_period;        
             end loop;
-            input_valid <= '0';
+            in_valid <= '0';
             wait for 2*clk_period;
         end loop;
         
-        conv_en <= '0';
-        input_valid <= '0';
+        convol_en <= '0';
+        in_valid <= '0';
         
         wait;
     end process;
 
-	assert_result : process(clk)
-	   variable index : integer := 0;
-	   variable nof_cycles : integer := 0;
-	begin
-	   if rising_edge(clk) then
-	       nof_cycles := nof_cycles + 1;
-	       if output_valid = '1' and index < 9 then
-	           assert data_out = expected((IMG_DIM/2)*(IMG_DIM/2)-1-index)
-                   report "Test " & Natural'image(index) & ". Data out was "
-                   & to_string(data_out) & ". Expected " &
-                   to_string(expected((IMG_DIM/POOL_DIM)*(IMG_DIM/POOL_DIM)-1-index))
-                   severity error;
-               index := index + 1;
-	       elsif nof_cycles = 200 then
-	           if index /= 9 then
-	               assert 1 = 0
-	                   report "Too many or too few outputs"
-	                   severity error;
-               end if;
-	       end if;
-	   end if;
-	end process;
+--	assert_result : process(clk)
+--	   variable index : integer := 0;
+--	   variable nof_cycles : integer := 0;
+--	begin
+--	   if rising_edge(clk) then
+--	       nof_cycles := nof_cycles + 1;
+--	       if out_valid = '1' and index < 9 then
+--	           assert data_out = expected((IMG_DIM/2)*(IMG_DIM/2)-1-index)
+--                   report "Test " & Natural'image(index) & ". Data out was "
+--                   & to_string(data_out) & ". Expected " &
+--                   to_string(expected((IMG_DIM/POOLING_DIM)*(IMG_DIM/POOLING_DIM)-1-index))
+--                   severity error;
+--               index := index + 1;
+--	       elsif nof_cycles = 200 then
+--	           if index /= 9 then
+--	               assert 1 = 0
+--	                   report "Too many or too few outputs"
+--	                   severity error;
+--               end if;
+--	       end if;
+--	   end if;
+--	end process;
 
 END;

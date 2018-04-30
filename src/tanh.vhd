@@ -30,25 +30,16 @@ architecture Behavioral of tanh is
 	constant a : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(1.52, BITS_INT_PART-1, -BITS_FRAC_PART);
 	constant b : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(2.57, BITS_INT_PART-1, -BITS_FRAC_PART);
 	
-	
-	-- cx = cycle tanh_in.
 	signal tanh_in_absol : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	signal tanh_in_absol_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	--signal abs_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	
-	signal tanh_in_power_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	--signal pow_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	
+	signal tanh_in_absol_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);	
+	signal tanh_in_power_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);	
 	signal sign_c1 : std_logic;
 	signal sign_c2 : std_logic;
 	signal sign_c3 : std_logic;
-	
 	signal tanh_in_valid_c1 : std_logic;
 	signal tanh_in_valid_c2 : std_logic;
 	signal tanh_in_valid_c3 : std_logic;
-	
 	signal tanh_in_c3 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	
 	signal c2_1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	signal c2_2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	signal c2_3 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
@@ -56,7 +47,7 @@ architecture Behavioral of tanh is
 begin
     
     tanh_in_absol <= resize(abs(tanh_in), tanh_in_absol); -- Absolute value of tanh_in
-    
+  
     input_of_c1 : process(clk) 
     begin
         if rising_edge(clk) then

@@ -22,9 +22,7 @@ end buffer_cnn;
 architecture Behavioral of buffer_cnn is
 	signal buff_val : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 begin
-
 	data_out <= buff_val;
-	
 	data : process(clk)
 	begin
 		if rising_edge(clk) then
@@ -35,7 +33,5 @@ begin
 			end if;
 		end if;
 	end process;
-
-
 end Behavioral;
 

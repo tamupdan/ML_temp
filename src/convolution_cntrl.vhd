@@ -20,11 +20,7 @@ architecture Behavioral of convolution_contrl is
 	signal row 				: Natural range 0 to IMAGE_DIM := 0;
 	signal col 			: Natural range 0 to IMAGE_DIM := 0;
 	signal row_end 	: std_logic;
-	
 	signal buffer_convol_en	: std_logic;
-	
-	--signal valid_out_buff			: std_logic;
-
     signal current_dim : natural; 
 
 begin
@@ -33,10 +29,6 @@ begin
     begin
         if lyr_nmbr = 0 then
             current_dim <= IMAGE_DIM;
-        elsif lyr_nmbr = 1 then
-            current_dim <= (IMAGE_DIM-KERNEL_DIM+1)/2;
-        else
-            current_dim <= (((IMAGE_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM+1)/2;
         end if;
     end process;
 

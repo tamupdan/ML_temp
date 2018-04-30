@@ -6,7 +6,6 @@ use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 use ieee_proposed.float_pkg.all;
 
-
 entity fifo is
 	Generic (
 		constant BITS_INT_PART : natural := 16;
@@ -34,14 +33,14 @@ architecture Behavioral of fifo is
     
 begin
 
-    set_layer_depth : process(lyr_nmbr)
-    begin
-        if lyr_nmbr = 1 then
-            LAYER_DEPTH <= FIFO_DEPTH;
-        else
-            LAYER_DEPTH <= 25;
-        end if;
-    end process;
+--    set_layer_depth : process(lyr_nmbr)
+--    begin
+--        if lyr_nmbr = 1 then
+--            LAYER_DEPTH <= FIFO_DEPTH;
+--        else
+--            LAYER_DEPTH <= 25;
+--        end if;
+--    end process;
     
     out_value : process(looped, mem, ind)
     begin
