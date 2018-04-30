@@ -5,7 +5,7 @@ library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 
-entity sfixed_buffer is
+entity buffer_cnn is
 	generic (
 		BITS_INT_PART 	: Natural := 8;
 		BITS_FRAC_PART 	: Natural := 8
@@ -17,9 +17,9 @@ entity sfixed_buffer is
         data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
         data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
-end sfixed_buffer;
+end buffer_cnn;
 
-architecture Behavioral of sfixed_buffer is
+architecture Behavioral of buffer_cnn is
 	signal buff_val : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 begin
 

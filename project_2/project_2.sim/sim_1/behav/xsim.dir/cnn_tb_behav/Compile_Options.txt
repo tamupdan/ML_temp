@@ -1,0 +1,1 @@
+-wto "7ab88964e4744ce397f08614def62b24" --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "cnn_tb_behav" "xil_defaultlib.cnn_tb" -log "elaborate.log" 

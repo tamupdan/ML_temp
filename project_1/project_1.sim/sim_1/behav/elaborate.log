@@ -1,8 +1,9 @@
 Vivado Simulator 2015.2
 Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
-Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto db17c739775247b4a40aec0d76575d4a --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot conv_layer_tb_wo_sig_behav xil_defaultlib.conv_layer_tb_wo_sig -log elaborate.log 
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 720b0304ed4243a884da9a7329c398cd --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-122] convolution_contrl1 remains a black-box since it has no binding entity [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:97]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -30,13 +31,12 @@ Compiling package ieee_proposed.float_pkg
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
-Compiling architecture behavioral of entity xil_defaultlib.sfixed_buffer [\sfixed_buffer(8,8)\]
-Compiling architecture behavioral of entity xil_defaultlib.sfixed_shift_registers [\sfixed_shift_registers(5,8,8)\]
-Compiling architecture behavioral of entity xil_defaultlib.conv_controller [\conv_controller(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.shift_register [\shift_register(5,8,8)\]
 Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
-Compiling architecture behavioral of entity xil_defaultlib.sfixed_fifo [\sfixed_fifo(8,8,1)\]
-Compiling architecture behavioral of entity xil_defaultlib.tan_h [\tan_h(8,8)\]
-Compiling architecture behavioral of entity xil_defaultlib.average_pooler [\average_pooler(6,3,2,8,8)\]
-Compiling architecture behavioral of entity xil_defaultlib.convolution_layer [\convolution_layer(8,3,2,8,8)\]
-Compiling architecture behavior of entity xil_defaultlib.conv_layer_tb_wo_sig
-Built simulation snapshot conv_layer_tb_wo_sig_behav
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav

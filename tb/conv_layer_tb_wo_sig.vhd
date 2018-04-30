@@ -17,7 +17,7 @@ END cnn_tb;
 
 ARCHITECTURE behavior OF cnn_tb IS 
 
-	component convolution_layer is
+	component cnn is
 		generic (
 			IMG_DIM 	: Natural := IMG_DIM;
 			KERNEL_DIM 	  : Natural := KERNEL_DIM;
@@ -82,7 +82,7 @@ ARCHITECTURE behavior OF cnn_tb IS
 	);
        
 begin
-	conv_layer : convolution_layer port map ( 
+	conv_layer : cnn port map ( 
 		clk => clk,
 		reset	=> reset,
 		convol_en	=> convol_en,

@@ -6,7 +6,7 @@ use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 use ieee_proposed.float_pkg.all;
 
-entity convolution_layer is
+entity cnn is
 	generic (
 		IMG_DIM 		    : Natural := 8;
 		KERNEL_DIM 		    : Natural := 3;
@@ -30,9 +30,9 @@ entity convolution_layer is
 		pxl_tanh_pool        	: inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 		pxl_tanh_out        	: inout sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
-end convolution_layer;
+end cnn;
 
-architecture Behavioral of convolution_layer is
+architecture Behavioral of cnn is
 	
 	component convolution
 		generic 	(
@@ -56,7 +56,7 @@ architecture Behavioral of convolution_layer is
 		);
 	end component;
 	
-	component average_pooler
+	component pooling
         generic (
             IMG_DIM         : Natural := IMG_DIM-KERNEL_DIM+1;
             KERNEL_DIM      : Natural := KERNEL_DIM;
@@ -80,7 +80,7 @@ architecture Behavioral of convolution_layer is
         );
 	end component;
 	
-	component sfixed_fifo is
+	component fifo is
 		generic (
 			BITS_INT_PART 	: Natural := BITS_INT_PART;
 			BITS_FRAC_PART 	: Natural := BITS_FRAC_PART;
@@ -96,7 +96,7 @@ architecture Behavioral of convolution_layer is
 		);
 	end component;
 	
-	component tan_h is
+	component tanh is
 		Port (
             clk 	     : in std_logic;
 			in_valid  : in std_logic;
@@ -156,7 +156,7 @@ architecture Behavioral of convolution_layer is
     
 begin
 
-	conv : convolution port map (
+	convolution_inst : convolution port map (
 		clk				=> clk,
 		reset			=> reset,
 		convol_en 		=> convol_en,
@@ -182,7 +182,7 @@ begin
     
     buffer_we <= layer1 and out_vld_con_mux;
     
-    intermediate_buffer : sfixed_fifo port map (
+    fifo_inst : fifo port map (
         clk => clk,
         reset => reset,
         write_en => buffer_we,
@@ -218,7 +218,7 @@ begin
 	   end if;
 	end process;
 	
-    activation_function : tan_h port map (
+    tanh_inst_1 : tanh port map (
 	    clk => clk,
 	    in_valid => valid_bias_tanh,
         tanh_in => pxl_bias_tanh(BITS_INT_PART-1 downto -BITS_FRAC_PART),
@@ -227,7 +227,7 @@ begin
 	);
 
 	
-	avg_pooler : average_pooler port map ( 
+	pooling_inst : pooling port map ( 
 		clk 			=> clk,
         reset           => reset,
         convol_en			=> convol_en,
@@ -259,7 +259,7 @@ begin
     end process;
 
     
-    activation_function2 : tan_h port map (
+    tanh_inst_2 : tanh port map (
 	    clk => clk,
 	    in_valid => valid_bias2_tanh2,
         tanh_in => pxl_bias2_tanh2(BITS_INT_PART-1 downto -BITS_FRAC_PART),

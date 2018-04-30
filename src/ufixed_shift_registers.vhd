@@ -4,7 +4,7 @@ library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 
-entity sfixed_shift_registers is
+entity q_reg is
     generic (
         STORE_PXL_REG : Natural := 8;
         BITS_INT_PART : Natural := 8;
@@ -20,11 +20,11 @@ entity sfixed_shift_registers is
     );
     
 
-end sfixed_shift_registers;
+end q_reg;
 
-architecture Behavioral of sfixed_shift_registers is
+architecture Behavioral of q_reg is
 
-    component sfixed_buffer
+    component buffer_cnn
         generic (
             BITS_INT_PART : Natural := BITS_INT_PART;
             BITS_FRAC_PART : Natural := BITS_FRAC_PART
@@ -60,7 +60,7 @@ begin
     
         first_reg: if reg = 0 generate
         begin
-            shift_reg : sfixed_buffer port map (
+            shift_reg : buffer_cnn port map (
                 clk => clk,
                 reset => reset,
                 we => we,
@@ -71,7 +71,7 @@ begin
         
         other_reg: if reg > 0 generate
         begin
-            shift_reg : sfixed_buffer port map (
+            shift_reg : buffer_cnn port map (
                 clk => clk,
                 reset => reset,
                 we => we,

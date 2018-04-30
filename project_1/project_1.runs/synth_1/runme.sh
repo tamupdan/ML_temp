@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log conv_layer_tb_wo_sig.vds -m64 -mode batch -messageDb vivado.pb -notrace -source conv_layer_tb_wo_sig.tcl
+EAStep vivado -log cnn_tb.vds -m64 -mode batch -messageDb vivado.pb -notrace -source cnn_tb.tcl

@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1157-1" LaunchTime="1525048136">
-  <File Type="VDS-TIMING-PB" Name="conv_layer_tb_wo_sig_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="conv_layer_tb_wo_sig_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="conv_layer_tb_wo_sig.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="conv_layer_tb_wo_sig_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="conv_layer_tb_wo_sig_utilization_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1157-1" LaunchTime="1525119463">
+  <File Type="VDS-TIMING-PB" Name="cnn_tb_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="cnn_tb_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="cnn_tb.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="cnn_tb_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="cnn_tb_utilization_synth.rpt"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
-  <File Type="RDS-RDS" Name="conv_layer_tb_wo_sig.vds"/>
+  <File Type="RDS-RDS" Name="cnn_tb.vds"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
-  <File Type="PA-TCL" Name="conv_layer_tb_wo_sig.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="conv_layer_tb_wo_sig_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="cnn_tb.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="cnn_tb_drc_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/ufixed_buffer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/conv_controller.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -31,12 +37,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/conv_controller.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../src/sfixed_fifo.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -49,13 +49,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/convolution.vhd">
+    <File Path="$PPRDIR/../src/average_pooler.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/average_pooler.vhd">
+    <File Path="$PPRDIR/../src/convolution.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -75,7 +75,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="conv_layer_tb_wo_sig"/>
+      <Option Name="TopModule" Val="cnn_tb"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -86,7 +86,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

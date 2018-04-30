@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log conv_layer_tb_wo_sig.vds -m64 -mode batch -messageDb vivado.pb -notrace -source conv_layer_tb_wo_sig.tcl
+    with args -log cnn_tb.vds -m64 -mode batch -messageDb vivado.pb -notrace -source cnn_tb.tcl
 
 
 ****** Vivado v2015.2 (64-bit)
@@ -8,16 +8,16 @@
   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
-source conv_layer_tb_wo_sig.tcl -notrace
-Command: synth_design -top conv_layer_tb_wo_sig -part xc7vx485tffg1157-1
+source cnn_tb.tcl -notrace
+Command: synth_design -top cnn_tb -part xc7vx485tffg1157-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
-INFO: [Common 17-1223] The version limit for your license is '2017.12' and will expire in -119 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2017.12' and will expire in -120 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1070.484 ; gain = 162.520 ; free physical = 5206 ; free virtual = 74783
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1070.480 ; gain = 162.520 ; free physical = 52665 ; free virtual = 107329
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'conv_layer_tb_wo_sig' [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'cnn_tb' [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:18]
 	Parameter IMG_DIM bound to: 8 - type: integer 
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
 	Parameter POOLING_DIM bound to: 2 - type: integer 
@@ -28,8 +28,8 @@ INFO: [Synth 8-638] synthesizing module 'conv_layer_tb_wo_sig' [/home/grads/p/pr
 	Parameter POOLING_DIM bound to: 2 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'convolution_layer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:9' bound to instance 'conv_layer' of component 'convolution_layer' [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:114]
-INFO: [Synth 8-638] synthesizing module 'convolution_layer' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:35]
+INFO: [Synth 8-3491] module 'cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:9' bound to instance 'conv_layer' of component 'cnn' [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'cnn' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:35]
 	Parameter IMG_DIM bound to: 8 - type: integer 
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
 	Parameter POOLING_DIM bound to: 2 - type: integer 
@@ -39,7 +39,7 @@ INFO: [Synth 8-638] synthesizing module 'convolution_layer' [/home/grads/p/prate
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'convolution' declared at '/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:10' bound to instance 'conv' of component 'convolution' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:159]
+INFO: [Synth 8-3491] module 'convolution' declared at '/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:10' bound to instance 'convolution_inst' of component 'convolution' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:159]
 INFO: [Synth 8-638] synthesizing module 'convolution' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:33]
 	Parameter IMG_DIM bound to: 8 - type: integer 
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
@@ -47,14 +47,14 @@ INFO: [Synth 8-638] synthesizing module 'convolution' [/home/grads/p/prateek_24p
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
 	Parameter IMAGE_DIM bound to: 8 - type: integer 
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'conv_controller' declared at '/home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd:5' bound to instance 'controller' of component 'conv_controller' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:98]
-INFO: [Synth 8-638] synthesizing module 'conv_controller' [/home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd:18]
+INFO: [Synth 8-3491] module 'convolution_contrl' declared at '/home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd:5' bound to instance 'controller' of component 'convolution_contrl' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'convolution_contrl' [/home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd:18]
 	Parameter IMAGE_DIM bound to: 8 - type: integer 
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'conv_controller' (1#1) [/home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'convolution_contrl' (1#1) [/home/grads/p/prateek_24prasad/ml_new/src/conv_controller.vhd:18]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac1' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:111]
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac1' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:110]
 INFO: [Synth 8-638] synthesizing module 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:25]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
@@ -66,83 +66,81 @@ WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [
 INFO: [Synth 8-256] done synthesizing module 'mac' (2#1) [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:25]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac3' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:139]
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac3' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:138]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac4' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:153]
-	Parameter NOF_REGS bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac4' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:152]
+	Parameter STORE_PXL_REG bound to: 5 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_shift_registers' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:38' bound to instance 'sr' of component 'sfixed_shift_registers' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:167]
-INFO: [Synth 8-638] synthesizing module 'sfixed_shift_registers' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:56]
-	Parameter NOF_REGS bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'shift_register' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:7' bound to instance 'sr' of component 'shift_register' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'shift_register' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:25]
+	Parameter STORE_PXL_REG bound to: 5 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_buffer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:9' bound to instance 'shift_reg' of component 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:94]
-INFO: [Synth 8-638] synthesizing module 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:23]
+INFO: [Synth 8-3491] module 'buffer_cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:8' bound to instance 'shift_reg' of component 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:22]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sfixed_buffer' (3#1) [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'buffer_cnn' (3#1) [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:22]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_buffer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:9' bound to instance 'shift_reg' of component 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:105]
+INFO: [Synth 8-3491] module 'buffer_cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:8' bound to instance 'shift_reg' of component 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:74]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_buffer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:9' bound to instance 'shift_reg' of component 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:105]
+INFO: [Synth 8-3491] module 'buffer_cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:8' bound to instance 'shift_reg' of component 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:74]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_buffer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:9' bound to instance 'shift_reg' of component 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:105]
+INFO: [Synth 8-3491] module 'buffer_cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:8' bound to instance 'shift_reg' of component 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:74]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_buffer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:9' bound to instance 'shift_reg' of component 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:105]
-INFO: [Synth 8-256] done synthesizing module 'sfixed_shift_registers' (4#1) [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:56]
+INFO: [Synth 8-3491] module 'buffer_cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:8' bound to instance 'shift_reg' of component 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'shift_register' (4#1) [/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:25]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac1' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:125]
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac1' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:124]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac3' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:139]
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac3' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:138]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac4' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:153]
-	Parameter NOF_REGS bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac4' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:152]
+	Parameter STORE_PXL_REG bound to: 5 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_shift_registers' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:38' bound to instance 'sr' of component 'sfixed_shift_registers' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:167]
+INFO: [Synth 8-3491] module 'shift_register' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_shift_registers.vhd:7' bound to instance 'sr' of component 'shift_register' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:166]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac1' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:125]
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac1' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:124]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac3' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:139]
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac3' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:138]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac4' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:153]
+INFO: [Synth 8-3491] module 'mac' declared at '/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:8' bound to instance 'mac4' of component 'mac' [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:152]
 INFO: [Synth 8-256] done synthesizing module 'convolution' (5#1) [/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd:33]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
 	Parameter FIFO_DEPTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_fifo' declared at '/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:11' bound to instance 'intermediate_buffer' of component 'sfixed_fifo' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:185]
-INFO: [Synth 8-638] synthesizing module 'sfixed_fifo' [/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:27]
+INFO: [Synth 8-3491] module 'fifo' declared at '/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:10' bound to instance 'fifo_inst' of component 'fifo' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'fifo' [/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:26]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
 	Parameter FIFO_DEPTH bound to: 1 - type: integer 
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
-WARNING: [Synth 8-3512] assigned value '1' out of range [/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:73]
-INFO: [Synth 8-256] done synthesizing module 'sfixed_fifo' (6#1) [/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:27]
+WARNING: [Synth 8-3512] assigned value '1' out of range [/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'fifo' (6#1) [/home/grads/p/prateek_24prasad/ml_new/src/sfixed_fifo.vhd:26]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
-INFO: [Synth 8-3491] module 'tan_h' declared at '/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:8' bound to instance 'activation_function' of component 'tan_h' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:221]
-INFO: [Synth 8-638] synthesizing module 'tan_h' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:24]
+INFO: [Synth 8-3491] module 'tanh' declared at '/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:8' bound to instance 'tanh_inst_1' of component 'tanh' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:221]
+INFO: [Synth 8-638] synthesizing module 'tanh' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:22]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-	Parameter CONST_INT_WIDTH bound to: 8 - type: integer 
-	Parameter CONST_FRAC_WIDTH bound to: 8 - type: integer 
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
@@ -179,14 +177,14 @@ WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
-INFO: [Synth 8-256] done synthesizing module 'tan_h' (7#1) [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'tanh' (7#1) [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:22]
 	Parameter IMG_DIM bound to: 6 - type: integer 
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
 	Parameter POOLING_DIM bound to: 2 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'average_pooler' declared at '/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:9' bound to instance 'avg_pooler' of component 'average_pooler' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:230]
-INFO: [Synth 8-638] synthesizing module 'average_pooler' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:32]
+INFO: [Synth 8-3491] module 'pooling' declared at '/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:8' bound to instance 'pooling_inst' of component 'pooling' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:230]
+INFO: [Synth 8-638] synthesizing module 'pooling' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:31]
 	Parameter IMG_DIM bound to: 6 - type: integer 
 	Parameter KERNEL_DIM bound to: 3 - type: integer 
 	Parameter POOLING_DIM bound to: 2 - type: integer 
@@ -194,10 +192,10 @@ INFO: [Synth 8-638] synthesizing module 'average_pooler' [/home/grads/p/prateek_
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_buffer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:9' bound to instance 'uf_buffer' of component 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:84]
+INFO: [Synth 8-3491] module 'buffer_cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:8' bound to instance 'buffer_cnn_inst1' of component 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:83]
 	Parameter BITS_INT_PART bound to: 8 - type: integer 
 	Parameter BITS_FRAC_PART bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'sfixed_buffer' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:9' bound to instance 'uf_buffer' of component 'sfixed_buffer' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:95]
+INFO: [Synth 8-3491] module 'buffer_cnn' declared at '/home/grads/p/prateek_24prasad/ml_new/src/ufixed_buffer.vhd:8' bound to instance 'buffer_cnn_inst2' of component 'buffer_cnn' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:94]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
@@ -207,14 +205,14 @@ WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
-INFO: [Synth 8-256] done synthesizing module 'average_pooler' (8#1) [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'pooling' (8#1) [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:31]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: assertion statement [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:1495]
-INFO: [Synth 8-3491] module 'tan_h' declared at '/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:8' bound to instance 'activation_function2' of component 'tan_h' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:262]
+INFO: [Synth 8-3491] module 'tanh' declared at '/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:8' bound to instance 'tanh_inst_2' of component 'tanh' [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:262]
 WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:4547]
 WARNING: [Synth 8-151] case item 1'b1 is unreachable [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:4547]
 INFO: [Synth 8-226] default block is never used [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:4547]
@@ -263,33 +261,33 @@ INFO: [Synth 8-226] default block is never used [/home/grads/p/prateek_24prasad/
 WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:4547]
 WARNING: [Synth 8-151] case item 1'b1 is unreachable [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:4547]
 INFO: [Synth 8-226] default block is never used [/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.runs/synth_1/vhdl_packages/1993/src/fixed_pkg_c.vhd:4547]
-INFO: [Synth 8-256] done synthesizing module 'convolution_layer' (9#1) [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:35]
-WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:132]
-WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:140]
-WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:150]
-INFO: [Synth 8-256] done synthesizing module 'conv_layer_tb_wo_sig' (10#1) [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'cnn' (9#1) [/home/grads/p/prateek_24prasad/ml_new/src/convolution_layer.vhd:35]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:103]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:110]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:121]
+INFO: [Synth 8-256] done synthesizing module 'cnn_tb' (10#1) [/home/grads/p/prateek_24prasad/ml_new/tb/conv_layer_tb_wo_sig.vhd:18]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1112.156 ; gain = 204.191 ; free physical = 5363 ; free virtual = 74951
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1113.152 ; gain = 205.191 ; free physical = 52579 ; free virtual = 107248
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1112.156 ; gain = 204.191 ; free physical = 5357 ; free virtual = 74945
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1113.152 ; gain = 205.191 ; free physical = 52578 ; free virtual = 107247
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7vx485tffg1157-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1120.152 ; gain = 212.188 ; free physical = 5358 ; free virtual = 74946
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1121.148 ; gain = 213.188 ; free physical = 52578 ; free virtual = 107247
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "current_dim" won't be mapped to RAM because address size (31) is larger than maximum supported(18)
+INFO: [Synth 8-5544] ROM "row_end" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
-INFO: [Synth 8-5545] ROM "curr_img_dim" won't be mapped to RAM because address size (31) is larger than maximum supported(18)
-INFO: [Synth 8-5544] ROM "reached_valid_row" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5545] ROM "looped" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "LAYER_DEPTH" won't be mapped to RAM because address size (31) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "write_buffers" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "wt_buff" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "tanh_in" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1171.348 ; gain = 263.383 ; free physical = 5201 ; free virtual = 74803
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1156.195 ; gain = 248.234 ; free physical = 52534 ; free virtual = 107206
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -333,7 +331,7 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module conv_controller 
+Module convolution_contrl 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      4 Bit       Adders := 2     
@@ -353,7 +351,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 8     
 	   2 Input      1 Bit        Muxes := 2     
-Module sfixed_buffer 
+Module buffer_cnn 
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
@@ -362,7 +360,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	               16 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
-Module sfixed_fifo 
+Module fifo 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
@@ -373,7 +371,7 @@ Detailed RTL Component Info :
 	               16 Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 6     
-Module tan_h 
+Module tanh 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     18 Bit       Adders := 1     
@@ -388,7 +386,7 @@ Detailed RTL Component Info :
 	   3 Input     16 Bit        Muxes := 4     
 	   3 Input      9 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 6     
-Module average_pooler 
+Module pooling 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
@@ -404,7 +402,7 @@ Detailed RTL Component Info :
 	   3 Input     16 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 11    
-Module convolution_layer 
+Module cnn 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     17 Bit       Adders := 3     
@@ -426,62 +424,62 @@ BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1348.598 ; gain = 440.633 ; free physical = 4945 ; free virtual = 74723
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1347.719 ; gain = 439.758 ; free physical = 52737 ; free virtual = 107399
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5545] ROM "curr_img_dim" won't be mapped to RAM because address size (31) is larger than maximum supported(18)
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-5545] ROM "current_dim" won't be mapped to RAM because address size (31) is larger than maximum supported(18)
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'weight_reg_reg[7:-8]' into 'weight_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
+INFO: [Synth 8-4471] merging register 'wt_reg_reg[7:-8]' into 'wt_reg_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd:33]
 DSP Report: Generating DSP arg, operation Mode is: C+A2*B.
-DSP Report: register weight_reg_reg is absorbed into DSP arg.
+DSP Report: register wt_reg_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 INFO: [Synth 8-5545] ROM "LAYER_DEPTH" won't be mapped to RAM because address size (31) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "looped" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-4471] merging register 'abs_x_c1_reg[7:-8]' into 'abs_x_c1_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:65]
-INFO: [Synth 8-4471] merging register 'abs_x_c1_reg[7:-8]' into 'abs_x_c1_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:65]
+INFO: [Synth 8-4471] merging register 'tanh_in_absol_c1_reg[7:-8]' into 'tanh_in_absol_c1_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:63]
+INFO: [Synth 8-4471] merging register 'tanh_in_absol_c1_reg[7:-8]' into 'tanh_in_absol_c1_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:63]
 DSP Report: Generating DSP arg, operation Mode is: A2*(B:0x6d).
-DSP Report: register abs_x_c1_reg is absorbed into DSP arg.
+DSP Report: register tanh_in_absol_c1_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: Generating DSP arg, operation Mode is: A*B.
 DSP Report: operator arg is absorbed into DSP arg.
@@ -489,17 +487,17 @@ DSP Report: Generating DSP arg, operation Mode is: A*(B:0x3ffea).
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: Generating DSP arg, operation Mode is: A*(B:0x3ffba).
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'pool_sum_reg[7:-8]' into 'pool_sum_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:88]
-INFO: [Synth 8-4471] merging register 'weight_reg[7:-8]' into 'weight_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:179]
+INFO: [Synth 8-4471] merging register 'pooling_sum_reg[7:-8]' into 'pooling_sum_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:87]
+INFO: [Synth 8-4471] merging register 'weight_reg[7:-8]' into 'weight_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/average_pooler.vhd:178]
 INFO: [Synth 8-5545] ROM "tanh_in" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "write_buffers" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "wt_buff" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 DSP Report: Generating DSP arg, operation Mode is: A2*B2.
-DSP Report: register pool_sum_reg is absorbed into DSP arg.
+DSP Report: register pooling_sum_reg is absorbed into DSP arg.
 DSP Report: register weight_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
-INFO: [Synth 8-4471] merging register 'abs_x_c1_reg[7:-8]' into 'abs_x_c1_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:65]
+INFO: [Synth 8-4471] merging register 'tanh_in_absol_c1_reg[7:-8]' into 'tanh_in_absol_c1_reg[7:-8]' [/home/grads/p/prateek_24prasad/ml_new/src/tan_h.vhd:63]
 DSP Report: Generating DSP arg, operation Mode is: A2*(B:0x6d).
-DSP Report: register abs_x_c1_reg is absorbed into DSP arg.
+DSP Report: register tanh_in_absol_c1_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 DSP Report: Generating DSP arg, operation Mode is: A*B.
 DSP Report: operator arg is absorbed into DSP arg.
@@ -513,9 +511,9 @@ DSP Report: register bias2_reg is absorbed into DSP arg.
 DSP Report: register scaling_reg is absorbed into DSP arg.
 DSP Report: operator arg is absorbed into DSP arg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4653 ; free virtual = 74450
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52795 ; free virtual = 107463
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4653 ; free virtual = 74450
+Finished Parallel Reinference  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52795 ; free virtual = 107463
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -527,164 +525,164 @@ Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: 
-+---------------------+------------+-----------+----------------------+--------------+-----------------------------------------------------------+
-|Module Name          | RTL Object | Inference | Size (Depth x Width) | Primitives   | Hierarchical Name                                         | 
-+---------------------+------------+-----------+----------------------+--------------+-----------------------------------------------------------+
-|conv_layer_tb_wo_sig | Memory_reg | Implied   | 2 x 16               | RAM32M x 3   | conv_layer_tb_wo_sig/convolution_layer/sfixed_fifo/ram__1 | 
-+---------------------+------------+-----------+----------------------+--------------+-----------------------------------------------------------+
++------------+------------+-----------+----------------------+--------------+------------------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | Hierarchical Name      | 
++------------+------------+-----------+----------------------+--------------+------------------------+
+|cnn_tb      | mem_reg    | Implied   | 2 x 16               | RAM32M x 3   | cnn_tb/cnn/fifo/ram__1 | 
++------------+------------+-----------+----------------------+--------------+------------------------+
 
 Note: The table shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
 DSP:
-+------------------+---------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name       | DSP Mapping   | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------------+---------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|mac               | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|tan_h             | A2*(B:0x6d)   | No           | 16     | 8      | 48     | 25     | 24     | 1    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tan_h             | A*B           | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tan_h             | A*(B:0x3ffea) | No           | 16     | 6      | 48     | 25     | 22     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tan_h             | A*(B:0x3ffba) | No           | 16     | 8      | 48     | 25     | 24     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|average_pooler    | A2*B2         | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
-|tan_h             | A2*(B:0x6d)   | No           | 16     | 8      | 48     | 25     | 24     | 1    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tan_h             | A*B           | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tan_h             | A*(B:0x3ffea) | No           | 16     | 6      | 48     | 25     | 22     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tan_h             | A*(B:0x3ffba) | No           | 16     | 8      | 48     | 25     | 24     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|convolution_layer | A''*B         | No           | 16     | 16     | 48     | 25     | 32     | 2    | 0    | 1    | 1    | 1     | 0    | 0    | 
-+------------------+---------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+---------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping   | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|mac         | C+A2*B        | No           | 16     | 16     | 24     | 25     | 33     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|tanh        | A2*(B:0x6d)   | No           | 16     | 8      | 48     | 25     | 24     | 1    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B           | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*(B:0x3ffea) | No           | 16     | 6      | 48     | 25     | 22     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*(B:0x3ffba) | No           | 16     | 8      | 48     | 25     | 24     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|pooling     | A2*B2         | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A2*(B:0x6d)   | No           | 16     | 8      | 48     | 25     | 24     | 1    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B           | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*(B:0x3ffea) | No           | 16     | 6      | 48     | 25     | 22     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*(B:0x3ffba) | No           | 16     | 8      | 48     | 25     | 24     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|cnn         | A''*B         | No           | 16     | 16     | 48     | 25     | 32     | 2    | 0    | 1    | 1    | 1     | 0    | 0    | 
++------------+---------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 No constraint files found.
-WARNING: [Synth 8-3332] Sequential element (\controller/column_num_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/column_num_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/column_num_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/column_num_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/row_num_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/row_num_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/row_num_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/row_num_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/reached_valid_row_reg ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\controller/conv_en_buf_reg ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/col_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/col_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/col_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/col_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/row_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/row_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/row_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/row_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/row_end_reg ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\controller/buffer_convol_en_reg ) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (\controller/out_valid_reg ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/weight_reg_reg[-8] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[0].mac_first_leftmost.mac1/result_reg[-8] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/weight_reg_reg[-8] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[1].mac_others.mac3/result_reg[-8] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/weight_reg_reg[-8] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[7] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[6] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[5] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[4] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[3] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[2] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[1] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[0] ) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (\gen_mac_rows[0].gen_mac_columns[2].mac_rightmost.mac4/result_reg[-1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/wt_reg_reg[-8] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[0].mac_top_left.mac1/result_reg[-8] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/wt_reg_reg[-8] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[1].mac_other.mac3/result_reg[-8] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/wt_reg_reg[-8] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[7] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[6] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[5] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[4] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[3] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[2] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[1] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[0] ) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (\mac_row[0].mac_col[2].mac_last.mac4/result_reg[-1] ) is unused and will be removed from module convolution.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4587 ; free virtual = 74386
+Finished Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52792 ; free virtual = 107463
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4587 ; free virtual = 74386
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52792 ; free virtual = 107463
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4588 ; free virtual = 74387
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52792 ; free virtual = 107463
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4586 ; free virtual = 74386
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52792 ; free virtual = 107463
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -696,7 +694,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4585 ; free virtual = 74384
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52792 ; free virtual = 107463
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -714,7 +712,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4486 ; free virtual = 74288
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52787 ; free virtual = 107461
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -727,7 +725,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4485 ; free virtual = 74287
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52787 ; free virtual = 107461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -739,13 +737,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4485 ; free virtual = 74287
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52787 ; free virtual = 107461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4485 ; free virtual = 74287
+Start Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52787 ; free virtual = 107461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4485 ; free virtual = 74287
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52787 ; free virtual = 107461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -770,11 +768,11 @@ Report Instance Areas:
 |1     |top      |       |     0|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4473 ; free virtual = 74277
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52787 ; free virtual = 107461
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 955 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1356.605 ; gain = 332.121 ; free physical = 4471 ; free virtual = 74275
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 1356.605 ; gain = 448.641 ; free physical = 4471 ; free virtual = 74275
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1355.727 ; gain = 331.246 ; free physical = 52787 ; free virtual = 107461
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1355.727 ; gain = 447.766 ; free physical = 52787 ; free virtual = 107461
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -784,6 +782,6 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 96 Infos, 198 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1423.605 ; gain = 407.117 ; free physical = 4767 ; free virtual = 74609
-report_utilization: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.30 . Memory (MB): peak = 1455.629 ; gain = 0.000 ; free physical = 4736 ; free virtual = 74581
-INFO: [Common 17-206] Exiting Vivado at Sun Apr 29 19:29:48 2018...
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1422.727 ; gain = 406.242 ; free physical = 52627 ; free virtual = 107315
+report_utilization: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.26 . Memory (MB): peak = 1454.750 ; gain = 0.000 ; free physical = 52635 ; free virtual = 107325
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 30 15:18:17 2018...

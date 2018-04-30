@@ -5,7 +5,7 @@ library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 
-entity tan_h is
+entity tanh is
     generic (
         BITS_INT_PART : Natural := 8;
         BITS_FRAC_PART : Natural := 8
@@ -17,9 +17,9 @@ entity tan_h is
 		out_valid : out std_logic;
 		tanh_out : out sfixed (BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
-end tan_h;
+end tanh;
  
-architecture Behavioral of tan_h is
+architecture Behavioral of tanh is
 
 	constant m1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(-0.54324*0.5, BITS_INT_PART-1, -BITS_FRAC_PART); 
 	constant m2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(-0.16957*0.5, BITS_INT_PART-1, -BITS_FRAC_PART);

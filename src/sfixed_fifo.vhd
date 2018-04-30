@@ -7,7 +7,7 @@ use ieee_proposed.fixed_pkg.all;
 use ieee_proposed.float_pkg.all;
 
 
-entity sfixed_fifo is
+entity fifo is
 	Generic (
 		constant BITS_INT_PART : natural := 16;
         constant BITS_FRAC_PART : natural := 16;
@@ -21,9 +21,9 @@ entity sfixed_fifo is
 		data_in	 : in  sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 		data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
-end sfixed_fifo;
+end fifo;
 
-architecture Behavioral of sfixed_fifo is
+architecture Behavioral of fifo is
 
     type fifo is array (0 to FIFO_DEPTH - 1) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal mem : fifo;

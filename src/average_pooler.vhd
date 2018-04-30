@@ -5,7 +5,7 @@ library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 
-entity average_pooler is
+entity pooling is
 	generic (
 	    IMG_DIM : Natural := 6;
         KERNEL_DIM : Natural := 3;
@@ -26,11 +26,11 @@ entity average_pooler is
 		out_valid : out std_logic;
 		wt_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 	);
-end average_pooler;
+end pooling;
 
-architecture Behavioral of average_pooler is
+architecture Behavioral of pooling is
 
-	component sfixed_buffer is
+	component buffer_cnn is
 		generic (
 			BITS_INT_PART 	: positive := BITS_INT_PART;
 			BITS_FRAC_PART 	: positive := BITS_FRAC_PART
@@ -80,7 +80,7 @@ begin
 	begin
 		first_buffer : if i = 0 generate
 		begin
-			uf_buffer : sfixed_buffer port map (
+			buffer_cnn_inst1 : buffer_cnn port map (
 				clk => clk,
 				reset => buff_rst,
 				we => wt_buff,
@@ -91,7 +91,7 @@ begin
 		
 		other_buffers : if i > 0 generate
 		begin
-			uf_buffer : sfixed_buffer port map (
+			buffer_cnn_inst2 : buffer_cnn port map (
 				clk => clk,
 				reset => buff_rst,
 				we => wt_buff,

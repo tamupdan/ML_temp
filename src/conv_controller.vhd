@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity conv_controller is
+entity convolution_contrl is
 	generic (	
 		IMAGE_DIM 	: Natural := 3;
 		KERNEL_DIM 	: Natural := 2
@@ -13,9 +13,9 @@ entity conv_controller is
         lyr_nmbr            : in Natural;
 		out_valid 	    : out std_logic
 	);
-end conv_controller;
+end convolution_contrl;
 
-architecture Behavioral of conv_controller is
+architecture Behavioral of convolution_contrl is
 
 	signal row 				: Natural range 0 to IMAGE_DIM := 0;
 	signal col 			: Natural range 0 to IMAGE_DIM := 0;

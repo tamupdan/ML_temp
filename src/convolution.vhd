@@ -32,7 +32,7 @@ end convolution;
 
 architecture Behavioral of convolution is
 
-    component conv_controller
+    component convolution_contrl
         generic (
             IMAGE_DIM       : Natural := IMG_DIM;
             KERNEL_DIM      : Natural := KERNEL_DIM
@@ -45,7 +45,7 @@ architecture Behavioral of convolution is
         );
         end component;
 
-    component sfixed_shift_registers 
+    component q_reg 
         generic (
             STORE_PXL_REG : Natural := IMG_DIM-KERNEL_DIM;
             BITS_INT_PART : Natural := BITS_INT_PART;
@@ -94,7 +94,7 @@ begin
 
     pxl_out <= acc_values(KERNEL_DIM-1)(KERNEL_DIM-1);
     
-    controller : conv_controller port map (
+    contrl_inst : convolution_contrl port map (
         clk => clk,
         convol_en => convol_en,
         lyr_nmbr => lyr_nmbr,
@@ -163,7 +163,7 @@ begin
                 
                 shift_regs : if row < KERNEL_DIM-1 and col = KERNEL_DIM-1 generate
                 begin
-                    sr : sfixed_shift_registers port map (
+                    qr : q_reg port map (
                         clk => clk,
                         reset => reset,
                         we => convol_en,
