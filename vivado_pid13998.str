@@ -951,3 +951,256 @@ closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - conv_layer
 selectButton("RDIResource.WaveformUtils_WAVEFORM_CONFIGURATION_HAS_BEEN_MODIFIED_Discard", "Discard"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
 // Tcl Message: close_sim 
 // Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Elapsed time: 69 seconds
+minimizeFrame(RDIResource.RDIViews_PROPERTIES, "Properties"); // ap:DockableFrame (FrameContainer:JideTabbedPane, cl:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F:b
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5, true, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click - Node
+// Elapsed time: 18 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 150, 500); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 184, 237); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 5, 516); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 282, 320); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 64 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, conv_layer_tb_wo_sig - behavior (conv_layer_tb_wo_sig.vhd)]", 5); // A:k (H:JPanel, cl:JFrame)
+// Elapsed time: 22 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 244, 289); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 15, 280); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 709, 308); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 833, 230); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 517, 174); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 670, 173, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 49 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 11, 289); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 3, 264); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 31, 290); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 25, 218); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 113, 396); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "conv_layer_tb_wo_sig.vhd", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 39, 234); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 40, 395); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 20, 161); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 31, 414); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 131, 250); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 128, 267); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 46 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 205, 368); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 209, 356); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 58 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 691, 245, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 133, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 41 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 148, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 719, 182); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 166, 208); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 642, 107, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 51, 9); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 47, 29); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 96, 44); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 96, 57); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 123, 66); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 123, 79); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 108, 100); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 12 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 18, 10); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 83, 25); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 78, 35); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 75, 52); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 60, 12); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 63, 19); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 75, 43); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 78, 55); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 82, 63); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 18 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 184, 162); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 187, 175); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 184, 191); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 31 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 948, 147, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, Popup:JWindow)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 43, 223); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 39, 235); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 85, 199); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 146, 266); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 14 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 155, 359); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 118, 399); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 36, 536); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 721, 172, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 711, 160, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 619, 147); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // w:Y (v:H, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// d:cp (cl:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [USF-XSim-27] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'conv_layer_tb_wo_sig' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' 
+// Tcl Message: Built simulation snapshot conv_layer_tb_wo_sig_behav  ****** Webtalk v2015.2 (64-bit)   **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.  source /home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav/xsim.dir/conv_layer_tb_wo_sig_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 14:35:28 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 14:35:28 2018... 
+// Tcl Message: INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_1/project_1.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "conv_layer_tb_wo_sig_behav -key {Behavioral:sim_1:Functional:conv_layer_tb_wo_sig} -tclbatch {conv_layer_tb_wo_sig.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2015.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 ps 
+// Tcl Message: source conv_layer_tb_wo_sig.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'conv_layer_tb_wo_sig_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 6377.273 ; gain = 0.000 ; free physical = 62327 ; free virtual = 113941 
+// 'c' command handler elapsed time: 6 seconds
+dismissDialog("Run Simulation"); // d:cp (cl:JFrame)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cl:JFrame)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - conv_layer_tb_wo_sig", "DesignTask.SIMULATION");
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// [GUI Memory]: 104 MB (+1208kb) [00:33:57]
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Elapsed time: 19 seconds
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 191, 110); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 170, 235); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 319, 266); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 269, 260); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 269, 260, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// Replace in Files: addNotify
+selectComboBox("pa.FindAndReplaceAllDialog_FIND_COMBO_BOX", "conv_layer_tb_wo_sig", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectComboBox("pa.FindAndReplaceAllDialog_REPLACE_COMBO_BOX", "output", -1); // JComboBox:JComponent (JPanel:JComponent, a:FindAndReplaceDialog)
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // g:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// n:ap (cl:JFrame): Save Text Editor Changes: addNotify
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, n:ap)
+// TclEventType: DG_GRAPH_STALE
+// cp:P (cl:JFrame):  Find in Files : addNotify
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,430 MB. GUI used memory: 47 MB. Current time: 4/30/18 2:36:30 PM CDT
+// 'e' command handler elapsed time: 7 seconds
+dismissDialog("Save Text Editor Changes"); // n:ap (cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,430 MB. GUI used memory: 47 MB. Current time: 4/30/18 2:36:31 PM CDT
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Find in Files"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceEtoH.FindInFilesView_REPLACE_ALL_OCCURRENCES_IN_ALL_FILES, "Replace All"); // a:JButton (ButtonPanel:JPanel, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 388, 231); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 552, 129, false, false, false, true, false); // bj:J (JPanel:JComponent, cl:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_SAVE_FILE, "Save File"); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: DG_UPDATE_GRAPH
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, cnn_tb - behavior (conv_layer_tb_wo_sig.vhd)]", 5); // A:k (H:JPanel, cl:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, cnn_tb - behavior (conv_layer_tb_wo_sig.vhd)]", 5); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, cnn_tb - behavior (conv_layer_tb_wo_sig.vhd)]", 5); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, cnn_tb - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd)]", 6); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, cnn_tb - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), avg_pooler - average_pooler - Behavioral (average_pooler.vhd)]", 10); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, cnn_tb - behavior (conv_layer_tb_wo_sig.vhd), conv_layer - convolution_layer - Behavioral (convolution_layer.vhd), conv - convolution - Behavioral (convolution.vhd)]", 7); // A:k (H:JPanel, cl:JFrame)
+selectCodeEditor("conv_layer_tb_wo_sig.vhd", 142, 282); // bj:J (JPanel:JComponent, cl:JFrame)

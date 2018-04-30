@@ -22,3 +22,8 @@ close_sim
 launch_simulation
 source conv_layer_tb_wo_sig.tcl
 close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
