@@ -48,9 +48,9 @@ architecture Behavioral of average_pooler is
     constant POOL_ARRAY_DIM_MAX : Natural := IMG_DIM/POOLING_DIM;
 	type states is (find_max, end_of_row,wait_for_new_row, finished);
 
-	type sfixed_array is array(POOL_ARRAY_DIM_MAX-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	type arr is array(POOL_ARRAY_DIM_MAX-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
-	signal buffer_values : sfixed_array;
+	signal buffer_values : arr;
 	signal reset_buffers : std_logic;
 	signal write_buffers : std_logic;
     signal pool_sum	     : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);

@@ -15,9 +15,9 @@ entity mac is
 			reset 		: in std_logic;		
 			wt_we 	: in std_logic;
 			wt_in 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-			multi_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-			acc_value 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-			weight_out	: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			mul_val : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			acc_val 	: in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+			mac_wt_out	: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 			result 		: out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
 		);
 end mac;
@@ -30,7 +30,7 @@ architecture Behavioral of mac is
 	
 begin	
 	
-	weight_out <= weight_reg;
+	mac_wt_out <= weight_reg;
 	
 	weight_register : process(clk) 
 	begin
@@ -50,10 +50,10 @@ begin
         end if;
     end process;
     
-    mult_and_acc : process(product, weight_reg, acc_value, multi_value) 
+    mult_and_acc : process(product, weight_reg, acc_val, mul_val) 
     begin
-        product <= weight_reg*multi_value;
-        sum <= product+acc_value;
+        product <= weight_reg*mul_val;
+        sum <= product+acc_val;
     end process;
 	
 

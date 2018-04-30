@@ -37,7 +37,7 @@ use ieee_proposed.fixed_pkg.all;
 
 entity sfixed_shift_registers is
     generic (
-        NOF_REGS : Natural := 8;
+        STORE_PXL_REG : Natural := 8;
         BITS_INT_PART : Natural := 8;
         BITS_FRAC_PART : Natural := 8
     );
@@ -45,7 +45,7 @@ entity sfixed_shift_registers is
         clk : in std_logic;
         reset : in std_logic;
         we : in std_logic;
-        output_reg : in Natural;
+        out_reg : in Natural;
         data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
         data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
     );
@@ -69,24 +69,24 @@ architecture Behavioral of sfixed_shift_registers is
         );
     end component;
     
-    type sfixed_array is array (NOF_REGS-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    type arr is array (STORE_PXL_REG-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
-    signal shift_reg_values : sfixed_array; 
+    signal shift_reg_values : arr; 
 
 begin
 
-    set_output : process(output_reg, shift_reg_values)
+    set_output : process(out_reg, shift_reg_values)
     begin
-        if output_reg >= 0 then
-            data_out <= shift_reg_values(output_reg);
-        elsif output_reg = 0 then
+        if out_reg >= 0 then
+            data_out <= shift_reg_values(out_reg);
+        elsif out_reg = 0 then
             data_out <= data_in;
         else
             data_out <= shift_reg_values(0);
         end if;
     end process;
     
-    gen_regs_loop : for reg in 0 to NOF_REGS-1 generate
+    gen_regs_loop : for reg in 0 to STORE_PXL_REG-1 generate
     begin
     
         first_reg : if reg = 0 generate

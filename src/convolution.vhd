@@ -47,7 +47,7 @@ architecture Behavioral of convolution is
 
     component sfixed_shift_registers 
         generic (
-            NOF_REGS : Natural := IMG_DIM-KERNEL_DIM;
+            STORE_PXL_REG : Natural := IMG_DIM-KERNEL_DIM;
             BITS_INT_PART : Natural := BITS_INT_PART;
             BITS_FRAC_PART : Natural := BITS_FRAC_PART
         );
@@ -55,7 +55,7 @@ architecture Behavioral of convolution is
             clk : in std_logic;
             reset : in std_logic;
             we : in std_logic;
-            output_reg : in Natural;
+            out_reg : in Natural;
             data_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
             data_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
         );
@@ -72,23 +72,22 @@ architecture Behavioral of convolution is
             reset : in std_logic;
             wt_we : in std_logic;
             wt_in : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-            multi_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-            acc_value : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-            weight_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            mul_val : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            acc_val : in sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+            mac_wt_out : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
             result : out sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART)
         );
     end component;
 
     
-    type sfixed_array is array (KERNEL_DIM-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    type sfixed_array_of_arrays is array (KERNEL_DIM-1 downto 0) of sfixed_array;
-    type sfixed_array_shift_reg is array (KERNEL_DIM-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    type arr is array (KERNEL_DIM-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    type arr_of_arr is array (KERNEL_DIM-1 downto 0) of arr;
+    signal weight_values : arr_of_arr;
+    signal acc_values : arr_of_arr;
+    type arr_reg is array (KERNEL_DIM-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal shift_reg_output : arr_reg;
     
-    signal weight_values : sfixed_array_of_arrays;
-    signal acc_values : sfixed_array_of_arrays;
-    signal shift_reg_output : sfixed_array_shift_reg;
-    
-    signal output_shift_reg_nr : Natural;
+    signal out_reg_nmbr : Natural;
     
 
 begin
@@ -102,62 +101,62 @@ begin
         out_valid => out_valid
     );
 
-    gen_mac_rows: for row in 0 to KERNEL_DIM-1 generate
-        gen_mac_columns: for col in 0 to KERNEL_DIM-1 generate
+    mac_row: for row in 0 to KERNEL_DIM-1 generate
+        mac_col: for col in 0 to KERNEL_DIM-1 generate
             begin
             
-                mac_first_leftmost : if row = 0 and col = 0 generate
+                mac_top_left : if row = 0 and col = 0 generate
                 begin
                     mac1 : mac port map (
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
                         wt_in => wt_data,
-                        multi_value => pxl_in,
-                        acc_value => (others => '0'),
-                        weight_out => weight_values(row)(col),
+                        mul_val => pxl_in,
+                        acc_val => (others => '0'),
+                        mac_wt_out => weight_values(row)(col),
                         result => acc_values(row)(col)
                     );
                 end generate;
                 
-                mac_other_leftmost : if row > 0 and col = 0 generate
+                mac_left_down : if row > 0 and col = 0 generate
                 begin
                     mac1 : mac port map (
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
                         wt_in => weight_values(row-1)(KERNEL_DIM-1),
-                        multi_value => pxl_in,
-                        acc_value => shift_reg_output(row-1),
-                        weight_out => weight_values(row)(col),
+                        mul_val => pxl_in,
+                        acc_val => shift_reg_output(row-1),
+                        mac_wt_out => weight_values(row)(col),
                         result => acc_values(row)(col)
                     );
                 end generate;
                 
-                mac_others : if (col > 0 and col < KERNEL_DIM-1) generate
+                mac_other : if (col > 0 and col < KERNEL_DIM-1) generate
                 begin
                     mac3 : mac port map (
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
                         wt_in => weight_values(row)(col-1),
-                        multi_value => pxl_in,
-                        acc_value => acc_values(row)(col-1),
-                        weight_out => weight_values(row)(col),
+                        mul_val => pxl_in,
+                        acc_val => acc_values(row)(col-1),
+                        mac_wt_out => weight_values(row)(col),
                         result => acc_values(row)(col)
                     );
                 end generate;
                 
-                mac_rightmost : if col = KERNEL_DIM-1  generate
+                mac_last : if col = KERNEL_DIM-1  generate
                 begin
                     mac4 : mac port map (
                         clk => clk,
                         reset => reset,
                         wt_we => wt_we,
                         wt_in => weight_values(row)(col-1),
-                        multi_value => pxl_in,
-                        acc_value => acc_values(row)(col-1),
-                        weight_out => weight_values(row)(col),
+                        mul_val => pxl_in,
+                        acc_val => acc_values(row)(col-1),
+                        mac_wt_out => weight_values(row)(col),
                         result => acc_values(row)(col)
                     );
                 end generate;
@@ -168,7 +167,7 @@ begin
                         clk => clk,
                         reset => reset,
                         we => convol_en,
-                        output_reg => output_shift_reg_nr,
+                        out_reg => out_reg_nmbr,
                         data_in => acc_values(row)(col),
                         data_out => shift_reg_output(row)
                     );
@@ -177,18 +176,18 @@ begin
         end generate;
     end generate;
     
-    shift_reg_config : process(lyr_nmbr)
+    reg_number : process(lyr_nmbr)
     begin
         --if lyr_nmbr = 0 then
-            output_shift_reg_nr <= IMG_DIM-KERNEL_DIM-1;
+            out_reg_nmbr <= IMG_DIM-KERNEL_DIM-1;
         --elsif lyr_nmbr = 1 then
-        --    output_shift_reg_nr <= ((IMG_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM-1;
+        --    out_reg_nmbr <= ((IMG_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM-1;
         --else
-        --    output_shift_reg_nr <= 0;
+        --    out_reg_nmbr <= 0;
         --end if; 
     end process;
     
-    bias_register : process(clk, reset)
+    bias_reg_val : process(clk, reset)
     begin
         if rising_edge(clk) then
             if reset = '0' then
@@ -199,7 +198,7 @@ begin
         end if;
     end process;
     
-    conv_reg : process(clk) 
+    convol_enable : process(clk) 
     begin
         if rising_edge(clk) then
             conv_en_out <= convol_en;
