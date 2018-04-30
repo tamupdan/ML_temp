@@ -17,65 +17,63 @@ end conv_controller;
 
 architecture Behavioral of conv_controller is
 
-	signal row_num 				: Natural range 0 to IMAGE_DIM := 0;
-	signal column_num 			: Natural range 0 to IMAGE_DIM := 0;
-	signal reached_valid_row 	: std_logic;
+	signal row 				: Natural range 0 to IMAGE_DIM := 0;
+	signal col 			: Natural range 0 to IMAGE_DIM := 0;
+	signal row_end 	: std_logic;
 	
-	signal conv_en_buf	: std_logic;
+	signal buffer_convol_en	: std_logic;
 	
-	signal output_valid_buf			: std_logic;
+	--signal valid_out_buff			: std_logic;
 
-    signal curr_img_dim : natural; 
+    signal current_dim : natural; 
 
 begin
 
-    set_img_dim : process(lyr_nmbr)
+    setting_img_dim : process(lyr_nmbr)
     begin
         if lyr_nmbr = 0 then
-            curr_img_dim <= IMAGE_DIM;
+            current_dim <= IMAGE_DIM;
         elsif lyr_nmbr = 1 then
-            curr_img_dim <= (IMAGE_DIM-KERNEL_DIM+1)/2;
+            current_dim <= (IMAGE_DIM-KERNEL_DIM+1)/2;
         else
-            curr_img_dim <= (((IMAGE_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM+1)/2;
+            current_dim <= (((IMAGE_DIM-KERNEL_DIM+1)/2)-KERNEL_DIM+1)/2;
         end if;
     end process;
 
 	count_pixels : process (clk)
 	begin
 		if rising_edge(clk) then
-			conv_en_buf <= convol_en;
+			buffer_convol_en <= convol_en;
 			if convol_en = '1' then
-				if (column_num = curr_img_dim and row_num = curr_img_dim) then
-					row_num <= 1;
-					column_num <= 1;
-					reached_valid_row <= '0';
+				if (col = current_dim and row = current_dim) then
+					row <= 1;
+					col <= 1;
+					row_end <= '0';
 				
 				else
-					if (column_num = curr_img_dim) then
-						column_num <= 1;
-						row_num <= row_num + 1;
+					if (col = current_dim) then
+						col <= 1;
+						row <= row + 1;
 					else
-						column_num <= column_num + 1;
+						col <= col + 1;
 					end if;
 					
-					if (row_num = KERNEL_DIM) then
-						reached_valid_row <= '1';
+					if (row = KERNEL_DIM) then
+						row_end <= '1';
 					end if;
 				end if;
 			else
-				row_num <= 1;
-				column_num <= 0;
-				reached_valid_row <= '0';
+				row <= 1;
+				col <= 0;
+				row_end <= '0';
 			end if;
 		end if;
 	end process;
 	
-	is_output_valid : process(clk)
+	is_out_valid : process(clk)
 	begin
 		if rising_edge(clk) then
-			if conv_en_buf = '1'
-			and reached_valid_row = '1' 
-			and (column_num >= KERNEL_DIM-1 and column_num < curr_img_dim) then
+			if buffer_convol_en = '1' and row_end = '1' and (col >= KERNEL_DIM-1 and col < current_dim) then
 				out_valid <= '1';
 			else 
 				out_valid <= '0';

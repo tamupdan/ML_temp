@@ -55,7 +55,7 @@ architecture Behavioral of average_pooler is
 	signal write_buffers : std_logic;
     signal pool_sum	     : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal weight        : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    signal output_valid_buf : std_logic;
+    signal valid_out_buff : std_logic;
 	signal pool_x : Natural range 0 to POOL_ARRAY_DIM_MAX-1 := 0;
     signal buf_reset : std_logic;
 
@@ -108,7 +108,7 @@ begin
     begin
         if rising_edge(clk) then
             if convol_en = '0' or reset = '0' then
-                output_valid_buf <= '0';
+                valid_out_buff <= '0';
                 reset_buffers <= '1';
                 write_buffers <= '0';
                 tanh_in := 0;
@@ -117,21 +117,21 @@ begin
             elsif in_valid = '1' then
                 if tanh_in = POOLING_DIM-1 and tanh_out = POOLING_DIM-1 then
                     if pool_x = POOL_ARRAY_DIM-1 then
-                        output_valid_buf <= '1';
+                        valid_out_buff <= '1';
                         reset_buffers <= '0';
                         write_buffers <= '0';
                         tanh_in := 0;
                         tanh_out := 0;
                         pool_x <= 0;
                     else
-                        output_valid_buf <= '1';
+                        valid_out_buff <= '1';
                         reset_buffers <= '1';
                         write_buffers <= '1';
                         tanh_in := 0;
                         pool_x <= pool_x + 1; 
                     end if;
                 elsif tanh_in = POOLING_DIM-1 then
-                    output_valid_buf <= '0';
+                    valid_out_buff <= '0';
                     tanh_in := 0;
                     write_buffers <= '1';
                     reset_buffers <= '1';
@@ -143,12 +143,12 @@ begin
                     end if;
                 else
                     tanh_in := tanh_in + 1;
-                    output_valid_buf <= '0';
+                    valid_out_buff <= '0';
                     reset_buffers <= '1';
                     write_buffers <= '0';                        
                 end if;
             else
-                output_valid_buf <= '0';
+                valid_out_buff <= '0';
                 reset_buffers <= '1';
                 write_buffers <= '0';
             end if;
@@ -191,7 +191,7 @@ begin
                 averaged_sum_valid <= '0';
             else
                 averaged_sum <= resize(weight*pool_sum, BITS_INT_PART-1, -BITS_FRAC_PART);
-                averaged_sum_valid <= output_valid_buf;
+                averaged_sum_valid <= valid_out_buff;
             end if;
         end if;
     end process;

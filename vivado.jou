@@ -43,3 +43,23 @@ close_design
 launch_simulation
 source conv_layer_tb_wo_sig.tcl
 close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
+launch_simulation
+launch_simulation
+source conv_layer_tb_wo_sig.tcl
+close_sim
