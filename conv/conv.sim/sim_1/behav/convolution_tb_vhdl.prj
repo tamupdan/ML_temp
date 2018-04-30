@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../../src/buffer_cnn.vhd"
+vhdl xil_defaultlib  "../../../../src/q_reg.vhd"
+vhdl xil_defaultlib  "../../../../src/mac.vhd"
+vhdl xil_defaultlib  "../../../../src/convolution_cntrl.vhd"
+vhdl xil_defaultlib  "../../../../src/convolution.vhd"
+vhdl xil_defaultlib  "../../../../tb/convolution_tb.vhd"
+
+# Do not sort compile order
+nosort

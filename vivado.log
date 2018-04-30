@@ -162,3 +162,913 @@ INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 6064.805 ; gain = 7.812 ; free physical = 60414 ; free virtual = 117103
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
+close_project
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/avg/avg.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/avg/avg.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Mon Apr 30 17:38:40 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 17:38:40 2018...
+create_project conv /home/grads/p/prateek_24prasad/ml_new/conv -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd /home/grads/p/prateek_24prasad/ml_new/src/mac.vhd /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd /home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd /home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd /home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd /home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd /home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+remove_files /home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+remove_files /home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+remove_files {/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd}
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto db10b24df305406ebb1925b1018b60e2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot convolution_tb_behav xil_defaultlib.convolution_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <conv_en> does not exist in entity <convolution>.  Please compare the definition of block <convolution> to its component declaration and its instantion to detect the mismatch. [/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd:30]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit convolution_tb in library work failed.
+INFO: [USF-XSim-99] Step results log file:'/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto db10b24df305406ebb1925b1018b60e2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot convolution_tb_behav xil_defaultlib.convolution_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.convolution_tb
+Built simulation snapshot convolution_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 17:44:33 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 17:44:33 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "convolution_tb_behav -key {Behavioral:sim_1:Functional:convolution_tb} -tclbatch {convolution_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source convolution_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'convolution_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto db10b24df305406ebb1925b1018b60e2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot convolution_tb_behav xil_defaultlib.convolution_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 3995. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4001. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.convolution_tb
+Built simulation snapshot convolution_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 17:49:19 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 17:49:19 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "convolution_tb_behav -key {Behavioral:sim_1:Functional:convolution_tb} -tclbatch {convolution_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source convolution_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000000.00000000.
+Time: 31500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 32500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00000011.00000000.
+Time: 33500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 34500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 35500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 36500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 39500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000000.00000000.
+Time: 40500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00000011.00000000.
+Time: 41500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000000.00000000.
+Time: 42500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000000.00000000.
+Time: 43500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00000000.00000000.
+Time: 44500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 47500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000000.00000000.
+Time: 48500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000011.00000000.
+Time: 49500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000000.00000000.
+Time: 50500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000000.00000000.
+Time: 51500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00000000.00000000.
+Time: 52500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00000000.00000000.
+Time: 55500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 56500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000011.00000000.
+Time: 57500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000000.00000000.
+Time: 58500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00000000.00000000.
+Time: 59500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00000000.00000000.
+Time: 60500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00000000.00000000.
+Time: 63500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 64500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 65500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 66500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 67500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 68500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00000000.00000000.
+Time: 71500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 72500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 73500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 74500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 75500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000000.00000000.
+Time: 76500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000000.00000000.
+Time: 95500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 96500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00000011.00000000.
+Time: 97500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 98500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 99500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 100500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 103500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000000.00000000.
+Time: 104500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00000011.00000000.
+Time: 105500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000000.00000000.
+Time: 106500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000000.00000000.
+Time: 107500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00000000.00000000.
+Time: 108500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 111500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000000.00000000.
+Time: 112500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000011.00000000.
+Time: 113500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000000.00000000.
+Time: 114500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000000.00000000.
+Time: 115500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00000000.00000000.
+Time: 116500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00000000.00000000.
+Time: 119500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 120500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000011.00000000.
+Time: 121500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000000.00000000.
+Time: 122500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00000000.00000000.
+Time: 123500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00000000.00000000.
+Time: 124500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00000000.00000000.
+Time: 127500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 128500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 129500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 130500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 131500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 132500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00000000.00000000.
+Time: 135500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 136500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 137500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 138500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 139500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000000.00000000.
+Time: 140500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'convolution_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 6108.852 ; gain = 8.000 ; free physical = 59880 ; free virtual = 116625
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto db10b24df305406ebb1925b1018b60e2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot convolution_tb_behav xil_defaultlib.convolution_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 3995. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4001. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.convolution_tb
+Built simulation snapshot convolution_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 17:55:32 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 17:55:32 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "convolution_tb_behav -key {Behavioral:sim_1:Functional:convolution_tb} -tclbatch {convolution_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source convolution_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000110.00000000.
+Time: 31500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000111.00000000.
+Time: 32500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00001011.00000000.
+Time: 33500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00001000.00000000.
+Time: 34500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00001010.00000000.
+Time: 35500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00001001.00000000.
+Time: 36500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000101.00000000.
+Time: 39500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000011.00000000.
+Time: 40500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00001000.00000000.
+Time: 41500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000101.00000000.
+Time: 42500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000111.00000000.
+Time: 43500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00001011.00000000.
+Time: 44500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000110.00000000.
+Time: 47500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000100.00000000.
+Time: 48500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000101.00000000.
+Time: 49500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000100.00000000.
+Time: 50500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000011.00000000.
+Time: 51500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00001100.00000000.
+Time: 52500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00001010.00000000.
+Time: 55500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000111.00000000.
+Time: 56500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000100.00000000.
+Time: 57500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000110.00000000.
+Time: 58500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00001000.00000000.
+Time: 59500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00001100.00000000.
+Time: 60500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00001001.00000000.
+Time: 63500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00001011.00000000.
+Time: 64500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 65500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00001010.00000000.
+Time: 66500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000110.00000000.
+Time: 67500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00001011.00000000.
+Time: 68500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00001011.00000000.
+Time: 71500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00001100.00000000.
+Time: 72500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 73500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00001000.00000000.
+Time: 74500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00001001.00000000.
+Time: 75500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000111.00000000.
+Time: 76500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000110.00000000.
+Time: 95500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000111.00000000.
+Time: 96500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00001011.00000000.
+Time: 97500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00001000.00000000.
+Time: 98500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00001010.00000000.
+Time: 99500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00001001.00000000.
+Time: 100500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000101.00000000.
+Time: 103500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000011.00000000.
+Time: 104500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00001000.00000000.
+Time: 105500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000101.00000000.
+Time: 106500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000111.00000000.
+Time: 107500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00001011.00000000.
+Time: 108500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000110.00000000.
+Time: 111500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000100.00000000.
+Time: 112500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000101.00000000.
+Time: 113500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000100.00000000.
+Time: 114500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000011.00000000.
+Time: 115500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00001100.00000000.
+Time: 116500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00001010.00000000.
+Time: 119500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000111.00000000.
+Time: 120500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000100.00000000.
+Time: 121500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000110.00000000.
+Time: 122500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00001000.00000000.
+Time: 123500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00001100.00000000.
+Time: 124500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00001001.00000000.
+Time: 127500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00001011.00000000.
+Time: 128500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 129500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00001010.00000000.
+Time: 130500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000110.00000000.
+Time: 131500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00001011.00000000.
+Time: 132500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00001011.00000000.
+Time: 135500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00001100.00000000.
+Time: 136500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 137500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00001000.00000000.
+Time: 138500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00001001.00000000.
+Time: 139500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000111.00000000.
+Time: 140500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'convolution_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 6113.859 ; gain = 0.000 ; free physical = 57941 ; free virtual = 114682
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto db10b24df305406ebb1925b1018b60e2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot convolution_tb_behav xil_defaultlib.convolution_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 3995. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4001. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.convolution_tb
+Built simulation snapshot convolution_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 17:56:31 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 17:56:31 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "convolution_tb_behav -key {Behavioral:sim_1:Functional:convolution_tb} -tclbatch {convolution_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source convolution_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000000.00000000.
+Time: 31500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 32500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00000011.00000000.
+Time: 33500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 34500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 35500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 36500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 39500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000000.00000000.
+Time: 40500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00000011.00000000.
+Time: 41500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000000.00000000.
+Time: 42500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000000.00000000.
+Time: 43500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00000000.00000000.
+Time: 44500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 47500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000000.00000000.
+Time: 48500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000011.00000000.
+Time: 49500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000000.00000000.
+Time: 50500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000000.00000000.
+Time: 51500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00000000.00000000.
+Time: 52500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00000000.00000000.
+Time: 55500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 56500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000011.00000000.
+Time: 57500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000000.00000000.
+Time: 58500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00000000.00000000.
+Time: 59500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00000000.00000000.
+Time: 60500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00000000.00000000.
+Time: 63500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 64500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 65500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 66500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 67500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 68500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00000000.00000000.
+Time: 71500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 72500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 73500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 74500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 75500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000000.00000000.
+Time: 76500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 0. Expected value: 01000111.00000000. Actual value: 00000000.00000000.
+Time: 95500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 1. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 96500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 2. Expected value: 01001010.00000000. Actual value: 00000011.00000000.
+Time: 97500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 3. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 98500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 4. Expected value: 01010100.00000000. Actual value: 00000000.00000000.
+Time: 99500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 5. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 100500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 6. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 103500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 7. Expected value: 00101010.00000000. Actual value: 00000000.00000000.
+Time: 104500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 8. Expected value: 00110111.00000000. Actual value: 00000011.00000000.
+Time: 105500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 9. Expected value: 01010000.00000000. Actual value: 00000000.00000000.
+Time: 106500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 10. Expected value: 01010001.00000000. Actual value: 00000000.00000000.
+Time: 107500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 11. Expected value: 00111100.00000000. Actual value: 00000000.00000000.
+Time: 108500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 12. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 111500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 13. Expected value: 00101011.00000000. Actual value: 00000000.00000000.
+Time: 112500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 14. Expected value: 00101001.00000000. Actual value: 00000011.00000000.
+Time: 113500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 15. Expected value: 00100110.00000000. Actual value: 00000000.00000000.
+Time: 114500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 16. Expected value: 00100100.00000000. Actual value: 00000000.00000000.
+Time: 115500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 17. Expected value: 00110010.00000000. Actual value: 00000000.00000000.
+Time: 116500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 18. Expected value: 01011110.00000000. Actual value: 00000000.00000000.
+Time: 119500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 19. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 120500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 20. Expected value: 00100010.00000000. Actual value: 00000011.00000000.
+Time: 121500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 21. Expected value: 00101111.00000000. Actual value: 00000000.00000000.
+Time: 122500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 22. Expected value: 01001100.00000000. Actual value: 00000000.00000000.
+Time: 123500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 23. Expected value: 00111001.00000000. Actual value: 00000000.00000000.
+Time: 124500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 24. Expected value: 01001111.00000000. Actual value: 00000000.00000000.
+Time: 127500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 25. Expected value: 00111111.00000000. Actual value: 00000000.00000000.
+Time: 128500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 26. Expected value: 01000011.00000000. Actual value: 00000011.00000000.
+Time: 129500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 27. Expected value: 00101100.00000000. Actual value: 00000000.00000000.
+Time: 130500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 28. Expected value: 01001001.00000000. Actual value: 00000000.00000000.
+Time: 131500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 29. Expected value: 01010010.00000000. Actual value: 00000000.00000000.
+Time: 132500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 30. Expected value: 01011101.00000000. Actual value: 00000000.00000000.
+Time: 135500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 31. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 136500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 32. Expected value: 01001000.00000000. Actual value: 00000011.00000000.
+Time: 137500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 33. Expected value: 01000101.00000000. Actual value: 00000000.00000000.
+Time: 138500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 34. Expected value: 01001011.00000000. Actual value: 00000000.00000000.
+Time: 139500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+Error: Output nr. 35. Expected value: 00101101.00000000. Actual value: 00000000.00000000.
+Time: 140500 ps  Iteration: 1  Process: /convolution_tb/assert_outputs  File: /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'convolution_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 6113.859 ; gain = 0.000 ; free physical = 57934 ; free virtual = 114707
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'convolution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+xvhdl -m64 --relax -prj convolution_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto db10b24df305406ebb1925b1018b60e2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot convolution_tb_behav xil_defaultlib.convolution_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.convolution_tb
+Built simulation snapshot convolution_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav/xsim.dir/convolution_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 17:59:21 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 17:59:21 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/conv/conv.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "convolution_tb_behav -key {Behavioral:sim_1:Functional:convolution_tb} -tclbatch {convolution_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source convolution_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'convolution_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 6113.859 ; gain = 0.000 ; free physical = 58724 ; free virtual = 115281
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
