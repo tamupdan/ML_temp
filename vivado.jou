@@ -2,83 +2,13 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Sun Apr 29 18:55:45 2018
-# Process ID: 34962
+# Start of session at: Sun Apr 29 21:27:29 2018
+# Process ID: 12011
 # Log file: /home/grads/p/prateek_24prasad/ml_new/vivado.log
 # Journal file: /home/grads/p/prateek_24prasad/ml_new/vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project /home/grads/p/prateek_24prasad/ml_new/project_1/project_1.xpr
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_runs synth_1
-wait_on_run synth_1
-open_run synth_1 -name synth_1
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-close_design
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
-launch_simulation
-source conv_layer_tb_wo_sig.tcl
-close_sim
 launch_simulation
 source conv_layer_tb_wo_sig.tcl
 close_sim

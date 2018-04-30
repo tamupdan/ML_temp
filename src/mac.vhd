@@ -24,21 +24,21 @@ end mac;
 
 architecture Behavioral of mac is
 	
-	signal weight_reg 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal wt_reg 	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	signal sum 			: sfixed(BITS_INT_PART*2 downto -BITS_FRAC_PART*2);
-    signal product      : sfixed((BITS_INT_PART*2)-1 downto -BITS_FRAC_PART*2);
+    signal pro      : sfixed((BITS_INT_PART*2)-1 downto -BITS_FRAC_PART*2);
 	
 begin	
 	
-	mac_wt_out <= weight_reg;
+	mac_wt_out <= wt_reg;
 	
 	weight_register : process(clk) 
 	begin
 		if rising_edge(clk) then
 			if (reset = '0') then
-				weight_reg <= (others => '0');
+				wt_reg <= (others => '0');
 			elsif(wt_we = '1') then
-				weight_reg <= wt_in;
+				wt_reg <= wt_in;
 			end if;
 		end if;
 	end process;
@@ -50,10 +50,10 @@ begin
         end if;
     end process;
     
-    mult_and_acc : process(product, weight_reg, acc_val, mul_val) 
+    mac_op : process(pro, wt_reg, acc_val, mul_val) 
     begin
-        product <= weight_reg*mul_val;
-        sum <= product+acc_val;
+        pro <= wt_reg*mul_val;
+        sum <= pro+acc_val;
     end process;
 	
 

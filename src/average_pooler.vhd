@@ -172,7 +172,7 @@ begin
         end if; 
 	end process;
 
-    weight_reg : process(clk)
+    wt_reg : process(clk)
     begin
         if rising_edge(clk) then
             if reset = '0' then
