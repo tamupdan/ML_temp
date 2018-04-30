@@ -8,9 +8,7 @@ use ieee_proposed.fixed_pkg.all;
 entity tan_h is
     generic (
         BITS_INT_PART : Natural := 8;
-        BITS_FRAC_PART : Natural := 8;
-        CONST_INT_WIDTH : Natural := 8;
-        CONST_FRAC_WIDTH : Natural := 8
+        BITS_FRAC_PART : Natural := 8
     );
 	Port (
 		clk : in std_logic;
@@ -23,49 +21,49 @@ end tan_h;
  
 architecture Behavioral of tan_h is
 
-	constant m1 : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(-0.54324*0.5, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH); 
-	constant m2 : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(-0.16957*0.5, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
-	constant c1 : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(1, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
-	constant c2 : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(0.42654, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
-	constant d1 : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(0.016, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
-	constant d2 : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(0.4519, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
-	constant a : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(1.52, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
-	constant b : sfixed(CONST_INT_WIDTH-1 downto -CONST_FRAC_WIDTH) := to_sfixed(2.57, CONST_INT_WIDTH-1, -CONST_FRAC_WIDTH);
+	constant m1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(-0.54324*0.5, BITS_INT_PART-1, -BITS_FRAC_PART); 
+	constant m2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(-0.16957*0.5, BITS_INT_PART-1, -BITS_FRAC_PART);
+	constant c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(1, BITS_INT_PART-1, -BITS_FRAC_PART);
+	constant c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(0.42654, BITS_INT_PART-1, -BITS_FRAC_PART);
+	constant d1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(0.016, BITS_INT_PART-1, -BITS_FRAC_PART);
+	constant d2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(0.4519, BITS_INT_PART-1, -BITS_FRAC_PART);
+	constant a : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(1.52, BITS_INT_PART-1, -BITS_FRAC_PART);
+	constant b : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART) := to_sfixed(2.57, BITS_INT_PART-1, -BITS_FRAC_PART);
 	
 	
 	-- cx = cycle tanh_in.
-	signal abs_x : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	signal abs_x_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	signal abs_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal tanh_in_absol : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal tanh_in_absol_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	--signal abs_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
-	signal pow_x_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	signal pow_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal tanh_in_power_c1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	--signal pow_x_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
-	signal signed_bit_c1 : std_logic;
-	signal signed_bit_c2 : std_logic;
-	signal signed_bit_c3 : std_logic;
+	signal sign_c1 : std_logic;
+	signal sign_c2 : std_logic;
+	signal sign_c3 : std_logic;
 	
-	signal input_valid_c1 : std_logic;
-	signal input_valid_c2 : std_logic;
-	signal input_valid_c3 : std_logic;
+	signal tanh_in_valid_c1 : std_logic;
+	signal tanh_in_valid_c2 : std_logic;
+	signal tanh_in_valid_c3 : std_logic;
 	
-	signal tanh_x_c3 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal tanh_in_c3 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
-	signal term1_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	signal term2_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	signal term3_c2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal c2_1 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal c2_2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal c2_3 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
 begin
     
-    abs_x <= resize(abs(tanh_in), abs_x); -- Absolute value of tanh_in
+    tanh_in_absol <= resize(abs(tanh_in), tanh_in_absol); -- Absolute value of tanh_in
     
-    process_input_c1 : process(clk) 
+    input_of_c1 : process(clk) 
     begin
         if rising_edge(clk) then
-            abs_x_c1 <= abs_x;
-            pow_x_c1 <= resize(abs_x*abs_x, BITS_INT_PART-1, -BITS_FRAC_PART);
-            signed_bit_c1 <= tanh_in(BITS_INT_PART-1);
-            input_valid_c1 <= in_valid;
+            tanh_in_absol_c1 <= tanh_in_absol;
+            tanh_in_power_c1 <= resize(tanh_in_absol*tanh_in_absol, BITS_INT_PART-1, -BITS_FRAC_PART);
+            sign_c1 <= tanh_in(BITS_INT_PART-1);
+            tanh_in_valid_c1 <= in_valid;
         end if;
     end process;
     
@@ -73,20 +71,20 @@ begin
     calculate_terms_c2 : process(clk)
     begin
         if rising_edge(clk) then
-            signed_bit_c2 <= signed_bit_c1;
-            input_valid_c2 <= input_valid_c1;
-            if abs_x_c1 <= a and abs_x_c1 >= 0 then
-                term1_c2 <= resize(m1*pow_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
-                term2_c2 <= resize(c1*abs_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
-                term3_c2 <= d1;
-            elsif abs_x_c1 <= b and abs_x_c1 > a then
-                term1_c2 <= resize(m2*pow_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
-                term2_c2 <= resize(c2*abs_x_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
-                term3_c2 <= d2;
+            sign_c2 <= sign_c1;
+            tanh_in_valid_c2 <= tanh_in_valid_c1;
+            if tanh_in_absol_c1 <= a and tanh_in_absol_c1 >= 0 then
+                c2_1 <= resize(m1*tanh_in_power_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
+                c2_2 <= resize(c1*tanh_in_absol_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
+                c2_3 <= d1;
+            elsif tanh_in_absol_c1 <= b and tanh_in_absol_c1 > a then
+                c2_1 <= resize(m2*tanh_in_power_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
+                c2_2 <= resize(c2*tanh_in_absol_c1, BITS_INT_PART-1, -BITS_FRAC_PART);
+                c2_3 <= d2;
             else
-                term1_c2 <= (others => '0');
-                term2_c2 <= (others => '0');
-                term3_c2 <= to_sfixed(1, BITS_INT_PART-1, -BITS_FRAC_PART);
+                c2_1 <= (others => '0');
+                c2_2 <= (others => '0');
+                c2_3 <= to_sfixed(1, BITS_INT_PART-1, -BITS_FRAC_PART);
             end if;
         end if;
     end process;
@@ -94,24 +92,22 @@ begin
     add_terms_c3 : process(clk) 
     begin
         if rising_edge(clk) then
-            signed_bit_c3 <= signed_bit_c2;
-            input_valid_c3 <= input_valid_c2;
-            tanh_x_c3 <= resize(term1_c2 + term2_c2 + term3_c2, BITS_INT_PART-1, -BITS_FRAC_PART);
+            sign_c3 <= sign_c2;
+            tanh_in_valid_c3 <= tanh_in_valid_c2;
+            tanh_in_c3 <= resize(c2_1 + c2_2 + c2_3, BITS_INT_PART-1, -BITS_FRAC_PART);
         end if;
     end process;
     
-    set_output_c4: process(clk)
+    output_cal: process(clk)
         begin 
             if rising_edge(clk) then
-                if signed_bit_c3 = '1' then
-                    tanh_out <= resize(-tanh_x_c3, BITS_INT_PART-1, -BITS_FRAC_PART);
+                if sign_c3 = '1' then
+                    tanh_out <= resize(-tanh_in_c3, BITS_INT_PART-1, -BITS_FRAC_PART);
                 else
-                    tanh_out <= tanh_x_c3;
+                    tanh_out <= tanh_in_c3;
                 end if;
-                out_valid <= input_valid_c3;
+                out_valid <= tanh_in_valid_c3;
             end if;
         end process;
         
-
-	
 end Behavioral;

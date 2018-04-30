@@ -35,7 +35,7 @@ Compiling architecture behavioral of entity xil_defaultlib.sfixed_shift_register
 Compiling architecture behavioral of entity xil_defaultlib.conv_controller [\conv_controller(8,3)\]
 Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
 Compiling architecture behavioral of entity xil_defaultlib.sfixed_fifo [\sfixed_fifo(8,8,1)\]
-Compiling architecture behavioral of entity xil_defaultlib.tan_h [\tan_h(8,8,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.tan_h [\tan_h(8,8)\]
 Compiling architecture behavioral of entity xil_defaultlib.average_pooler [\average_pooler(6,3,2,8,8)\]
 Compiling architecture behavioral of entity xil_defaultlib.convolution_layer [\convolution_layer(8,3,2,8,8)\]
 Compiling architecture behavior of entity xil_defaultlib.conv_layer_tb_wo_sig
