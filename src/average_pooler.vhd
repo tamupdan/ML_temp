@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-
 library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
@@ -45,48 +44,48 @@ architecture Behavioral of average_pooler is
 		);
 	end component;
 
-    constant POOL_ARRAY_DIM_MAX : Natural := IMG_DIM/POOLING_DIM;
-	type states is (find_max, end_of_row,wait_for_new_row, finished);
+    constant POOL_ARRAY_MAX_DIM : Natural := IMG_DIM/POOLING_DIM;
+	--type states is (find_max, end_of_row,wait_for_new_row, finished);
 
-	type arr is array(POOL_ARRAY_DIM_MAX-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	type arr is array(POOL_ARRAY_MAX_DIM-2 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 	
-	signal buffer_values : arr;
-	signal reset_buffers : std_logic;
-	signal write_buffers : std_logic;
-    signal pool_sum	     : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal buff_vals : arr;
+	signal rst : std_logic;
+	signal wt_buff : std_logic;
+    signal pooling_sum	     : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal weight        : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal valid_out_buff : std_logic;
-	signal pool_x : Natural range 0 to POOL_ARRAY_DIM_MAX-1 := 0;
-    signal buf_reset : std_logic;
+	signal pool_ele : Natural range 0 to POOL_ARRAY_MAX_DIM-1 := 0;
+    signal buff_rst : std_logic;
 
-    signal averaged_sum : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    signal averaged_sum_valid : std_logic;
+    signal sum_avg : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal sum_avg_valid : std_logic;
 
     signal POOL_ARRAY_DIM : Natural;
     
 begin
 
-    buf_reset <= reset and reset_buffers;
+    buff_rst <= reset and rst;
 
-    set_array_dim : process(lyr_nmbr)
+    array_dimension : process(lyr_nmbr)
     begin
         --if lyr_nmbr = 0 then
-            POOL_ARRAY_DIM <= POOL_ARRAY_DIM_MAX;
+            POOL_ARRAY_DIM <= POOL_ARRAY_MAX_DIM;
         --else
             --POOL_ARRAY_DIM <= ((IMG_DIM/2)-KERNEL_DIM+1)/POOLING_DIM;
         --end if;
     end process;
     
-	generate_buffers : for i in 0 to POOL_ARRAY_DIM_MAX-2 generate
+	buffer_values : for i in 0 to POOL_ARRAY_MAX_DIM-2 generate
 	begin
 		first_buffer : if i = 0 generate
 		begin
 			uf_buffer : sfixed_buffer port map (
 				clk => clk,
-				reset => buf_reset,
-				we => write_buffers,
-				data_in => pool_sum,
-				data_out => buffer_values(i)
+				reset => buff_rst,
+				we => wt_buff,
+				data_in => pooling_sum,
+				data_out => buff_vals(i)
 			);
 		end generate;
 		
@@ -94,10 +93,10 @@ begin
 		begin
 			uf_buffer : sfixed_buffer port map (
 				clk => clk,
-				reset => buf_reset,
-				we => write_buffers,
-				data_in => buffer_values(i-1),
-				data_out => buffer_values(i)
+				reset => buff_rst,
+				we => wt_buff,
+				data_in => buff_vals(i-1),
+				data_out => buff_vals(i)
 			);
 		end generate;
 	end generate;
@@ -109,65 +108,65 @@ begin
         if rising_edge(clk) then
             if convol_en = '0' or reset = '0' then
                 valid_out_buff <= '0';
-                reset_buffers <= '1';
-                write_buffers <= '0';
+                rst <= '1';
+                wt_buff <= '0';
                 tanh_in := 0;
                 tanh_out := 0;
-                pool_x <= 0;
+                pool_ele <= 0;
             elsif in_valid = '1' then
                 if tanh_in = POOLING_DIM-1 and tanh_out = POOLING_DIM-1 then
-                    if pool_x = POOL_ARRAY_DIM-1 then
+                    if pool_ele = POOL_ARRAY_DIM-1 then
                         valid_out_buff <= '1';
-                        reset_buffers <= '0';
-                        write_buffers <= '0';
+                        rst <= '0';
+                        wt_buff <= '0';
                         tanh_in := 0;
                         tanh_out := 0;
-                        pool_x <= 0;
+                        pool_ele <= 0;
                     else
                         valid_out_buff <= '1';
-                        reset_buffers <= '1';
-                        write_buffers <= '1';
+                        rst <= '1';
+                        wt_buff <= '1';
                         tanh_in := 0;
-                        pool_x <= pool_x + 1; 
+                        pool_ele <= pool_ele + 1; 
                     end if;
                 elsif tanh_in = POOLING_DIM-1 then
                     valid_out_buff <= '0';
                     tanh_in := 0;
-                    write_buffers <= '1';
-                    reset_buffers <= '1';
-                    if pool_x = POOL_ARRAY_DIM-1 then 
+                    wt_buff <= '1';
+                    rst <= '1';
+                    if pool_ele = POOL_ARRAY_DIM-1 then 
                         tanh_out := tanh_out + 1;
-                        pool_x <= 0;
+                        pool_ele <= 0;
                     else
-                        pool_x <= pool_x + 1;
+                        pool_ele <= pool_ele + 1;
                     end if;
                 else
                     tanh_in := tanh_in + 1;
                     valid_out_buff <= '0';
-                    reset_buffers <= '1';
-                    write_buffers <= '0';                        
+                    rst <= '1';
+                    wt_buff <= '0';                        
                 end if;
             else
                 valid_out_buff <= '0';
-                reset_buffers <= '1';
-                write_buffers <= '0';
+                rst <= '1';
+                wt_buff <= '0';
             end if;
 	   end if;
 	end process;
 	
-    update_sum : process(clk)
+    sum : process(clk)
 	begin
         if rising_edge(clk) then
-            if convol_en = '0' or reset_buffers = '0' or reset = '0' then
-                pool_sum <= (others => '0');
+            if convol_en = '0' or rst = '0' or reset = '0' then
+                pooling_sum <= (others => '0');
             elsif in_valid = '1' then
-                if write_buffers = '1' then
-                    pool_sum <= resize(data_in + buffer_values(POOL_ARRAY_DIM-2), BITS_INT_PART-1, -BITS_FRAC_PART);
+                if wt_buff = '1' then
+                    pooling_sum <= resize(data_in + buff_vals(POOL_ARRAY_DIM-2), BITS_INT_PART-1, -BITS_FRAC_PART);
                 else
-                    pool_sum <= resize(data_in + pool_sum, BITS_INT_PART-1, -BITS_FRAC_PART);
+                    pooling_sum <= resize(data_in + pooling_sum, BITS_INT_PART-1, -BITS_FRAC_PART);
                 end if;
-            elsif write_buffers = '1' then
-                pool_sum <= buffer_values(POOL_ARRAY_DIM-2);
+            elsif wt_buff = '1' then
+                pooling_sum <= buff_vals(POOL_ARRAY_DIM-2);
             end if;
         end if; 
 	end process;
@@ -183,24 +182,24 @@ begin
         end if;
     end process;
 
-    average_reg : process(clk)
+    avg_reg : process(clk)
     begin
         if rising_edge(clk) then
             if reset = '0' then
-                averaged_sum <= (others => '0');
-                averaged_sum_valid <= '0';
+                sum_avg <= (others => '0');
+                sum_avg_valid <= '0';
             else
-                averaged_sum <= resize(weight*pool_sum, BITS_INT_PART-1, -BITS_FRAC_PART);
-                averaged_sum_valid <= valid_out_buff;
+                sum_avg <= resize(weight*pooling_sum, BITS_INT_PART-1, -BITS_FRAC_PART);
+                sum_avg_valid <= valid_out_buff;
             end if;
         end if;
     end process;
 
-    output_reg : process(clk)
+    output : process(clk)
     begin
         if rising_edge(clk) then
-            out_valid <= averaged_sum_valid;
-            data_out <= averaged_sum;
+            out_valid <= sum_avg_valid;
+            data_out <= sum_avg;
         end if;
     end process;
 
