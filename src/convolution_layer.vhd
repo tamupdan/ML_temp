@@ -106,6 +106,8 @@ architecture Behavioral of convolution_layer is
 		);
 	end component;
 	
+	signal float_size : float32;   
+    signal layer1 : std_logic;
 
 
 	signal bias : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
@@ -113,46 +115,45 @@ architecture Behavioral of convolution_layer is
     signal wt_pool_bias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal scaling : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
-	signal convEn_convToMux : std_logic;
-	signal outputValid_convToMux : std_logic;
-    signal pixelOut_convToMux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+	signal convol_en_con_mux : std_logic;
+	signal out_vld_con_mux : std_logic;
+    signal pxl_out_con_mux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
-    signal pixel_BufToMux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     signal buffer_we      : std_logic;
-    
-    signal pixel_MuxToBias : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    signal valid_MuxToBias : std_logic;
+    signal pxl_buf_mux : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
-    signal pixel_MuxToF2F : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-    signal pixelValid_MuxToF2F : std_logic;
+    signal valid_mux_bias : std_logic;
+    signal pxl_mux_bias : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+
+    --signal pixelValid_MuxToF2F : std_logic;
+    --signal pixel_MuxToF2F : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+
     
-    signal valid_biasToTanh : std_logic;
-    signal pixel_biasToTanh : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal valid_bias_tanh : std_logic;
+    signal pxl_bias_tanh : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
-    signal pixelValid_TanhToAvgPool : std_logic;
+    signal valid_tanh_pool : std_logic;
     --signal pxl_tanh_pool : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
-    signal pixelValid_AvgPoolToScaleFactor : std_logic;
-    signal pixelOut_AvgPoolToScaleFactor : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal valid_pool_scaling : std_logic;
+    signal pxl_pool_scaling : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
-    signal pixelValid_ScaleFactorToBias2 : std_logic;
-    signal pixelOut_ScaleFactorToBias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal valid_scaling_bias2 : std_logic;
+    signal pxl_scaling_bias2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
-    signal pixelValid_Bias2ToTanh2 : std_logic;
-    signal pixelOut_Bias2ToTanh2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
+    signal valid_bias2_tanh2 : std_logic;
+    signal pxl_bias2_tanh2 : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
-    signal pixelValid_Tanh2ToOut : std_logic;
+    signal valid_tanh2_out : std_logic;
     --signal pxl_tanh_out : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
-    signal pixelValid_F2FToOut : std_logic;
-    signal pixelOut_F2FToOut : float32;
+    signal valid_float_out : std_logic;
+    signal pxl_float_out : float32;
     
     --signal y1        	: sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     --signal y2            : sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
 
-    signal float_size : float32;
-
-    signal is_layer_1 : std_logic;
+    
 begin
 
 	conv : convolution port map (
@@ -163,9 +164,9 @@ begin
 		wt_we		=> wt_we,
 		wt_data 	=> wt_data,
 		pxl_in 		=> pxl_in,
-		out_valid	=> outputValid_convToMux,--dv_conv_to_buf_and_mux,
-		conv_en_out		=> convEn_convToMux,
-		pxl_out 		=> pixelOut_convToMux,--data_conv_to_buf_and_mux,
+		out_valid	=> out_vld_con_mux,--dv_conv_to_buf_and_mux,
+		conv_en_out		=> convol_en_con_mux,
+		pxl_out 		=> pxl_out_con_mux,--data_conv_to_buf_and_mux,
 		bias    		=> bias
 	
 	);
@@ -173,36 +174,36 @@ begin
     is_layer_1_process : process (lyr_nmbr)
     begin
         --if lyr_nmbr = 1 or lyr_nmbr = 2 then
-            --is_layer_1 <= '1';
+            --layer1 <= '1';
         --else
-            is_layer_1 <= '0';
+            layer1 <= '0';
         --end if;
     end process;
     
-    buffer_we <= is_layer_1 and outputValid_convToMux;
+    buffer_we <= layer1 and out_vld_con_mux;
     
     intermediate_buffer : sfixed_fifo port map (
         clk => clk,
         reset => reset,
         write_en => buffer_we,
         lyr_nmbr => lyr_nmbr,
-        data_in => pixelOut_convToMux,
-        data_out => pixel_bufToMux
+        data_in => pxl_out_con_mux,
+        data_out => pxl_buf_mux
     );
 
     mux : process(clk)
     begin
         if rising_edge(clk) then
             --if lyr_nmbr = 0 then
-                pixel_MuxToBias <= pixelOut_convToMux;
-                valid_MuxToBias <= outputValid_convToMux;
+                pxl_mux_bias <= pxl_out_con_mux;
+                valid_mux_bias <= out_vld_con_mux;
             --elsif lyr_nmbr = 1 or lyr_nmbr = 2 then
             --    if final_set = '1' then
-            --        pixel_MuxToBias <= resize(pixelOut_convToMux + pixel_bufToMux, BITS_INT_PART-1, -BITS_FRAC_PART);
-            --        valid_MuxToBias <= outputValid_convToMux;
+            --        pxl_mux_bias <= resize(pxl_out_con_mux + pxl_buf_mux, BITS_INT_PART-1, -BITS_FRAC_PART);
+            --        valid_mux_bias <= out_vld_con_mux;
             --    else
-            --        pixel_MuxToBias <= (others => '0');
-            --        valid_MuxToBias <= '0';
+            --        pxl_mux_bias <= (others => '0');
+            --        valid_mux_bias <= '0';
             --    end if;
             --end if;
         end if;
@@ -212,16 +213,16 @@ begin
 	add_bias : process(clk)
 	begin
 	   if rising_edge(clk) then
-	       pixel_biasToTanh <= resize(bias + pixel_MuxToBias, BITS_INT_PART-1, -BITS_FRAC_PART);
-	       valid_biasToTanh <= valid_MuxToBias;
+	       pxl_bias_tanh <= resize(bias + pxl_mux_bias, BITS_INT_PART-1, -BITS_FRAC_PART);
+	       valid_bias_tanh <= valid_mux_bias;
 	   end if;
 	end process;
 	
     activation_function : tan_h port map (
 	    clk => clk,
-	    in_valid => valid_biasToTanh,
-        tanh_in => pixel_biasToTanh(BITS_INT_PART-1 downto -BITS_FRAC_PART),
-        out_valid => pixelValid_TanhToAvgPool,
+	    in_valid => valid_bias_tanh,
+        tanh_in => pxl_bias_tanh(BITS_INT_PART-1 downto -BITS_FRAC_PART),
+        out_valid => valid_tanh_pool,
         tanh_out => pxl_tanh_pool
 	);
 
@@ -233,44 +234,44 @@ begin
         lyr_nmbr        => lyr_nmbr,
         wt_in       => bias,
         wt_we       => wt_we,
-        in_valid		=> pixelValid_TanhToAvgPool,
+        in_valid		=> valid_tanh_pool,
         data_in         => pxl_tanh_pool,
-        data_out		=> pixelOut_AvgPoolToScaleFactor,
-	  	out_valid 	=> pixelValid_AvgPoolToScaleFactor,
+        data_out		=> pxl_pool_scaling,
+	  	out_valid 	=> valid_pool_scaling,
         wt_out   => wt_pool_bias2
     );
 
-    apply_scale_factor : process(clk)
+    apply_scaling : process(clk)
     begin
         if rising_edge(clk) then
-            pixelOut_ScaleFactorToBias2 <= resize(scaling*pixelOut_AvgPoolToScaleFactor, BITS_INT_PART-1, -BITS_FRAC_PART);
-            pixelValid_ScaleFactorToBias2 <= pixelValid_AvgPoolToScaleFactor;
+            pxl_scaling_bias2 <= resize(scaling*pxl_pool_scaling, BITS_INT_PART-1, -BITS_FRAC_PART);
+            valid_scaling_bias2 <= valid_pool_scaling;
         end if;
     end process;
     
     
-    add_bias_after_ap : process(clk)
+    adding_bias_pooler : process(clk)
     begin
        if rising_edge(clk) then
-           pixelOut_Bias2ToTanh2 <= resize(bias2 + pixelOut_ScaleFactorToBias2, BITS_INT_PART-1, -BITS_FRAC_PART);
-           pixelValid_Bias2ToTanh2 <= pixelValid_ScaleFactorToBias2;
+           pxl_bias2_tanh2 <= resize(bias2 + pxl_scaling_bias2, BITS_INT_PART-1, -BITS_FRAC_PART);
+           valid_bias2_tanh2 <= valid_scaling_bias2;
        end if;
     end process;
 
     
     activation_function2 : tan_h port map (
 	    clk => clk,
-	    in_valid => pixelValid_Bias2ToTanh2,
-        tanh_in => pixelOut_Bias2ToTanh2(BITS_INT_PART-1 downto -BITS_FRAC_PART),
-        out_valid => pixelValid_Tanh2ToOut,
+	    in_valid => valid_bias2_tanh2,
+        tanh_in => pxl_bias2_tanh2(BITS_INT_PART-1 downto -BITS_FRAC_PART),
+        out_valid => valid_tanh2_out,
         tanh_out => pxl_tanh_out
 	);
 
     FixedToFloat : process (clk)
     begin
         if rising_edge(clk) then
-            pixelOut_F2FToOut <= to_float(pxl_tanh_pool);
-            pixelValid_F2FToOut <= pixelValid_TanhToAvgPool;
+            pxl_float_out <= to_float(pxl_tanh_pool);
+            valid_float_out <= valid_tanh_pool;
         end if;
     end process;
 
@@ -279,18 +280,18 @@ begin
         if rising_edge(clk) then
             --if lyr_nmbr = 0 then
                 pxl_out <= pxl_tanh_out;
-                pxl_valid <= pixelValid_Tanh2ToOut;
+                pxl_valid <= valid_tanh2_out;
             --elsif lyr_nmbr = 1 then
             --    pxl_out <= to_slv(pxl_tanh_out); 
-            --    pxl_valid <= pixelValid_Tanh2ToOut and (final_set);
+            --    pxl_valid <= valid_tanh2_out and (final_set);
             --else
-            --    pxl_out <= to_slv(pixelOut_F2FToOut);
-            --    pxl_valid <= pixelValid_F2FToOut;
+            --    pxl_out <= to_slv(pxl_float_out);
+            --    pxl_valid <= valid_float_out;
             --end if;
         end if;
     end process;
     
-    bias2_register : process (clk)
+    bias2_reg : process (clk)
     begin
         if rising_edge(clk) then
             if reset = '0' then
@@ -301,7 +302,7 @@ begin
         end if;     
     end process;
 
-    scale_factor_reg : process(clk)
+    scaling_reg : process(clk)
     begin
         if rising_edge(clk) then
             if reset = '0' then
