@@ -1,39 +1,8 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 02/13/2015 12:34:48 PM
--- Design Name: 
--- Module Name: shift_registers - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
 library ieee_proposed;
 use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Natural values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity sfixed_shift_registers is
     generic (
@@ -71,43 +40,43 @@ architecture Behavioral of sfixed_shift_registers is
     
     type arr is array (STORE_PXL_REG-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
     
-    signal shift_reg_values : arr; 
+    signal reg_vals : arr; 
 
 begin
 
-    set_output : process(out_reg, shift_reg_values)
+    assign_output : process(out_reg, reg_vals)
     begin
         if out_reg >= 0 then
-            data_out <= shift_reg_values(out_reg);
+            data_out <= reg_vals(out_reg);
         elsif out_reg = 0 then
             data_out <= data_in;
         else
-            data_out <= shift_reg_values(0);
+            data_out <= reg_vals(0);
         end if;
     end process;
     
-    gen_regs_loop : for reg in 0 to STORE_PXL_REG-1 generate
+    looping : for reg in 0 to STORE_PXL_REG-1 generate
     begin
     
-        first_reg : if reg = 0 generate
+        first_reg: if reg = 0 generate
         begin
             shift_reg : sfixed_buffer port map (
                 clk => clk,
                 reset => reset,
                 we => we,
                 data_in => data_in,
-                data_out => shift_reg_values(reg)
+                data_out => reg_vals(reg)
             );
         end generate;
         
-        other_regs : if reg > 0 generate
+        other_reg: if reg > 0 generate
         begin
             shift_reg : sfixed_buffer port map (
                 clk => clk,
                 reset => reset,
                 we => we,
-                data_in => shift_reg_values(reg-1),
-                data_out => shift_reg_values(reg)
+                data_in => reg_vals(reg-1),
+                data_out => reg_vals(reg)
             );
         end generate;
     
