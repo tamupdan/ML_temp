@@ -1,0 +1,1952 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Apr 30 15:46:29 2018
+# Process ID: 6108
+# Log file: /home/grads/p/prateek_24prasad/ml_new/vivado.log
+# Journal file: /home/grads/p/prateek_24prasad/ml_new/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_3 /home/grads/p/prateek_24prasad/ml_new/project_3 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/softwares/Linux/xilinx/Vivado/2015.2/data/ip'.
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd /home/grads/p/prateek_24prasad/ml_new/src/mac.vhd /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd /home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd /home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd /home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd /home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd /home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd /home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd /home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 15:48:02 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 15:48:02 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 6054.527 ; gain = 52.859 ; free physical = 48065 ; free virtual = 103861
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+ERROR: [VRFC 10-719] formal port/generic <clk> is not declared in <convolution> [/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd:158]
+ERROR: [VRFC 10-704] formal cl has no actual or default value [/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd:157]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd:33]
+INFO: [VRFC 10-240] VHDL file /home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xvhdl.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+ERROR: [VRFC 10-719] formal port/generic <clk> is not declared in <convolution> [/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd:158]
+ERROR: [VRFC 10-704] formal cl has no actual or default value [/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd:157]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd:33]
+INFO: [VRFC 10-240] VHDL file /home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd ignored due to errors
+INFO: [USF-XSim-99] Step results log file:'/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xvhdl.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 15:54:39 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 15:54:39 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 6067.523 ; gain = 10.996 ; free physical = 45846 ; free virtual = 102456
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 15:57:34 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 15:57:34 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 6069.531 ; gain = 0.000 ; free physical = 48421 ; free virtual = 105250
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:03:46 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:03:46 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 6120.559 ; gain = 41.828 ; free physical = 45799 ; free virtual = 103043
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:04:44 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:04:44 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 44923 ; free virtual = 102209
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+add_files -norecurse {/home/grads/p/prateek_24prasad/ml_new/tb/average_pooling_tb.vhd /home/grads/p/prateek_24prasad/ml_new/tb/convolution_tb.vhd /home/grads/p/prateek_24prasad/ml_new/tb/tanh_tb.vhd}
+update_compile_order -fileset sources_1
+add_files -norecurse /home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd
+WARNING: [filemgmt 56-12] File '/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd' cannot be added to the project because it already exists in the project, skipping this file
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:25:24 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:25:24 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 50480 ; free virtual = 106542
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:26:40 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:26:40 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 50405 ; free virtual = 106476
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:30:09 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:30:09 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 49939 ; free virtual = 106066
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:33:05 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:33:05 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 49532 ; free virtual = 105693
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [Common 17-344] 'run_program' was cancelled
+1
+    while executing
+"catch {rdi::run_program $scr_file} error_log"
+    (procedure "::tclapp::xilinx::xsim::usf_launch_script" line 35)
+    invoked from within
+"::tclapp::xilinx::xsim::usf_launch_script "xsim" $step"
+    (procedure "tclapp::xilinx::xsim::compile" line 13)
+    invoked from within
+"tclapp::xilinx::xsim::compile { -simset sim_1 -mode behavioral -run_dir /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav -int..."
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:38:04 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:38:04 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 47826 ; free virtual = 104339
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:39:36 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:39:36 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 47807 ; free virtual = 104292
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cnn_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+xvhdl -m64 --relax -prj cnn_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/buffer_cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity buffer_cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution_cntrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution_contrl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/mac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/q_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity q_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tanh
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/convolution.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity convolution
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/fifo.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fifo
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/pooling.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pooling
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/src/cnn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/grads/p/prateek_24prasad/ml_new/tb/cnn_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cnn_tb
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /softwares/Linux/xilinx/Vivado/2015.2/bin/unwrapped/lnx64.o/xelab -wto 61f125fa56c7458298673fff75303018 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cnn_tb_behav xil_defaultlib.cnn_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee_proposed.fixed_float_types
+Compiling package std.textio
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2038. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2057. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 2325. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4107. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4113. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4219. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4225. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4275. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4281. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4435. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 4535. Attribute instance_name is treated as path_name.
+WARNING: [XSIM 43-3360] "/proj/xhdhdstaff/saikatb/verific_integ/data/vhdl/src/ieee/distributable/fixed_pkg_c.vhd" Line 5127. Attribute instance_name is treated as path_name.
+Compiling package ieee_proposed.fixed_pkg
+Compiling package ieee.math_real
+Compiling package ieee_proposed.float_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mac [\mac(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.buffer_cnn [\buffer_cnn(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.q_reg [\q_reg(5,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution_contrl [\convolution_contrl(8,3)\]
+Compiling architecture behavioral of entity xil_defaultlib.convolution [\convolution(8,3,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.fifo [\fifo(8,8,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.tanh [\tanh(8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.pooling [\pooling(6,3,2,8,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnn [\cnn(8,3,2,8,8)\]
+Compiling architecture behavior of entity xil_defaultlib.cnn_tb
+Built simulation snapshot cnn_tb_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source /home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav/xsim.dir/cnn_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Apr 30 16:44:54 2018. For additional details about this file, please refer to the WebTalk help file at /softwares/Linux/xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 30 16:44:54 2018...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/grads/p/prateek_24prasad/ml_new/project_3/project_3.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cnn_tb_behav -key {Behavioral:sim_1:Functional:cnn_tb} -tclbatch {cnn_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source cnn_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 1500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 2500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 3500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 4500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_2/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 5500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+Warning: :fixed_pkg:"<=": metavalue detected, returning FALSE
+Time: 6500 ps  Iteration: 1  Process: /cnn_tb/conv_layer/tanh_inst_1/calculate_terms_c2  File: /home/grads/p/prateek_24prasad/ml_new/src/tanh.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cnn_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 6120.566 ; gain = 0.000 ; free physical = 48733 ; free virtual = 105219
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 30 16:59:39 2018...

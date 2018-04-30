@@ -1,0 +1,1 @@
+-wto "e8833924969e4270952097afb4f68d10" --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "pooling_tb_behav" "xil_defaultlib.pooling_tb" -log "elaborate.log" 

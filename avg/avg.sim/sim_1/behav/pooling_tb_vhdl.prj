@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../../src/buffer_cnn.vhd"
+vhdl xil_defaultlib  "../../../../src/pooling.vhd"
+vhdl xil_defaultlib  "../../../../tb/pooling_tb.vhd"
+
+# Do not sort compile order
+nosort

@@ -70,16 +70,8 @@ ARCHITECTURE behavior OF pooling_tb IS
             val_three, val_four,    val_five, val_one,    val_minus_one, val_minus_one
         );
         
-	type pooling_arr is array ((IMG_DIM/2)*(IMG_DIM/2)-1 downto 0) of sfixed(BITS_INT_PART-1 downto -BITS_FRAC_PART);
-	signal expected : pooling_arr := (
-	   val_one, val_two, val_three,
-	   val_four, val_five, val_two,
-	   val_three, val_two, val_minus_one
-	);
- 
 BEGIN
- 
-	-- Instantiate the Unit Under Test (UUT)
+
    pooling_inst : pooling PORT MAP (
           clk => clk,
           reset => reset,
@@ -93,7 +85,6 @@ BEGIN
           out_valid => out_valid
         );
 
-   -- Clock process definitions
    clk_process :process
    begin
 		clk <= '0';
@@ -101,9 +92,7 @@ BEGIN
 		clk <= '1';
 		wait for clk_period/2;
    end process;
- 
 
-   -- Stimulus process
     input: process
     begin		
         reset <= '0';
@@ -132,28 +121,5 @@ BEGIN
         
         wait;
     end process;
-
---	assert_result : process(clk)
---	   variable index : integer := 0;
---	   variable nof_cycles : integer := 0;
---	begin
---	   if rising_edge(clk) then
---	       nof_cycles := nof_cycles + 1;
---	       if out_valid = '1' and index < 9 then
---	           assert data_out = expected((IMG_DIM/2)*(IMG_DIM/2)-1-index)
---                   report "Test " & Natural'image(index) & ". Data out was "
---                   & to_string(data_out) & ". Expected " &
---                   to_string(expected((IMG_DIM/POOLING_DIM)*(IMG_DIM/POOLING_DIM)-1-index))
---                   severity error;
---               index := index + 1;
---	       elsif nof_cycles = 200 then
---	           if index /= 9 then
---	               assert 1 = 0
---	                   report "Too many or too few outputs"
---	                   severity error;
---               end if;
---	       end if;
---	   end if;
---	end process;
 
 END;
